@@ -3,7 +3,7 @@ import axios from "axios";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
-function AddProject(props) {
+function AddGame(props) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
@@ -24,14 +24,14 @@ function AddProject(props) {
      // Reset the state
      setTitle("");
      setDescription("");
-     props.refreshProjects();
+     props.refreshGames();
     })
      .catch((error) => console.log(error));
   };
 
   return (
-    <div className="AddProject">
-      <h3>Add Project</h3>
+    <div>
+      <h3>Add Game</h3>
 
       <form onSubmit={handleSubmit}>
         <label>Title:</label>
@@ -56,4 +56,4 @@ function AddProject(props) {
   );
 }
 
-export default AddProject;
+export default AddGame;
