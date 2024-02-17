@@ -1,0 +1,20 @@
+.container{
+    display: flex;
+}
+
+.menu-div1{
+    width: 50%;
+    background-color: #070720;
+    color: white;
+}
+
+.menu-div2{
+    width: 50%;
+    background-color: #070720;
+    color: white;
+}
+
+.banner2 {
+    width: 90%;
+
+}

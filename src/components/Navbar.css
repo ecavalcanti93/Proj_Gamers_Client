@@ -1,0 +1,32 @@
+nav {
+    background-color: #000;
+    padding: 10px;
+    display: flex; 
+    justify-content: flex-end; 
+  }
+  
+  nav button {
+    background-color: transparent;
+    color: #fff; 
+    border: 2px solid #03a9f4; 
+    border-radius: 5px;
+    padding: 8px 16px;
+    margin-right: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  nav button:hover {
+    background-color: #03a9f4; 
+    box-shadow: 0 0 10px #03a9f4; 
+  }
+  
+  nav span {
+    color: #fff;
+  }
+
+  .login-button {
+    margin-right: 50px;
+  }
+  
