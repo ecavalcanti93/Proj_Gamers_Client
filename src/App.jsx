@@ -2,9 +2,9 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
-import ProjectListPage from "./pages/ProjectListPage";
-import ProjectDetailsPage from "./pages/ProjectDetailsPage";
-import EditProjectPage from "./pages/EditProjectPage";
+import GameListPage from "./pages/GameListPage";
+import GameDetailsPage from "./pages/GameDetailsPage";
+import EditGamePage from "./pages/EditGamePage";
 import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
 import IsPrivate from "./components/IsPrivate";
@@ -18,31 +18,31 @@ function App() {
       <Routes>
         <Route exact path="/" element={<HomePage />} />
         <Route
-          path="/projects"
+          path="/games"
           element={
             <IsPrivate>
               {" "}
-              <ProjectListPage />{" "}
+              <GameListPage />{" "}
             </IsPrivate>
           }
         />
 
         <Route
-          path="/projects/:projectId"
+          path="/games/:gameId"
           element={
             <IsPrivate>
               {" "}
-              <ProjectDetailsPage />{" "}
+              <GameDetailsPage />{" "}
             </IsPrivate>
           }
         />
 
         <Route
-          path="/projects/edit/:projectId"
+          path="/games/edit/:gameId"
           element={
             <IsPrivate>
               {" "}
-              <EditProjectPage />{" "}
+              <EditGamePage />{" "}
             </IsPrivate>
           }
         />

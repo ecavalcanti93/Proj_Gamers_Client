@@ -4,24 +4,24 @@ import axios from "axios";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
-function EditProjectPage(props) {
+function EditGamePage(props) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   
-  const { projectId } = useParams();
+  const { gameId } = useParams();
   const navigate = useNavigate();
   
   useEffect(() => {
     axios
-      .get(`${API_URL}/api/projects/${projectId}`)
+      .get(`${API_URL}/api/games/${gameId}`)
       .then((response) => {
-        const oneProject = response.data;
-        setTitle(oneProject.title);
-        setDescription(oneProject.description);
+        const oneGame = response.data;
+        setTitle(oneGame.title);
+        setDescription(oneGame.description);
       })
       .catch((error) => console.log(error));
     
-  }, [projectId]);
+  }, [gameId]);
   
 
   const handleFormSubmit = (e) => {
@@ -29,27 +29,27 @@ function EditProjectPage(props) {
     const requestBody = { title, description };
 
     axios
-      .put(`${API_URL}/api/projects/${projectId}`, requestBody)
+      .put(`${API_URL}/api/games/${gameId}`, requestBody)
       .then((response) => {
-        navigate(`/projects/${projectId}`)
+        navigate(`/games/${gameId}`)
       });
   };
   
   
-  const deleteProject = () => {
+  const deleteGame = () => {
     
     axios
-      .delete(`${API_URL}/api/projects/${projectId}`)
+      .delete(`${API_URL}/api/games/${gameId}`)
       .then(() => {
-        navigate("/projects");
+        navigate("/games");
       })
       .catch((err) => console.log(err));
   };  
 
   
   return (
-    <div className="EditProjectPage">
-      <h3>Edit the Project</h3>
+    <div>
+      <h3>Edit Game</h3>
 
       <form onSubmit={handleFormSubmit}>
         <label>Title:</label>
@@ -67,12 +67,12 @@ function EditProjectPage(props) {
           onChange={(e) => setDescription(e.target.value)}
         />
 
-        <button type="submit">Update Project</button>
+        <button type="submit">Update Game</button>
       </form>
 
-      <button onClick={deleteProject}>Delete Project</button>
+      <button onClick={deleteGame}>Delete Game</button>
     </div>
   );
 }
 
-export default EditProjectPage;
+export default EditGamePage;
