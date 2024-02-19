@@ -40,6 +40,7 @@ function SignupPage(props) {
   };
 
   return (
+    <div className="signup-container">
     <div className="SignupPage">
       <h1>Sign Up</h1>
 
@@ -55,7 +56,7 @@ function SignupPage(props) {
           onChange={handlePassword}
         />
 
-        <label>Name:</label>
+        <label>Username:</label>
         <input type="text" name="name" value={name} onChange={handleName} />
 
         <button type="submit">Sign Up</button>
@@ -65,6 +66,7 @@ function SignupPage(props) {
 
       <p>Already have account?</p>
       <Link to={"/login"}> Login</Link>
+    </div>
     </div>
   );
 }

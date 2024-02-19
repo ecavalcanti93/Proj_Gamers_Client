@@ -7,7 +7,7 @@ import "./LoginPage.css";
 const API_URL = import.meta.env.VITE_API_URL;
 
 function LoginPage(props) {
-  const [email, setEmail] = useState("");
+  const [username, serUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
 
@@ -15,13 +15,13 @@ function LoginPage(props) {
 
   const { storeToken, authenticateUser } = useContext(AuthContext);
 
-  const handleEmail = (e) => setEmail(e.target.value);
+  const handleUsername = (e) => serUsername(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
 
   const handleLoginSubmit = (e) => {
     e.preventDefault();
 
-    const requestBody = { email, password };
+    const requestBody = { username, password };
 
     axios
       .post(`${API_URL}/auth/login`, requestBody)
@@ -44,8 +44,8 @@ function LoginPage(props) {
       <h1>Login</h1>
 
       <form onSubmit={handleLoginSubmit}>
-        <label>Email:</label>
-        <input type="email" name="email" value={email} onChange={handleEmail} />
+        <label>Username:</label>
+        <input type="username" name="username" value={username} onChange={handleUsername} />
 
         <label>Password:</label>
         <input

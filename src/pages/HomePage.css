@@ -6,6 +6,11 @@
     width: 50%;
     background-color: #070720;
     color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
 .menu-div2{
@@ -16,5 +21,10 @@
 
 .banner2 {
     width: 90%;
+}
 
+.section2 {
+    background: white;
+    width: 100%;
+    height: 800px;
 }

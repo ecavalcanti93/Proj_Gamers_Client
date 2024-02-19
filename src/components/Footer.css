@@ -1,0 +1,36 @@
+.grid {
+    display: flex;
+    color: white;
+    gap: 5rem;
+}
+
+.mb-6{
+    color: orangered;
+}
+
+.mt-4{
+    display: flex;
+    color: white;
+    padding: 1rem;
+}
+
+.w-full{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+title{
+    color: orangered;
+}

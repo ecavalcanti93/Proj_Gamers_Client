@@ -1,5 +1,5 @@
 import { useEffect, useState, useCallback } from "react";
-import "./Pagination.css";
+import "./Nextpage.css";
 
 const Pagination = () => {
     const [pages, setPages] = useState([]);

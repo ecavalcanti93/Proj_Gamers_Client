@@ -1,11 +1,17 @@
+body{
+  background-color: #070720;
+}
+
 .SignupPage {
     max-width: 400px;
     margin: 0 auto;
+    margin-top: 45px;
     padding: 20px;
-    background-color: #f4f4f4;
+    background-color: #2a2a58;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+    color: white;
   }
   
   .SignupPage h1 {
