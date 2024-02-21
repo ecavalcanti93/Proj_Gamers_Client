@@ -35,3 +35,24 @@
     justify-content: center;
     text-align: center;
 }
+
+button {
+    background-color: transparent;
+    color: #fff; 
+    border: 2px solid #fb3108; 
+    border-radius: 5px;
+    padding: 16px 32px;
+    margin-right: 10px;
+    font-size: 22px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #fb3108;; 
+    box-shadow: 0 0 10px #fb3108;; 
+}
+
+.menu-button {
+    margin-top: 2rem;
+}

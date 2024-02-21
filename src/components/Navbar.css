@@ -8,7 +8,7 @@ nav {
   nav button {
     background-color: transparent;
     color: #fff; 
-    border: 2px solid #03a9f4; 
+    border: 2px solid #fb3108; 
     border-radius: 5px;
     padding: 8px 16px;
     margin-right: 10px;
@@ -18,8 +18,8 @@ nav {
   }
   
   nav button:hover {
-    background-color: #03a9f4; 
-    box-shadow: 0 0 10px #03a9f4; 
+    background-color: #fb3108;; 
+    box-shadow: 0 0 10px #fb3108;; 
   }
   
   nav span {

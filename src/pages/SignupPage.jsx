@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import "./SignupPage.css"
+import "./SignupPage.css";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -30,42 +30,52 @@ function SignupPage(props) {
 
       .then((response) => {
         navigate("/login");
-      })
-
-      .catch((error) => {
-        const errorDescription = error.response.data.message;
-        setErrorMessage(errorDescription);
       });
+
+    // .catch((error) => {
+    //   const errorDescription = error.response.data.message;
+    //   setErrorMessage(errorDescription);
+    // });
   };
 
   return (
     <div className="signup-container">
-    <div className="SignupPage">
-      <h1>Sign Up</h1>
+      <div className="SignupPage">
+        <h1>Sign Up</h1>
 
-      <form onSubmit={handleSignupSubmit}>
-        <label>Email:</label>
-        <input type="email" name="email" value={email} onChange={handleEmail} />
+        <form onSubmit={handleSignupSubmit}>
+          <label>Email:</label>
+          <input
+            type="email"
+            name="email"
+            value={email}
+            onChange={handleEmail}
+          />
 
-        <label>Password:</label>
-        <input
-          type="password"
-          name="password"
-          value={password}
-          onChange={handlePassword}
-        />
+          <label>Password:</label>
+          <input
+            type="password"
+            name="password"
+            value={password}
+            onChange={handlePassword}
+          />
 
-        <label>Username:</label>
-        <input type="text" name="name" value={username} onChange={handleUsername} />
+          <label>Username:</label>
+          <input
+            type="text"
+            name="name"
+            value={username}
+            onChange={handleUsername}
+          />
 
-        <button type="submit">Sign Up</button>
-      </form>
+          <button type="submit">Sign Up</button>
+        </form>
 
-      {errorMessage && <p className="error-message">{errorMessage}</p>}
+        {errorMessage && <p className="error-message">{errorMessage}</p>}
 
-      <p>Already have account?</p>
-      <Link to={"/login"}> Login</Link>
-    </div>
+        <p>Already have account?</p>
+        <Link to={"/login"}> Login</Link>
+      </div>
     </div>
   );
 }

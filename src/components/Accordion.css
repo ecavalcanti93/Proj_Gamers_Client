@@ -17,6 +17,7 @@ section {
     align-items: flex-end;
     opacity: 0.9;
     transition: 0.5s;
+    border: 2px solid #0855fb;
   }
   
   h2,
