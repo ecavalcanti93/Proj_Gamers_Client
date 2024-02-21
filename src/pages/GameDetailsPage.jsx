@@ -13,7 +13,7 @@ function GameDetailsPage(props) {
   const getGame = () => {
     const storedToken = localStorage.getItem("authToken");
     axios
-      .get( `${API_URL}/api/games/${gameId}`,
+      .get( `${API_URL}/games/${gameId}`,
         { headers: { Authorization: `Bearer ${storedToken}` } }
       )
 

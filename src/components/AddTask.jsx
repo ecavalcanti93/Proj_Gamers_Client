@@ -17,7 +17,7 @@ function AddTask(props) {
     const requestBody = { title, description, projectId };
 
     axios
-      .post(`${API_URL}/api/tasks`, requestBody)
+      .post(`${API_URL}/tasks`, requestBody)
       .then((response) => {
         // Reset the state to clear the inputs
         setTitle("");

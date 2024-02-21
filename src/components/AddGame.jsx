@@ -16,7 +16,7 @@ function AddGame(props) {
     const storedToken = localStorage.getItem('authToken');
 
     axios
-    .post( `${API_URL}/api/projects`,
+    .post( `${API_URL}/projects`,
       requestBody,
       { headers: { Authorization: `Bearer ${storedToken}` } }
     )

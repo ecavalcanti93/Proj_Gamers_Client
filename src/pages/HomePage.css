@@ -30,5 +30,8 @@
 }
 
 .section2-text{
-    padding: 10px;
+    padding: 2rem;
+    display: grid;
+    justify-content: center;
+    text-align: center;
 }

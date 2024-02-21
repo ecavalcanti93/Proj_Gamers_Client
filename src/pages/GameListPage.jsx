@@ -13,7 +13,7 @@ function GameListPage() {
     const storedToken = localStorage.getItem("authToken");
 
     axios
-      .get( `${API_URL}/api/games`,
+      .get( `${API_URL}/games`,
         { headers: { Authorization: `Bearer ${storedToken}` } }
       )
       .then((response) => setGames(response.data))

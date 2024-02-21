@@ -13,7 +13,7 @@ function EditGamePage(props) {
   
   useEffect(() => {
     axios
-      .get(`${API_URL}/api/games/${gameId}`)
+      .get(`${API_URL}/games/${gameId}`)
       .then((response) => {
         const oneGame = response.data;
         setTitle(oneGame.title);
@@ -29,7 +29,7 @@ function EditGamePage(props) {
     const requestBody = { title, description };
 
     axios
-      .put(`${API_URL}/api/games/${gameId}`, requestBody)
+      .put(`${API_URL}/games/${gameId}`, requestBody)
       .then((response) => {
         navigate(`/games/${gameId}`)
       });
@@ -39,7 +39,7 @@ function EditGamePage(props) {
   const deleteGame = () => {
     
     axios
-      .delete(`${API_URL}/api/games/${gameId}`)
+      .delete(`${API_URL}/games/${gameId}`)
       .then(() => {
         navigate("/games");
       })
