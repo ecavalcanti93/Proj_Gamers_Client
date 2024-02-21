@@ -8,25 +8,25 @@ const API_URL = import.meta.env.VITE_API_URL;
 function SignupPage(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
+  const [username, setUsername] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
 
   const navigate = useNavigate();
 
   const handleEmail = (e) => setEmail(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
-  const handleName = (e) => setName(e.target.value);
+  const handleUsername = (e) => setUsername(e.target.value);
 
   const handleSignupSubmit = (e) => {
     e.preventDefault();
 
     // Create an object representing the request body
-    const requestBody = { email, password, name };
+    const requestBody = { email, password, username };
     // Make an axios request to the API
     // If the POST request is a successful redirect to the login page
     // If the request resolves with an error, set the error message in the state
     axios
-      .post(`${API_URL}/auth/signup`, requestBody)
+      .post(`${API_URL}/signup`, requestBody)
 
       .then((response) => {
         navigate("/login");
@@ -34,7 +34,6 @@ function SignupPage(props) {
 
       .catch((error) => {
         const errorDescription = error.response.data.message;
-
         setErrorMessage(errorDescription);
       });
   };
@@ -57,7 +56,7 @@ function SignupPage(props) {
         />
 
         <label>Username:</label>
-        <input type="text" name="name" value={name} onChange={handleName} />
+        <input type="text" name="name" value={username} onChange={handleUsername} />
 
         <button type="submit">Sign Up</button>
       </form>

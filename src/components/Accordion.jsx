@@ -4,6 +4,12 @@ import image2 from "../assets/image2.jpg";
 import image3 from "../assets/image3.jpg";
 import image4 from "../assets/image4.jpeg";
 import image5 from "../assets/image5.jpg";
+import image6 from "../assets/image6.jpg";
+import image7 from "../assets/image7.webp";
+import image8 from "../assets/image8.jpg";
+import image9 from "../assets/image9.jpg";
+import image10 from "../assets/image10.jpg";
+
 import "./Accordion.css";
 
 const cards = [
@@ -31,6 +37,31 @@ const cards = [
     header: "Super Smash Bros Ultimate",
     image: image5,
     text: `Namco Studios`,
+  },
+  {
+    header: "It Takes Two",
+    image: image6,
+    text: `Hazelight Studios`,
+  },
+  {
+    header: "Alan Wake",
+    image: image7,
+    text: `Remedy Entertainment`,
+  },
+  {
+    header: "Until Dawn",
+    image: image8,
+    text: `Supermassive Games`,
+  },
+  {
+    header: "Grand Theft Auto: San Andreas",
+    image: image9,
+    text: `Rockstar Games`,
+  },
+  {
+    header: "Far Cry 3",
+    image: image10,
+    text: `Ubisoft`,
   },
 ];
 

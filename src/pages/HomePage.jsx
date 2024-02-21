@@ -17,8 +17,10 @@ function HomePage() {
     </div>
     </div>
     <div className="section2">
+    <div className="section2-text">
     <h1>Your library for games of the past, present, and future!</h1>
     <h3>Find and add games to your virtual shelf.</h3>
+    </div>
     <Accordion />
     </div>
     <Component/>
