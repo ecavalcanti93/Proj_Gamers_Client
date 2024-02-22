@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-
 import GameCard from "../components/GameCard";
-import AddGame from "../components/AddGame";
+import SearchBar from "../components/SearchBar";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -26,10 +25,22 @@ function GameListPage() {
     getAllGames();
   }, []);
 
+  const searchGame = (char) => {
+    let filteredGames;
+  
+    if (char === "") {
+      filteredGames = jsonData; // How to import the JSON coming from the backend?
+    } else {
+      filteredGames = jsonData.filter((eachGame) => {
+        return eachGame.name.toLowerCase().includes(char.toLowerCase());
+      })
+    }
+    setGames(filteredGames);
+  }
+
   return (
     <div>
-      <AddGame refreshGames={getAllGames} />
-
+    <SearchBar setGames={searchGame}/>
       {games.map((game) => (
         <GameCard key={game._id} {...game} />
       ))}
