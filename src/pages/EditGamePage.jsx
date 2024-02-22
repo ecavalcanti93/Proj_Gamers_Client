@@ -1,54 +1,94 @@
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
 function EditGamePage(props) {
+  // const [game, setGame] = useState(null);
+
   const [title, setTitle] = useState("");
+  const [genre, setGenre] = useState("");
+  const [company, setCompany] = useState("");
+  const [platform, setPlatform] = useState("");
+  const [rating, setRating] = useState(0);
+  const [age, setAge] = useState(0);
   const [description, setDescription] = useState("");
-  
+  const [image, setImage] = useState("");
+
   const { gameId } = useParams();
   const navigate = useNavigate();
-  
+
   useEffect(() => {
+    const storedToken = localStorage.getItem("authToken");
     axios
-      .get(`${API_URL}/games/${gameId}`)
+      .get(`${API_URL}/games/${gameId}`, {
+        headers: { Authorization: `Bearer ${storedToken}` },
+      })
       .then((response) => {
         const oneGame = response.data;
         setTitle(oneGame.title);
+        setGenre(oneGame.genre);
+        setCompany(oneGame.company);
+        setPlatform(oneGame.platform);
+        setRating(oneGame.rating);
+        setAge(oneGame.age);
         setDescription(oneGame.description);
+        setImage(oneGame.image);
       })
       .catch((error) => console.log(error));
-    
-  }, [gameId]);
-  
+  }, []);
+
+  // const getGame = () => {
+  //   const storedToken = localStorage.getItem("authToken");
+  //   axios
+  //     .get(`${API_URL}/games/${gameId}`, {
+  //       headers: { Authorization: `Bearer ${storedToken}` },
+  //     })
+
+  //     .then((response) => {
+  //       const oneGame = response.data;
+  //       // setGame(oneGame);
+  //     })
+  //     .catch((error) => console.log(error));
+  // };
+
+  // useEffect(() => {
+  //   getGame();
+  // }, []);
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    const requestBody = { title, description };
+    const requestBody = {
+      title,
+      genre,
+      company,
+      platform,
+      rating,
+      age,
+      description,
+      image,
+    };
+    const storedToken = localStorage.getItem("authToken");
 
-    axios
-      .put(`${API_URL}/games/${gameId}`, requestBody)
-      .then((response) => {
-        navigate(`/games/${gameId}`)
-      });
+    axios.put(`${API_URL}/games/${gameId}`, requestBody, {
+      headers: { Authorization: `Bearer ${storedToken}` },
+    }).then(() => {
+      navigate(`/games/${gameId}`);
+    });
   };
-  
-  
-  const deleteGame = () => {
-    
-    axios
-      .delete(`${API_URL}/games/${gameId}`)
-      .then(() => {
-        navigate("/games");
-      })
-      .catch((err) => console.log(err));
-  };  
 
-  
+  // const deleteGame = () => {
+  //   axios
+  //     .delete(`${API_URL}/games/${gameId}`)
+  //     .then(() => {
+  //       navigate("/games");
+  //     })
+  //     .catch((err) => console.log(err));
+  // };
+
   return (
-    <div>
+    <div className="game-title">
       <h3>Edit Game</h3>
 
       <form onSubmit={handleFormSubmit}>
@@ -59,18 +99,71 @@ function EditGamePage(props) {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
-        
+        <br />
+        <label>Genre:</label>
+        <input
+          type="text"
+          name="genre"
+          value={genre}
+          onChange={(e) => setGenre(e.target.value)}
+        />
+        <br />
+        <label>Company:</label>
+        <input
+          type="text"
+          name="company"
+          value={company}
+          onChange={(e) => setCompany(e.target.value)}
+        />
+        <br />
+        <label>Platform:</label>
+        <input
+          type="text"
+          name="platform"
+          value={platform}
+          onChange={(e) => setPlatform(e.target.value)}
+        />
+        <br />
+        <label>Rating:</label>
+        <select value={rating} onChange={(e) => setRating(e.target.value)}>
+          <option>0</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+        <br />
+        <label>PEGI:</label>
+        <input
+          type="number"
+          name="age"
+          value={age}
+          onChange={(e) => setAge(e.target.value)}
+        />
+        <br />
         <label>Description:</label>
         <textarea
           name="description"
           value={description}
+          rows="10"
+          cols="50"
           onChange={(e) => setDescription(e.target.value)}
         />
+        <br />
+        <label>Image:</label>
+        <input
+          type="text"
+          name="image"
+          value={image}
+          onChange={(e) => setImage(e.target.value)}
+        />
+        <br />
 
         <button type="submit">Update Game</button>
       </form>
 
-      <button onClick={deleteGame}>Delete Game</button>
+      {/* <button onClick={deleteGame}>Delete Game</button> */}
     </div>
   );
 }

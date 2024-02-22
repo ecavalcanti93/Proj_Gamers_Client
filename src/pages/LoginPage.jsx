@@ -24,19 +24,19 @@ function LoginPage(props) {
     const requestBody = { username, password };
 
     axios
-      .post(`${API_URL}/login`, requestBody)
+      .post(`${API_URL}/auth/login`, requestBody)
       .then((response) => {
         // Request to the server's endpoint `/auth/login` returns a response
         // with the JWT string ->  response.data.authToken
         console.log("JWT token", response.data.authToken);
         storeToken(response.data.authToken); 
-        authenticateUser();                     
+        authenticateUser();                  
         navigate("/");
       })
-      .catch((error) => {
-        const errorDescription = error.response.data.message;
-        setErrorMessage(errorDescription);
-      });
+      // .catch((error) => {
+      //   const errorDescription = error.response.data.message;
+      //   setErrorMessage(errorDescription);
+      // });
   };
 
   return (

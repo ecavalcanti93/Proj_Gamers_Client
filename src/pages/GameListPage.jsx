@@ -27,7 +27,7 @@ function GameListPage() {
   }, []);
 
   return (
-    <div>
+    <div className="game-title">
       <AddGame refreshGames={getAllGames} />
 
       {games.map((game) => (
