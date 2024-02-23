@@ -30,8 +30,8 @@ function LoginPage(props) {
         // with the JWT string ->  response.data.authToken
         console.log("JWT token", response.data.authToken);
         storeToken(response.data.authToken);
-        // authenticateUser();
-        navigate("/");
+        authenticateUser();
+        navigate("/games");
       })
       .catch((error) => {
         const errorDescription = error.response.data.message;
