@@ -32,8 +32,8 @@ function LoginPage(props) {
         storeToken(response.data.authToken); 
         authenticateUser();                  
         storeToken(response.data.authToken);
-        // authenticateUser();
-        navigate("/");
+        authenticateUser();
+        navigate("/games");
       })
       // .catch((error) => {
       //   const errorDescription = error.response.data.message;

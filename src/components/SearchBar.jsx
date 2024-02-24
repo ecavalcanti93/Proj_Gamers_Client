@@ -1,21 +1,46 @@
-import { useState } from 'react';
+import axios from "axios";
+import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 
-function SearchBar (props) {
+const API_URL = import.meta.env.VITE_API_URL;
 
-    const [word, setWord] = useState('');
+function SearchBar() {
+  const [games, setGames] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
 
-    const handleSearch = e => {
-        setWord(e.target.value);
-        props.setGames(e.target.value);
-    }
+  const fetchGames = () => {
+    axios.get(`${API_URL}/games`)
+      .then((res) => {
+        setGames(res.data);
+      })
+      .catch(error => {
+        console.error("Error fetching games:", error);
+      });
+  };
 
-    return (
-        <>
-            <label>Search</label><br/>
-            <input name='search' value={word} type='text' onChange={handleSearch} />
-        </>
-    )
+  useEffect(() => {
+    fetchGames();
+  }, []); 
+
+
+  const handleSearchInputChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
+  
+
+  return (
+    <>
+      <div>
+        <input
+          type="text"
+          placeholder="Search for games..."
+          value={searchQuery}
+          onChange={handleSearchInputChange}
+          className="search-bar"
+        />
+      </div>
+    </>
+  );
 }
-
 
 export default SearchBar;
