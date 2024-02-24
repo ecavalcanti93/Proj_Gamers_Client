@@ -1,21 +1,23 @@
 import { Link } from "react-router-dom";
 
 // We are deconstructing props object directly in the parentheses of the function
-function GameCard ( { title, genre, company, plataform, rating, age, description, _id } ) {
+function GameCard ( { image, title, genre, company, platform, rating, age, description, _id } ) {
   
   return (
+    <>
     <div>
-      <Link to={`/games/${_id}`}>
-        <h3><b>{title}</b></h3>
-      </Link>
-      <p>{description} </p>
-      <p>{genre} </p>
-      <p>{company} </p>
-      <p>{plataform} </p>
-      <p>{rating} </p>
-      <p>{age} </p>
-      <p>{description} </p>
+    <img src={image} alt="game image"/>
+  </div>
+    <div>
+    <h1><b>{title}</b></h1>
+            <p><b>Genre:</b> {genre}</p>
+            <p><b>Platform:</b> {platform}</p>
+            <p><b>Company:</b> {company}</p>
+            <p><b>PEGI:</b> {age}</p>
+            <p><b>Description:</b> {description}</p>
+            <p><b>Rating:</b> {rating}</p>
     </div>
+    </>
   );
 }
 

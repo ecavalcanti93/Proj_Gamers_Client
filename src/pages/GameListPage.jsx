@@ -29,9 +29,9 @@ function GameListPage() {
   return (
     <div>
     <SearchBar />
-      {games.map((game) => (
+      {/* {games.map((game) => (
         <GameCard key={game._id} {...game} />
-      ))}
+      ))} */}
     </div>
   );
 }

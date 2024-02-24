@@ -2,6 +2,7 @@ import "./gameDetailsPage.css";
 import { useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import GameCard from "../components/GameCard";
 // import AddTask from "../components/AddTask";
 // import TaskCard from "../components/TaskCard";
 
@@ -45,7 +46,8 @@ function GameDetailsPage(props) {
 
   return (
     <div>
-      {game && (
+    <GameCard key={game._id} {...game}/>
+      {/* {game && (
         <div className="game-title">
           <div>
             <img src={game.image} alt="game image"/>
@@ -60,7 +62,7 @@ function GameDetailsPage(props) {
             <p><b>Rating:</b> {game.rating}</p>
           </div>
         </div>
-      )}
+      )} */}
 
       {/* <AddTask refreshGame={getGame} gameId={gameId} /> */}
 

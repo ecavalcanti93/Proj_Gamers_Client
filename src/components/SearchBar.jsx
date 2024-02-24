@@ -1,18 +1,25 @@
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import GameCard from "../components/GameCard";
+import "../App.css"
 
 const API_URL = import.meta.env.VITE_API_URL;
 
 function SearchBar() {
   const [games, setGames] = useState([]);
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchGames, setSearchGames] = useState([]);
+
+  const storedToken = localStorage.getItem("authToken");
 
   const fetchGames = () => {
-    axios.get(`${API_URL}/games`)
+    axios.get(`${API_URL}/games` , 
+    { headers: { Authorization: `Bearer ${storedToken}` } }
+    )
       .then((res) => {
         setGames(res.data);
-      })
+        return res.data;
+      }) .then((data) => setSearchGames(data))
       .catch(error => {
         console.error("Error fetching games:", error);
       });
@@ -24,8 +31,11 @@ function SearchBar() {
 
 
   const handleSearchInputChange = (e) => {
-    setSearchQuery(e.target.value);
-  };
+    e.target.value === null ? setSearchGames(games)
+    : setSearchGames(games.filter((game) => {
+      return game.title.toLowerCase().includes(e.target.value.toLowerCase());
+    }))
+  }
   
 
   return (
@@ -34,10 +44,22 @@ function SearchBar() {
         <input
           type="text"
           placeholder="Search for games..."
-          value={searchQuery}
           onChange={handleSearchInputChange}
           className="search-bar"
-        />
+        />🔍
+        {games.length === 0 ? (
+          <h1>Loading...</h1>
+        ): (
+          <>
+          {searchGames.map((game) => {
+            return (
+            <GameCard key={game._id} {...game} />
+            
+            )
+            
+          })}
+        </>
+        )}
       </div>
     </>
   );
