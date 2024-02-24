@@ -46,7 +46,7 @@ function GameDetailsPage(props) {
 
   return (
     <div>
-    <GameCard key={game._id} {...game}/>
+    <GameCard {...game}/>
       {/* {game && (
         <div className="game-title">
           <div>

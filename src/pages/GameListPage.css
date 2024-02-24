@@ -1,0 +1,16 @@
+.list-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    gap: 10px;
+    padding-top: 5vh;
+}
+
+.list-img {
+    border: 2px #0855fb solid;
+    border-radius: 36px;
+    width: 200px;
+    height: 350px;
+    object-fit: cover;
+}

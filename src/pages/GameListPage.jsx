@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import GameCard from "../components/GameCard";
 import SearchBar from "../components/SearchBar";
+import "./GameListPage.css";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -12,9 +13,9 @@ function GameListPage() {
     const storedToken = localStorage.getItem("authToken");
 
     axios
-      .get( `${API_URL}/games`,
-        { headers: { Authorization: `Bearer ${storedToken}` } }
-      )
+      .get(`${API_URL}/games`, {
+        headers: { Authorization: `Bearer ${storedToken}` },
+      })
       .then((response) => setGames(response.data))
       .catch((error) => console.log(error));
   };
@@ -25,13 +26,9 @@ function GameListPage() {
     getAllGames();
   }, []);
 
-
   return (
     <div>
-    <SearchBar />
-      {/* {games.map((game) => (
-        <GameCard key={game._id} {...game} />
-      ))} */}
+      <SearchBar />
     </div>
   );
 }
