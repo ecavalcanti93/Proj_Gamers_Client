@@ -39,24 +39,6 @@ function EditGamePage(props) {
       .catch((error) => console.log(error));
   }, []);
 
-  // const getGame = () => {
-  //   const storedToken = localStorage.getItem("authToken");
-  //   axios
-  //     .get(`${API_URL}/games/${gameId}`, {
-  //       headers: { Authorization: `Bearer ${storedToken}` },
-  //     })
-
-  //     .then((response) => {
-  //       const oneGame = response.data;
-  //       // setGame(oneGame);
-  //     })
-  //     .catch((error) => console.log(error));
-  // };
-
-  // useEffect(() => {
-  //   getGame();
-  // }, []);
-
   const handleFormSubmit = (e) => {
     e.preventDefault();
     const requestBody = {
