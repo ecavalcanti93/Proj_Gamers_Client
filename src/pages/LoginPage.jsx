@@ -7,8 +7,8 @@ import "./LoginPage.css";
 const API_URL = import.meta.env.VITE_API_URL;
 
 function LoginPage(props) {
-  const [username, serUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, serUsername] = useState("marcel");
+  const [password, setPassword] = useState("Marcel123");
   const [errorMessage, setErrorMessage] = useState(undefined);
 
   const navigate = useNavigate();
@@ -33,12 +33,12 @@ function LoginPage(props) {
         authenticateUser();                  
         storeToken(response.data.authToken);
         authenticateUser();
-        navigate("/games");
+        // navigate("/games");
       })
-      // .catch((error) => {
-      //   const errorDescription = error.response.data.message;
-      //   setErrorMessage(errorDescription);
-      // });
+      .catch((error) => {
+        const errorDescription = error.response.data.message;
+        setErrorMessage(errorDescription);
+      });
   };
 
   return (
