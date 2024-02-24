@@ -26,7 +26,7 @@ function SignupPage(props) {
     // If the POST request is a successful redirect to the login page
     // If the request resolves with an error, set the error message in the state
     axios
-      .post(`${API_URL}/auth/signup`, requestBody)
+      .post(`${API_URL}/signup`, requestBody)
 
       .then((response) => {
         navigate("/login");
