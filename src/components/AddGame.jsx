@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/auth.context";
 import axios from "axios";
 
 const API_URL = import.meta.env.VITE_API_URL;
@@ -15,11 +17,13 @@ function AddGame(props) {
   // const [author, setAuthor] = useState("");
   // const [comments, setComments] = useState("");
 
+  const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const requestBody = { title, genre, company, platform, rating, age, description, image };
+    const requestBody = { title, genre, company, platform, rating, age, description, image, author:user };
 
     const storedToken = localStorage.getItem('authToken');
 
@@ -39,6 +43,7 @@ function AddGame(props) {
      setDescription("");
      setImage("");
      props.refreshGames();
+     navigate("/games")
     })
      .catch((error) => console.log(error));
   };
@@ -48,7 +53,6 @@ function AddGame(props) {
       <h3>Add Game</h3>
 
       <form onSubmit={handleSubmit}>
-        <label>Title:</label>
         <label>Title:</label>
         <input
           type="text"

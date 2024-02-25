@@ -1,37 +1,40 @@
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import "./ProfilePage.css";
+import { useState, useEffect, useContext } from "react";
+import { useParams, Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/auth.context";
 import axios from "axios";
-import "./SignupPage.css";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
-function SignupPage(props) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [username, setUsername] = useState("");
-  const [userImage, setUserImage] = useState("");
-  const [errorMessage, setErrorMessage] = useState(undefined);
-
+function ProfilePage() {
   const navigate = useNavigate();
+  const { storeToken, authenticateUser, user } = useContext(AuthContext);
+  const [email, setEmail] = useState(user.email);
+  const [password, setPassword] = useState(user.password);
+  const [username, setUsername] = useState(user.username);
+  const [userImage, setUserImage] = useState(user.userImage);
+  const [editForm, setEditForm] = useState(false);
 
   const handleEmail = (e) => setEmail(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
   const handleUsername = (e) => setUsername(e.target.value);
   const handleUserImage = (e) => setUserImage(e.target.value);
+  const handleForm = () => setEditForm(!editForm);
 
-  const handleSignupSubmit = (e) => {
+  const handleProfileSubmit = (e) => {
     e.preventDefault();
 
     // Create an object representing the request body
     const requestBody = { email, password, username, userImage };
     // Make an axios request to the API
-    // If the POST request is a successful redirect to the login page
+    // If the PUT request is a successful redirect to the login page
     // If the request resolves with an error, set the error message in the state
     axios
-      .post(`${API_URL}/signup`, requestBody)
+      .put(`${API_URL}/user/${user._id}`, requestBody)
 
       .then((response) => {
-        navigate("/login");
+        handleForm()
+        // navigate("/profile");
       });
 
     // .catch((error) => {
@@ -41,16 +44,27 @@ function SignupPage(props) {
   };
 
   return (
-    <div className="signup-container">
-      <div className="SignupPage">
-        <h1>Sign Up</h1>
+    <div>
+      <h1>Profile of: {user.username}</h1>
+      <img src={user.userImage} alt="profile image" />
+      <p>{user.email}</p>
+      <p>{user.games}</p>
 
-        <form onSubmit={handleSignupSubmit}>
+      <button
+        onClick={() => {
+          handleForm();
+        }}
+      >
+        Edit Profile
+      </button>
+
+      {editForm && (
+        <form onSubmit={handleProfileSubmit}>
           <label>Username:</label>
           <input
             type="text"
             name="name"
-            value={username}
+            value={user.username}
             onChange={handleUsername}
           />
 
@@ -58,7 +72,7 @@ function SignupPage(props) {
           <input
             type="email"
             name="email"
-            value={email}
+            value={user.email}
             onChange={handleEmail}
           />
 
@@ -66,7 +80,7 @@ function SignupPage(props) {
           <input
             type="password"
             name="password"
-            value={password}
+            value="*********"
             onChange={handlePassword}
           />
 
@@ -74,20 +88,15 @@ function SignupPage(props) {
           <input
             type="input"
             name="userImage"
-            value={userImage}
+            value={user.userImage}
             onChange={handleUserImage}
           />
 
-          <button type="submit">Sign Up</button>
+          <button type="submit">Save</button>
         </form>
-
-        {errorMessage && <p className="error-message">{errorMessage}</p>}
-
-        <p>Already have account?</p>
-        <Link to={"/login"}> Login</Link>
-      </div>
+      )}
     </div>
   );
 }
 
-export default SignupPage;
+export default ProfilePage;

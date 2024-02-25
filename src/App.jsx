@@ -5,6 +5,7 @@ import HomePage from "./pages/HomePage";
 import GameListPage from "./pages/GameListPage";
 import GameDetailsPage from "./pages/GameDetailsPage";
 import EditGamePage from "./pages/EditGamePage";
+import ProfilePage from "./pages/ProfilePage"
 import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
 import IsPrivate from "./components/IsPrivate";
@@ -33,6 +34,16 @@ function App() {
             <IsPrivate>
               {" "}
               <GameDetailsPage />{" "}
+            </IsPrivate>
+          }
+        />
+
+        <Route
+          path="/profile"
+          element={
+            <IsPrivate>
+              {" "}
+              <ProfilePage />{" "}
             </IsPrivate>
           }
         />

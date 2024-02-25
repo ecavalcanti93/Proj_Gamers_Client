@@ -3,6 +3,7 @@ import axios from "axios";
 import GameCard from "../components/GameCard";
 import SearchBar from "../components/SearchBar";
 import "./GameListPage.css";
+import AddGame from "../components/AddGame";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -27,9 +28,14 @@ function GameListPage() {
   }, []);
 
   return (
-    <div>
-      <SearchBar />
-    </div>
+    <>
+      <div>
+        <SearchBar />
+      </div>
+      <div>
+        <AddGame />
+      </div>
+    </>
   );
 }
 
