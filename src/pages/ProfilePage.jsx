@@ -10,13 +10,11 @@ function ProfilePage() {
   const navigate = useNavigate();
   const { storeToken, authenticateUser, user } = useContext(AuthContext);
   const [email, setEmail] = useState(user.email);
-  const [password, setPassword] = useState(user.password);
   const [username, setUsername] = useState(user.username);
   const [userImage, setUserImage] = useState(user.userImage);
   const [editForm, setEditForm] = useState(false);
 
   const handleEmail = (e) => setEmail(e.target.value);
-  const handlePassword = (e) => setPassword(e.target.value);
   const handleUsername = (e) => setUsername(e.target.value);
   const handleUserImage = (e) => setUserImage(e.target.value);
   const handleForm = () => setEditForm(!editForm);
@@ -25,7 +23,7 @@ function ProfilePage() {
     e.preventDefault();
 
     // Create an object representing the request body
-    const requestBody = { email, password, username, userImage };
+    const requestBody = { email, username, userImage };
     // Make an axios request to the API
     // If the PUT request is a successful redirect to the login page
     // If the request resolves with an error, set the error message in the state
@@ -48,7 +46,7 @@ function ProfilePage() {
       <h1>Profile of: {user.username}</h1>
       <img src={user.userImage} alt="profile image" />
       <p>{user.email}</p>
-      <p>{user.games}</p>
+      <p>Your's games{user.games}</p>
 
       <button
         onClick={() => {
@@ -74,14 +72,6 @@ function ProfilePage() {
             name="email"
             value={email}
             onChange={handleEmail}
-          />
-
-          <label>Password:</label>
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={handlePassword}
           />
 
           <label>Profile Image:</label>
