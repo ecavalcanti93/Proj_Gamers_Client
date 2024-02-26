@@ -48,37 +48,15 @@ function GameDetailsPage(props) {
   return (
     <div>
     <GameCard {...game}/>
-      {/* {game && (
-        <div className="game-title">
-          <div>
-            <img src={game.image} alt="game image"/>
-          </div>
-          <div>
-            <h1><b>{game.title}</b></h1>
-            <p><b>Genre:</b> {game.genre}</p>
-            <p><b>Platform:</b> {game.platform}</p>
-            <p><b>Company:</b> {game.company}</p>
-            <p><b>PEGI:</b> {game.age}</p>
-            <p><b>Description:</b> {game.description}</p>
-            <p><b>Rating:</b> {game.rating}</p>
-          </div>
-        </div>
-      )} */}
 
-      {/* <AddTask refreshGame={getGame} gameId={gameId} /> */}
-
-      {/* {game &&
-        game.tasks.map((task) => <TaskCard key={task._id} {...task} />)} */}
-
-      <Link to="/games">
+      {/* <Link to="/games">
         <button>Back to games</button>
-      </Link>
+      </Link> */}
 
       <Link to={`/games/edit/${gameId}`}>
         <button>Edit Game</button>
       </Link>
 
-      {/* <button onClick={()=>{deleteGame()}}>Delete Game</button> */}
       <button onClick={deleteGame}>Delete Game</button>
       
     </div>
