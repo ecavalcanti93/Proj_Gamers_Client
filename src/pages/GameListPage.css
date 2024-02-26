@@ -8,9 +8,9 @@
 }
 
 .list-img {
-    border: 2px #0855fb solid;
+    border: 2px #2323A1 solid;
     border-radius: 36px;
-    width: 200px;
-    height: 350px;
+    width: 250px;
+    height: 300px;
     object-fit: cover;
 }

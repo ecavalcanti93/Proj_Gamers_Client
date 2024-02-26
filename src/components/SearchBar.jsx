@@ -2,7 +2,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 // import GameCard from "../components/GameCard";
-import "../App.css";
+import "./SearchBar.css";
 import '../pages/GameListPage.css'
 
 const API_URL = import.meta.env.VITE_API_URL;
@@ -46,14 +46,15 @@ function SearchBar() {
 
   return (
     <>
-      <div>
+      <div className="search-box">
         <input
           type="text"
           placeholder="Search for games..."
           onChange={handleSearchInputChange}
-          className="search-bar"
+          className="input-search"
         />
-        🔍
+      </div>
+        
         {games.length === 0 ? (
           <h1>Loading...</h1>
         ) : (
@@ -69,7 +70,6 @@ function SearchBar() {
             })}
           </div>
         )}
-      </div>
     </>
   );
 }

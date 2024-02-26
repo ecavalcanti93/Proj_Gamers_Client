@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import GameCard from "../components/GameCard";
+import "./GameDetailsPage.css"
 // import AddTask from "../components/AddTask";
 // import TaskCard from "../components/TaskCard";
 

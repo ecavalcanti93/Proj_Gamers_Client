@@ -17,7 +17,7 @@ section {
     align-items: flex-end;
     opacity: 0.9;
     transition: 0.5s;
-    border: 2px solid #0855fb;
+    border: 2px solid #2323A1;
   }
   
   h2,
@@ -80,5 +80,5 @@ section {
     left: 50%;
     translate: -50% -50%;
     height: 100%;
-    filter: grayscale(0.5);
+    /* filter: grayscale(0.5); */
   }
