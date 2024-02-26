@@ -9,7 +9,7 @@ function GameCard ( { image, title, genre, company, platform, rating, age, descr
     <div  className="gamecard">
     <div className="div-container1">
     <img className="card" src={image} alt="game image"/>
-    <span className="material-symbols-outlined">+</span>
+    {/* <span className="material-symbols-outlined">+</span> */}
   </div>
     <div className="div-container2">
     <h1 className="titlecard"><b>{title}</b></h1>
@@ -19,6 +19,9 @@ function GameCard ( { image, title, genre, company, platform, rating, age, descr
             <p className="description"><b>PEGI:</b> {age}</p>
             <p className="description"><b>Description:</b> {description}</p>
             <p className="description"><b>Rating:</b> {rating}</p>
+    </div>
+    <div className="div-container3">
+
     </div>
     </div>
     </>
