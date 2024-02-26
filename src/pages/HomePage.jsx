@@ -2,13 +2,17 @@ import "./HomePage.css";
 import menu2 from "../assets/menu2.png";
 // import Footer from "../components/Footer"
 import Component from "../components/Footer";
+import AddGame from "../components/AddGame";
 import { Accordion } from "../components/Accordion";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../context/auth.context";
 
 function HomePage() {
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
+  const [editForm, setEditForm] = useState(false);
+  const handleForm = () => setEditForm(!editForm);
+
   return (
     <>
       <div className="container">
@@ -31,6 +35,14 @@ function HomePage() {
               <Link to="/games">
                 <button>Games</button>
               </Link>
+              <button
+                onClick={() => {
+                  handleForm();
+                }}
+              >
+                Add Game
+              </button>
+              {editForm && <AddGame />}
             </div>
           )}
         </div>
