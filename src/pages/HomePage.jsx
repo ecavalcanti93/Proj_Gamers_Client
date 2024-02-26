@@ -26,6 +26,13 @@ function HomePage() {
               </Link>
             </div>
           )}
+          {isLoggedIn && (
+            <div className="menu-button">
+              <Link to="/games">
+                <button>Games</button>
+              </Link>
+            </div>
+          )}
         </div>
         <div className="menu-div2">
           <img className="banner2" src={menu2} alt="image2" />

@@ -64,7 +64,7 @@ function ProfilePage() {
           <input
             type="text"
             name="name"
-            value={user.username}
+            value={username}
             onChange={handleUsername}
           />
 
@@ -72,7 +72,7 @@ function ProfilePage() {
           <input
             type="email"
             name="email"
-            value={user.email}
+            value={email}
             onChange={handleEmail}
           />
 
@@ -80,7 +80,7 @@ function ProfilePage() {
           <input
             type="password"
             name="password"
-            value="*********"
+            value={password}
             onChange={handlePassword}
           />
 
@@ -88,7 +88,7 @@ function ProfilePage() {
           <input
             type="input"
             name="userImage"
-            value={user.userImage}
+            value={userImage}
             onChange={handleUserImage}
           />
 

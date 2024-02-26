@@ -9,6 +9,8 @@ const API_URL = import.meta.env.VITE_API_URL;
 
 function GameListPage() {
   const [games, setGames] = useState([]);
+  const [editForm, setEditForm] = useState(false);
+  const handleForm = () => setEditForm(!editForm);
 
   const getAllGames = () => {
     const storedToken = localStorage.getItem("authToken");
@@ -33,7 +35,15 @@ function GameListPage() {
         <SearchBar />
       </div>
       <div>
-        <AddGame />
+      <button
+        onClick={() => {
+          handleForm();
+        }}
+      >
+        Add Game
+      </button>
+      {editForm && <AddGame />}
+        
       </div>
     </>
   );
