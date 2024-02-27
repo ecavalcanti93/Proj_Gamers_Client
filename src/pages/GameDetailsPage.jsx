@@ -23,7 +23,9 @@ function GameDetailsPage(props) {
 
       .then((response) => {
         const oneGame = response.data;
+        console.log(oneGame);
         setGame(oneGame);
+        console.log(game);
       })
       .catch((error) => console.log(error));
   };
@@ -47,11 +49,11 @@ function GameDetailsPage(props) {
 
   return (
     <div>
-    <GameCard {...game}/>
+    <GameCard {...game }/>
 
-      {/* <Link to="/games">
+      <Link to="/games">
         <button>Back to games</button>
-      </Link> */}
+      </Link>
 
       <Link to={`/games/edit/${gameId}`}>
         <button>Edit Game</button>

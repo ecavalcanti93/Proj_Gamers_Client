@@ -2,7 +2,8 @@ nav {
     background-color: #070720;
     padding: 10px;
     display: flex; 
-    justify-content: flex-end; 
+    justify-content: flex-end;
+    color: #fff;
   }
   
   nav button {
@@ -29,4 +30,4 @@ nav {
   .login-button {
     margin-right: 50px;
   }
-  
+

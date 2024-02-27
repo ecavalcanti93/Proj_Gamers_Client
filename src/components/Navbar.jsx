@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
 import "./Navbar.css"
+import EditForm from "./EditForm";
 
 function Navbar() {
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
@@ -21,8 +22,13 @@ function Navbar() {
             <button>Your Profile</button>
           </Link>
 
+          <Link to="/profile/edit">
+            <button>Settings</button>
+          </Link>
+
           <button onClick={logOutUser}>Logout</button>
-          <span>{user && user.name}</span>
+
+          <Link to="/profile">{user && user.username}</Link>
         </>
       )}
 

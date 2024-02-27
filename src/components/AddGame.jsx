@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const API_URL = import.meta.env.VITE_API_URL;
@@ -18,6 +18,7 @@ function AddGame() {
 
   const navigate = useNavigate();
 
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -30,7 +31,7 @@ function AddGame() {
       requestBody,
       { headers: { Authorization: `Bearer ${storedToken}` } }
     )
-    .then((response) => {
+    .then(() => {
      // Reset the state
      setTitle("");
      setGenre("");
@@ -120,6 +121,7 @@ function AddGame() {
 
         <button type="submit">Submit</button>
       </form>
+
     </div>
   );
 }

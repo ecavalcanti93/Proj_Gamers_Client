@@ -6,6 +6,7 @@ import GameListPage from "./pages/GameListPage";
 import GameDetailsPage from "./pages/GameDetailsPage";
 import EditGamePage from "./pages/EditGamePage";
 import ProfilePage from "./pages/ProfilePage"
+import EditProfilePage from "./pages/EditProfilePage";
 import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
 import IsPrivate from "./components/IsPrivate";
@@ -44,6 +45,16 @@ function App() {
             <IsPrivate>
               {" "}
               <ProfilePage />{" "}
+            </IsPrivate>
+          }
+        />
+
+        <Route
+          path="/profile/edit"
+          element={
+            <IsPrivate>
+              {" "}
+              <EditProfilePage />{" "}
             </IsPrivate>
           }
         />
