@@ -3,6 +3,7 @@ import { useState, useEffect, useContext } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 import axios from "axios";
+import Card from "../components/Perfil";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -43,10 +44,11 @@ function ProfilePage() {
 
   return (
     <div>
-      <h1>Profile of: {user.username}</h1>
+      <Card />
+      {/* <h1>Profile of: {user.username}</h1>
       <img src={user.userImage} alt="profile image" />
       <p>{user.email}</p>
-      <p>Your games</p>
+      <p>Your games</p> */}
 
       {/* <button
         onClick={() => {

@@ -1,0 +1,38 @@
+.card-container {
+	background-color: white;
+	min-width: 500px;
+	max-width: 600px;
+	height: auto;
+	border-radius: 14px;
+}
+
+.image {
+	margin: auto;
+	width: 100px;
+	border: solid white 4px;
+	border-radius: 50%;
+	margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.bold-text {
+	font-weight: bold;
+	text-align: center;
+	padding: 10px 20px 0px 20px;
+}
+
+.normal-text {
+	font-weight: normal;
+	font-size: 0.95rem;
+	color: hsl(0, 0%, 50%);
+	text-align: center;
+	padding-bottom: 10px;
+}
+
+.container-perfil{
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
