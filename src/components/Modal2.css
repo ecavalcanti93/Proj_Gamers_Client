@@ -1,0 +1,10 @@
+.button-home-add{
+    background-color: transparent;
+      color: #fff;
+      border: 2px solid #fb3108;
+      border-radius: 5px;
+      padding: 16px 32px;
+      margin-right: 10px;
+      font-size: 22px;
+      cursor: pointer;
+    }

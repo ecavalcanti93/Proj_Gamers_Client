@@ -31,3 +31,9 @@ nav {
     margin-right: 50px;
   }
 
+  .text-nav{
+    display: flex;
+    align-items: center;
+    padding-right: 50px;
+  }
+

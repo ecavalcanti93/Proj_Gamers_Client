@@ -55,4 +55,6 @@ button:hover {
 
 .menu-button {
     margin-top: 2rem;
+    display: flex;
 }
+

@@ -7,6 +7,7 @@ import { Accordion } from "../components/Accordion";
 import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../context/auth.context";
+import BasicModal from "../components/Modal2";
 
 function HomePage() {
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
@@ -35,14 +36,16 @@ function HomePage() {
               <Link to="/games">
                 <button>Games</button>
               </Link>
-              <button
+              {/* <button
+              
                 onClick={() => {
                   handleForm();
                 }}
               >
                 Add Game
-              </button>
-              {editForm && <AddGame />}
+              </button> */}
+              <BasicModal/>
+              {/* {editForm && <AddGame />} */}
             </div>
           )}
         </div>

@@ -4,6 +4,7 @@ import GameCard from "../components/GameCard";
 import SearchBar from "../components/SearchBar";
 import "./GameListPage.css";
 import AddGame from "../components/AddGame";
+import BasicModal from "../components/Modal";
 const API_URL = import.meta.env.VITE_API_URL;
 
 function GameListPage() {
@@ -31,14 +32,17 @@ function GameListPage() {
   return (
     <>
       <div>
-      <button
+ 
+      {/* <ModalForm /> */}
+      <BasicModal />
+      {/* <button
         className="add-game"
         onClick={() => {
         handleForm();
         }}
       >
         +
-      </button>
+      </button> */}
       {editForm && <AddGame />}   
         <SearchBar />
       </div>

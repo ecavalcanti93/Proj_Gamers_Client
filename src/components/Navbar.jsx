@@ -8,6 +8,7 @@ function Navbar() {
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
   return (
     <nav>
+    <p className="text-nav">Hello, {user && user.username}</p>
       <Link to="/">
         <button>Home</button>
       </Link>
@@ -28,7 +29,7 @@ function Navbar() {
 
           <button onClick={logOutUser}>Logout</button>
 
-          <Link to="/profile">{user && user.username}</Link>
+          
         </>
       )}
 

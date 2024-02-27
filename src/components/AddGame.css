@@ -1,0 +1,50 @@
+.container-add {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #2a2a58;
+  color: white;
+  margin-top: 75px;
+}
+
+.container-add h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.container-add form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.container-add form input[type="text"],
+.container-add form input[type="number"],
+.container-add form select,
+.container-add form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.container-add form textarea {
+  resize: vertical;
+}
+
+.container-add form button {
+  padding: 10px 20px;
+  background-color: #070720;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.container-add form button:hover {
+  background-color: #070720;
+}

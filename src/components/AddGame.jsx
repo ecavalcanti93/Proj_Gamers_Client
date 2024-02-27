@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import "./AddGame.css"
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -46,9 +47,13 @@ function AddGame() {
      .catch((error) => console.log(error));
   };
 
+  const handleCancel = () => {
+    navigate(-1);
+  };
+
   return (
-    <div>
-      <h3>Add Game</h3>
+    <div className="container-add">
+      <h3>Create a New Game</h3>
 
       <form onSubmit={handleSubmit}>
         <label>Title:</label>
@@ -120,6 +125,7 @@ function AddGame() {
         <br />
 
         <button type="submit">Submit</button>
+        <button type="button" onClick={handleCancel}>Cancel</button>
       </form>
 
     </div>
