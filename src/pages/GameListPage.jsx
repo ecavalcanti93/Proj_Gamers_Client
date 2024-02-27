@@ -4,7 +4,6 @@ import GameCard from "../components/GameCard";
 import SearchBar from "../components/SearchBar";
 import "./GameListPage.css";
 import AddGame from "../components/AddGame";
-
 const API_URL = import.meta.env.VITE_API_URL;
 
 function GameListPage() {
@@ -32,18 +31,16 @@ function GameListPage() {
   return (
     <>
       <div>
-        <SearchBar />
-      </div>
-      <div>
       <button
+        className="add-game"
         onClick={() => {
-          handleForm();
+        handleForm();
         }}
       >
-        Add Game
+        +
       </button>
-      {editForm && <AddGame />}
-        
+      {editForm && <AddGame />}   
+        <SearchBar />
       </div>
     </>
   );
