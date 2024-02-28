@@ -1,20 +1,20 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
-import "./Navbar.css"
+import "./Navbar.css";
 import EditForm from "./EditForm";
 
 function Navbar() {
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
   return (
     <nav>
-    <p className="text-nav">Hello, {user && user.username}</p>
       <Link to="/">
         <button>Home</button>
       </Link>
 
       {isLoggedIn && (
         <>
+          <p className="text-nav">Hello, {user && user.username}</p>
           <Link to="/games">
             <button>Games</button>
           </Link>
@@ -28,8 +28,6 @@ function Navbar() {
           </Link>
 
           <button onClick={logOutUser}>Logout</button>
-
-          
         </>
       )}
 
@@ -40,7 +38,7 @@ function Navbar() {
           </Link>
 
           <Link to="/login">
-          <button className="login-button">Login</button>
+            <button className="login-button">Login</button>
           </Link>
         </>
       )}

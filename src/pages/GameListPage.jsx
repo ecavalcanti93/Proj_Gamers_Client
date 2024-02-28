@@ -36,7 +36,7 @@ function GameListPage() {
       <div>
       
       {/* <ModalForm /> */}
-      <BasicModal />
+      {/* <BasicModal /> */}
       {/* <button
         className="add-game"
         onClick={() => {
