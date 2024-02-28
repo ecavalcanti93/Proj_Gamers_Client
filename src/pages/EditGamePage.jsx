@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-
+import "./EditGamePage.css"
 const API_URL = import.meta.env.VITE_API_URL;
 
 function EditGamePage(props) {
@@ -71,7 +71,7 @@ function EditGamePage(props) {
 
   return (
     <div className="game-title">
-      <h3>Edit Game</h3>
+      <h1>Edit Game</h1>
 
       <form onSubmit={handleFormSubmit}>
         <label>Title:</label>
@@ -142,7 +142,7 @@ function EditGamePage(props) {
         />
         <br />
 
-        <button type="submit">Update Game</button>
+        <button className="button-submit" type="submit">Update Game</button>
       </form>
 
       {/* <button onClick={deleteGame}>Delete Game</button> */}

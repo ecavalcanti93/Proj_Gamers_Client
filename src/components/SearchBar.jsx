@@ -1,18 +1,15 @@
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-// import GameCard from "../components/GameCard";
 import "./SearchBar.css";
-import '../pages/GameListPage.css'
-import "../pages/GameListPage.css";
 import BasicModal from "./Modal";
-// import search from "../assets/search.png"
 
 const API_URL = import.meta.env.VITE_API_URL;
 
 function SearchBar() {
   const [games, setGames] = useState([]);
   const [searchGames, setSearchGames] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const storedToken = localStorage.getItem("authToken");
 
@@ -22,10 +19,13 @@ function SearchBar() {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then((res) => {
-        setGames(res.data);
-        return res.data;
+        const sortedGames = res.data.sort((a, b) => {
+          return a.title.localeCompare(b.title);
+        });
+        setGames(sortedGames);
+        setSearchGames(sortedGames);
+        setLoading(false);
       })
-      .then((data) => setSearchGames(data))
       .catch((error) => {
         console.error("Error fetching games:", error);
       });
@@ -36,21 +36,16 @@ function SearchBar() {
   }, []);
 
   const handleSearchInputChange = (e) => {
-    e.target.value === null
-      ? setSearchGames(games)
-      : setSearchGames(
-          games.filter((game) => {
-            return game.title
-              .toLowerCase()
-              .includes(e.target.value.toLowerCase());
-          })
-        );
+    const searchTerm = e.target.value.toLowerCase();
+    const filteredGames = games.filter((game) => {
+      return game.title.toLowerCase().includes(searchTerm);
+    });
+    setSearchGames(filteredGames);
   };
 
   return (
     <div className="center">
       <div className="search-box flex-center">
-        {/* <button className="btn-search"><i className="fas fa-search"></i></button> */}
         <BasicModal />
         <input
           type="text"
@@ -60,19 +55,17 @@ function SearchBar() {
         />
       </div>
 
-      {games.length === 0 ? (
+      {loading ? (
         <h1>Loading...</h1>
       ) : (
         <div className="list-container">
-          {searchGames.map((game) => {
-            return (
-              <div key={game._id}>
-                <Link to={`/games/${game._id}`}>
-                  <img src={game.image} alt={game.title} className="list-img" />
-                </Link>
-              </div>
-            );
-          })}
+          {searchGames.map((game) => (
+            <div key={game._id}>
+              <Link to={`/games/${game._id}`}>
+                <img src={game.image} alt={game.title} className="list-img" />
+              </Link>
+            </div>
+          ))}
         </div>
       )}
     </div>

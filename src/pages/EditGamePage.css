@@ -1,0 +1,47 @@
+.game-title {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 36px;
+    background-color: #2a2a58;
+    margin-top: 20px;
+  }
+  
+  .game-title h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .game-title form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .game-title label {
+    margin-bottom: 5px;
+  }
+  
+  .game-title input[type="text"],
+  .game-title input[type="number"],
+  .game-title textarea,
+  .game-title select {
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .game-title button[type="submit"] {
+    padding: 10px 20px;
+    border: 2px solid  #fb3108;;
+    border-radius: 5px;
+    background-color: black;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .game-title button[type="submit"]:hover {
+    background-color: #fb3108;
+  }
+
+  
