@@ -39,7 +39,7 @@ body{
   .SignupPage button[type="submit"] {
     background-color: black;
     color: #fff;
-    border: 2px solid #03a9f4;
+    border: 2px solid #fb3108;;
     border-radius: 5px;
     padding: 8px 16px;
     font-size: 16px;
@@ -48,8 +48,8 @@ body{
   }
   
   .SignupPage button[type="submit"]:hover {
-    background-color: #03a9f4;
-    box-shadow: 0 0 10px #03a9f4;
+    background-color:  #fb3108;;
+    box-shadow: 0 0 10px  #fb3108;;
   }
   
   .SignupPage .error-message {
@@ -62,7 +62,7 @@ body{
   }
   
   .SignupPage a {
-    color: #03a9f4;
+    color: #fb3108;;
     text-decoration: none;
     font-weight: bold;
   }

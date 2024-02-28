@@ -1,6 +1,5 @@
 import "./HomePage.css";
 import menu2 from "../assets/menu2.png";
-// import Footer from "../components/Footer"
 import Component from "../components/Footer";
 import AddGame from "../components/AddGame";
 import { Accordion } from "../components/Accordion";

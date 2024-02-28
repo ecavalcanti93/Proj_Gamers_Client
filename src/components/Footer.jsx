@@ -45,7 +45,7 @@ function Component() {
             <Footer.Icon href="#" icon={BsInstagram} />
             <Footer.Icon href="#" icon={BsTwitter} />
             <Footer.Icon href="#" icon={BsGithub} />
-            <Footer.Icon href="#" icon={BsDribbble} />
+            {/* <Footer.Icon href="#" icon={BsDribbble} /> */}
           </div>
         </div>
       </div>
