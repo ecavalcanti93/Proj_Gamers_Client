@@ -20,7 +20,7 @@
   background-color: #fb3108;
   padding-right: 40px;
   color:#fff;
-  
+  cursor: pointer;
   }
 .input-search::placeholder{
   color:rgba(255,255,255,.5);

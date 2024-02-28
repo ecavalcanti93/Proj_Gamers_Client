@@ -3,13 +3,9 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 // import GameCard from "../components/GameCard";
 import "./SearchBar.css";
-<<<<<<< HEAD
 import '../pages/GameListPage.css'
-
-=======
 import "../pages/GameListPage.css";
 import BasicModal from "./Modal";
->>>>>>> 05c15cb6a94feeabe62d93a7a2524fd028e2f3a7
 // import search from "../assets/search.png"
 
 const API_URL = import.meta.env.VITE_API_URL;
@@ -55,13 +51,13 @@ function SearchBar() {
     <div className="center">
       <div className="search-box flex-center">
         {/* <button className="btn-search"><i className="fas fa-search"></i></button> */}
+        <BasicModal />
         <input
           type="text"
           placeholder="Search for games..."
           onChange={handleSearchInputChange}
           className="input-search"
         />
-        <BasicModal />
       </div>
 
       {games.length === 0 ? (
