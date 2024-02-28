@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 // import GameCard from "../components/GameCard";
 import "./SearchBar.css";
 import '../pages/GameListPage.css'
+
 // import search from "../assets/search.png"
 
 const API_URL = import.meta.env.VITE_API_URL;

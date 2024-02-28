@@ -1,5 +1,5 @@
 .card-container {
-	background-color: white;
+	background-color: #2a2a58;
 	min-width: 500px;
 	max-width: 600px;
 	height: auto;
@@ -8,15 +8,18 @@
 
 .image {
 	margin: auto;
-	width: 100px;
+	width: 200px;
+	height: 200px;
 	border: solid white 4px;
 	border-radius: 50%;
 	margin-top: 20px;
   display: flex;
   align-items: center;
+	object-fit: cover;
 }
 
 .bold-text {
+	color: white;
 	font-weight: bold;
 	text-align: center;
 	padding: 10px 20px 0px 20px;

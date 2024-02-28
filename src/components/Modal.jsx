@@ -1,28 +1,59 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
+import Dialog from "@mui/material/Dialog";
 import Modal from '@mui/material/Modal';
 import AddGame from './AddGame';
 import "./Modal.css"
 
 export default function BasicModal() {
   const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const [scroll, setScroll] = React.useState("body");
+
+  const handleClickOpen = (scrollType) => () => {
+    setOpen(true);
+    setScroll(scrollType);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const descriptionElementRef = React.useRef(null);
+  React.useEffect(() => {
+    if (open) {
+      const { current: descriptionElement } = descriptionElementRef;
+      if (descriptionElement !== null) {
+        descriptionElement.focus();
+      }
+    }
+  }, [open]);
+  
 
   return (
     <div className='modal-box'>
-      {/* <Button className='button' onClick={handleOpen}></Button> */}
-      <button className='button-size' onClick={handleOpen}></button>
+      <button onClick={handleClickOpen("body")} className='button-size'></button>
       <Modal
         open={open}
         onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
+        scroll={scroll}
+        aria-labelledby="scroll-modal-title"
+        aria-describedby="scroll-modal-description"
       >
-        <Box>
+        <Dialog
+          PaperProps={{
+    style: {
+      backgroundColor: 'transparent',
+      boxShadow: 'none',
+    },
+  }}
+        open={open}
+        onClose={handleClose}
+        scroll={scroll}
+        aria-labelledby="scroll-dialog-title"
+        aria-describedby="scroll-dialog-description"
+      >
             <AddGame />
-        </Box>
+        {/* <a className='x' onClick={handleClose}>X</a> */}
+        </Dialog>
       </Modal>
     </div>
   );

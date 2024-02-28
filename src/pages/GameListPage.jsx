@@ -5,6 +5,8 @@ import SearchBar from "../components/SearchBar";
 import "./GameListPage.css";
 import AddGame from "../components/AddGame";
 import BasicModal from "../components/Modal";
+
+
 const API_URL = import.meta.env.VITE_API_URL;
 
 function GameListPage() {
@@ -32,7 +34,7 @@ function GameListPage() {
   return (
     <>
       <div>
- 
+      
       {/* <ModalForm /> */}
       <BasicModal />
       {/* <button
