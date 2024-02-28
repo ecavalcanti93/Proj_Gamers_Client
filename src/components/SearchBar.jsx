@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 // import GameCard from "../components/GameCard";
 import "./SearchBar.css";
-import '../pages/GameListPage.css'
+import "../pages/GameListPage.css";
+import BasicModal from "./Modal";
 // import search from "../assets/search.png"
 
 const API_URL = import.meta.env.VITE_API_URL;
@@ -46,8 +47,8 @@ function SearchBar() {
   };
 
   return (
-    <>
-      <div className="search-box">
+    <div className="center">
+      <div className="search-box flex-center">
         {/* <button className="btn-search"><i className="fas fa-search"></i></button> */}
         <input
           type="text"
@@ -55,24 +56,25 @@ function SearchBar() {
           onChange={handleSearchInputChange}
           className="input-search"
         />
+        <BasicModal />
       </div>
-        
-        {games.length === 0 ? (
-          <h1>Loading...</h1>
-        ) : (
-          <div className="list-container">
-            {searchGames.map((game) => {
-              return (
-                <div key={game._id} >
-                  <Link to={`/games/${game._id}`}>
-                    <img src={game.image} alt={game.title} className="list-img"/>
-                  </Link>
-                </div>
-              );
-            })}
-          </div>
-        )}
-    </>
+
+      {games.length === 0 ? (
+        <h1>Loading...</h1>
+      ) : (
+        <div className="list-container">
+          {searchGames.map((game) => {
+            return (
+              <div key={game._id}>
+                <Link to={`/games/${game._id}`}>
+                  <img src={game.image} alt={game.title} className="list-img" />
+                </Link>
+              </div>
+            );
+          })}
+        </div>
+      )}
+    </div>
   );
 }
 

@@ -2,6 +2,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./GameCard.css";
+import Comments from "./Comments";
 
 // We are deconstructing props object directly in the parentheses of the function
 function GameCard({
@@ -18,8 +19,9 @@ function GameCard({
   const { gameId } = useParams();
   const navigate = useNavigate();
   const [game, setGame] = useState(null);
+  
 
-  const API_URL = import.meta.env.VITE_API_URL;
+  // const API_URL = import.meta.env.VITE_API_URL;
 
   // const getGame = () => {
   //   const storedToken = localStorage.getItem("authToken");
@@ -52,6 +54,8 @@ function GameCard({
   //     })
   //     .catch((err) => console.log(err));
   // };
+
+  
   return (
     <>
       <div className="gamecard">
@@ -91,13 +95,7 @@ function GameCard({
           </div> */}
         </div>
         <div className="div-container3">
-          {/* {comments.map((comment)=>{
-            return(
-              <ul key={game._id} >
-              <li>{comment.content}</li>
-              </ul>
-            )
-          })} */}
+        <Comments comments={comments}/>
         </div>
       </div>
     </>

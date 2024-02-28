@@ -3,13 +3,14 @@ import { useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import GameCard from "../components/GameCard";
-import "./GameDetailsPage.css"
+import "./GameDetailsPage.css";
+import Comments from "../components/Comments";
 // import AddTask from "../components/AddTask";
 // import TaskCard from "../components/TaskCard";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
-function GameDetailsPage(props) {
+function GameDetailsPage() {
   const [game, setGame] = useState(null);
   const { gameId } = useParams();
   const navigate = useNavigate();
@@ -23,9 +24,9 @@ function GameDetailsPage(props) {
 
       .then((response) => {
         const oneGame = response.data;
-        console.log(oneGame);
+        // console.log(oneGame);
         setGame(oneGame);
-        console.log(game);
+        // console.log(game);
       })
       .catch((error) => console.log(error));
   };
@@ -41,15 +42,16 @@ function GameDetailsPage(props) {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then(() => {
-        navigate("/games")
+        navigate("/games");
         // navigate("/games");
       })
       .catch((err) => console.log(err));
   };
-
+  // console.log({...game});
   return (
     <div>
-    <GameCard {...game }/>
+      <GameCard {...game} />
+      
 
       <Link to="/games">
         <button>Back to games</button>
@@ -60,7 +62,6 @@ function GameDetailsPage(props) {
       </Link>
 
       <button onClick={deleteGame}>Delete Game</button>
-      
     </div>
   );
 }
