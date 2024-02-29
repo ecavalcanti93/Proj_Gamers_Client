@@ -1,0 +1,19 @@
+.button-edit{
+    height: 50px;
+    width: 50px;
+    border-style: none;
+    padding: 10px;
+    padding-right: 10px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    outline: none;
+    border-radius: 25px;
+    transition: all .5s ease-in-out;
+    background-image: url("/src/assets/edit.png");
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #fb3108;
+    padding-right: 40px;
+    color: #fff;
+}

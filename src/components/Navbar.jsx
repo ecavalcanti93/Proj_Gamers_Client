@@ -14,7 +14,7 @@ function Navbar() {
         <img
           src={logo}
           alt="logo"
-          style={{ height: "35px", marginRight: "10px" }}
+          style={{ height: "35px", marginLeft: "50px" }}
         />
       </Link>
       {isLoggedIn && (

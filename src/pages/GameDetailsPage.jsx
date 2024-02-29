@@ -4,6 +4,9 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import GameCard from "../components/GameCard";
 import "./GameDetailsPage.css";
+import ModalEdit from "../components/ModalEdit"
+import DeleteGameButton from "../components/ModalDelete";
+import BackToBack from "../components/ModalBack";
 import Comments from "../components/Comments";
 // import AddTask from "../components/AddTask";
 // import TaskCard from "../components/TaskCard";
@@ -54,17 +57,19 @@ function GameDetailsPage() {
   return (
     <div>
       <GameCard {...game} />
-      
+      <BackToBack />
+      <ModalEdit />  
+      <DeleteGameButton />    
 
-      <Link to="/games">
+      {/* <Link to="/games">
         <button>Back to games</button>
-      </Link>
+      </Link> */}
 
-      <Link to={`/games/edit/${gameId}`}>
+      {/* <Link to={`/games/edit/${gameId}`}>
         <button>Edit Game</button>
       </Link>
 
-      <button onClick={deleteGame}>Delete Game</button>
+      <button onClick={deleteGame}>Delete Game</button> */}
     </div>
   );
 }

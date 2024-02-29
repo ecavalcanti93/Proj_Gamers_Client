@@ -34,7 +34,7 @@ nav {
   .text-nav{
     display: flex;
     align-items: center;
-    padding-right: 50px;
+    padding-left: 10px;
   }
 
 

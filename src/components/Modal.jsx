@@ -52,7 +52,6 @@ export default function BasicModal() {
         aria-describedby="scroll-dialog-description"
       >
             <AddGame />
-        {/* <a className='x' onClick={handleClose}>X</a> */}
         </Dialog>
       </Modal>
     </div>
