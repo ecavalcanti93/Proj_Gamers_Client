@@ -4,7 +4,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 import axios from "axios";
 import Card from "../components/Perfil";
-import SearchBar from "../components/SearchBar"
+import SearchBar from "../components/SearchBar";
 
 const API_URL = import.meta.env.VITE_API_URL;
 

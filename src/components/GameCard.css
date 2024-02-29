@@ -38,10 +38,10 @@
 
 .div-container1{
     width: 33%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .div-container2{

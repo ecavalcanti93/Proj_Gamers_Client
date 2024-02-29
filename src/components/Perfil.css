@@ -13,8 +13,8 @@
 	border: solid white 4px;
 	border-radius: 50%;
 	margin-top: 20px;
-  display: flex;
-  align-items: center;
+	display: flex;
+	align-items: center;
 	object-fit: cover;
 }
 
@@ -34,8 +34,8 @@
 }
 
 .container-perfil{
-  margin-top: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	margin-top: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }

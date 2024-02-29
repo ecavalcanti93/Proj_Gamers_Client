@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "./GameCard.css";
 import Comments from "./Comments";
+import AddComment from "./AddComment";
 
 // We are deconstructing props object directly in the parentheses of the function
 function GameCard({
@@ -14,12 +15,12 @@ function GameCard({
   rating,
   age,
   description,
-  comments
+  comments,
 }) {
   const { gameId } = useParams();
   const navigate = useNavigate();
   const [game, setGame] = useState(null);
-  
+  // console.log(comments);
 
   // const API_URL = import.meta.env.VITE_API_URL;
 
@@ -55,7 +56,6 @@ function GameCard({
   //     .catch((err) => console.log(err));
   // };
 
-  
   return (
     <>
       <div className="gamecard">
@@ -85,17 +85,31 @@ function GameCard({
           <p className="description">
             <b>Rating:</b> {rating}
           </p>
-
-          {/* <div>
-            <Link to={`/games/edit/${gameId}`}>
-              <button>Edit Game</button>
-            </Link>
-
-            <button onClick={deleteGame}>Delete Game</button>
-          </div> */}
         </div>
         <div className="div-container3">
-        <Comments comments={comments}/>
+          {comments ? (
+            <div>
+              <Comments>
+                {comments ? (
+                  comments.map((comment) => {
+                    return (
+                      <p key={comment._id}>
+                        <b>{comment.author.username}:</b> {comment.content}
+                      </p>
+                    );
+                  })
+                ) : (
+                  <p>loadig...</p>
+                )}
+              </Comments>
+              
+            </div>
+          ) : (
+            <p>loading...</p>
+          )}
+          <div>
+            <AddComment />
+          </div>
         </div>
       </div>
     </>

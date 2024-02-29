@@ -35,6 +35,9 @@ function GameDetailsPage() {
     getGame();
   }, []);
 
+  // game ? console.log(game.author.username) : <p>loading...</p>
+  
+ 
   const deleteGame = () => {
     const storedToken = localStorage.getItem("authToken");
     axios

@@ -3,36 +3,51 @@ import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
 import "./Navbar.css";
 import EditForm from "./EditForm";
+import logo from "../assets/logo.png";
 
 function Navbar() {
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
   return (
     <nav>
+    <div className="flex-center">
       <Link to="/">
-        <button>Home</button>
+        <img
+          src={logo}
+          alt="logo"
+          style={{ height: "35px", marginRight: "10px" }}
+        />
       </Link>
+      {isLoggedIn && (
+         <div>
+            <p className="text-nav">Hello, {user && user.username}</p>
+          </div>
+      )}
+    </div>
+      
 
       {isLoggedIn && (
         <>
-          <p className="text-nav">Hello, {user && user.username}</p>
-          <Link to="/games">
-            <button>Games</button>
-          </Link>
+         
+          <div>
+            <Link to="/games">
+              <button>Games</button>
+            </Link>
 
-          <Link to="/profile">
-            <button>Your Profile</button>
-          </Link>
+            <Link to="/profile">
+              <button>Your Profile</button>
+            </Link>
 
-          <Link to="/profile/edit">
-            <button>Settings</button>
-          </Link>
+            <Link to="/profile/edit">
+              <button>Settings</button>
+            </Link>
 
-          <button onClick={logOutUser}>Logout</button>
+            <button onClick={logOutUser}>Logout</button>
+          </div>
         </>
       )}
 
       {!isLoggedIn && (
-        <>
+        <div>
           <Link to="/signup">
             <button>Sign Up</button>
           </Link>
@@ -40,7 +55,7 @@ function Navbar() {
           <Link to="/login">
             <button className="login-button">Login</button>
           </Link>
-        </>
+        </div>
       )}
     </nav>
   );

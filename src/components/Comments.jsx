@@ -7,10 +7,13 @@ function Comments(props) {
   const [game, setGame] = useState(null);
   const { gameId } = useParams();
   const navigate = useNavigate();
+//   console.log(props.children);
 
   return (
     <>
-      {props.comments ? (
+    {/* {props.title} */}
+    {props.children}
+      {/* {props.comments ? (
         <ul>
           {props.comments.map((comment) => {
             <li key={props.comments._id}>
@@ -20,7 +23,7 @@ function Comments(props) {
         </ul>
       ) : (
         <p>loading...</p>
-      )}
+      )} */}
     </>
     // <>
     // {props.author}: {props.content}
