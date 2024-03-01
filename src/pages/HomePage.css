@@ -26,7 +26,7 @@
 .section2 {
     background: white;
     width: 100%;
-    height: 800px;
+    padding-bottom: 50px;
 }
 
 .section2-text{
@@ -58,3 +58,88 @@ button:hover {
     display: flex;
 }
 
+.menu-div3{
+    width: 50%;
+    background-color: red;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+}
+
+.menu-div4{
+    width: 50%;
+    background-color: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    height: 150px;
+    padding-left: 20px;
+}
+
+.section3{
+    display: flex;
+}
+
+.section4{
+    display: flex;
+}
+
+.menu-div5{
+    width: 50%;
+    background-color: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+    height: 150px;
+    padding-right: 20px;
+}
+
+.menu-div6{
+    width: 50%;
+    background-color: purple;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+}
+
+.section5{
+    display: flex;
+}
+
+.menu-div7{
+    width: 50%;
+    background-color: yellow;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+}
+
+.menu-div8{
+    width: 50%;
+    background-color: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    height: 150px;
+    padding-left: 20px;
+}
+
+.step03{
+    width: 35%;
+    margin-right: -420px;
+}

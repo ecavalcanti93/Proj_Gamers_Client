@@ -57,19 +57,12 @@ function GameDetailsPage() {
   return (
     <div>
       <GameCard {...game} />
+      <div className="buttons-detail">
       <BackToBack />
       <ModalEdit />  
       <DeleteGameButton />    
+      </div>
 
-      {/* <Link to="/games">
-        <button>Back to games</button>
-      </Link> */}
-
-      {/* <Link to={`/games/edit/${gameId}`}>
-        <button>Edit Game</button>
-      </Link>
-
-      <button onClick={deleteGame}>Delete Game</button> */}
     </div>
   );
 }

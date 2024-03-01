@@ -5,6 +5,7 @@ import SearchBar from "../components/SearchBar";
 import "./GameListPage.css";
 import AddGame from "../components/AddGame";
 import BasicModal from "../components/Modal";
+import Component from "../components/Footer";
 
 
 const API_URL = import.meta.env.VITE_API_URL;
@@ -48,6 +49,7 @@ function GameListPage() {
       {editForm && <AddGame />}   
         <SearchBar />
       </div>
+      <Component/>
     </>
   );
 }

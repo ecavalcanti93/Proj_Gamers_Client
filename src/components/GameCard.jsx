@@ -20,41 +20,6 @@ function GameCard({
   const { gameId } = useParams();
   const navigate = useNavigate();
   const [game, setGame] = useState(null);
-  // console.log(comments);
-
-  // const API_URL = import.meta.env.VITE_API_URL;
-
-  // const getGame = () => {
-  //   const storedToken = localStorage.getItem("authToken");
-  //   axios
-  //     .get(`${API_URL}/games/${gameId}`, {
-  //       headers: { Authorization: `Bearer ${storedToken}` },
-  //     })
-
-  //     .then((response) => {
-  //       const oneGame = response.data;
-  //       setGame(oneGame);
-  //       console.log(game);
-  //     })
-  //     .catch((error) => console.log(error));
-  // };
-
-  // useEffect(() => {
-  //   getGame();
-  // }, []);
-
-  // const deleteGame = () => {
-  //   const storedToken = localStorage.getItem("authToken");
-  //   axios
-  //     .delete(`${API_URL}/games/${gameId}`, {
-  //       headers: { Authorization: `Bearer ${storedToken}` },
-  //     })
-  //     .then(() => {
-  //       navigate("/games");
-  //       // navigate("/games");
-  //     })
-  //     .catch((err) => console.log(err));
-  // };
 
   return (
     <>
