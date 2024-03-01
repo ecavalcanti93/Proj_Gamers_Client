@@ -6,6 +6,7 @@ import axios from "axios";
 import Card from "../components/Perfil";
 import SearchBar from "../components/SearchBar";
 import Component from "../components/Footer";
+import SearchProfile from "../components/SearchProfile";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -16,10 +17,9 @@ function ProfilePage() {
   return (
     <div>
       <Card />
-      <SearchBar />
+      <SearchProfile />
       <Component />
     </div>
-
   );
 }
 

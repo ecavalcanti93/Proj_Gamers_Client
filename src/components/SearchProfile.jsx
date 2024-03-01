@@ -1,6 +1,7 @@
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { AuthContext } from "../context/auth.context";
 import "./SearchBar.css";
 import BasicModal from "./Modal";
 
@@ -9,20 +10,33 @@ const API_URL = import.meta.env.VITE_API_URL;
 function SearchProfile() {
   const [games, setGames] = useState([]);
   const [searchProfileGames, setSearchProfileGames] = useState([]);
+  const [profileGames, setProfileGames] = useState([]);
   const [loading, setLoading] = useState(true);
+  const { user } = useContext(AuthContext);
 
   const storedToken = localStorage.getItem("authToken");
 
   const fetchGames = () => {
+    
     axios
       .get(`${API_URL}/games`, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then((res) => {
+        res.data.filter((game)=>{
+            if (game.author !== undefined && user === game.author) return game
+        //    console.log(game.author); 
+        //    console.log(game);
+        })
+        
+        return filteredProfileGames
+      })
+      .then((res) => {
+        console.log(res);
         const sortedGames = res.data.sort((a, b) => {
           return a.title.localeCompare(b.title);
         });
-        setGames(sortedGames);
+        setProfileGames(sortedGames);
         setSearchProfileGames(sortedGames);
         setLoading(false);
       })
@@ -32,15 +46,22 @@ function SearchProfile() {
   };
 
   useEffect(() => {
-    fetchGames();
+    fetchGames()
   }, []);
+
+//   const handleProfileGames = () => {
+//     const filteredProfileGames = games.filter((game)=>{
+//         if (user === game.author) return game
+//     })
+//     setProfileGames(filteredProfileGames)
+//   }
 
   const handleSearchInputChange = (e) => {
     const searchTerm = e.target.value.toLowerCase();
-    const filteredProfileGames = games.filter((game) => {
+    const filteredSearchProfileGames = profileGames.filter((game) => {
       return game.title.toLowerCase().includes(searchTerm);
     });
-    setSearchProfileGames(filteredProfileGames);
+    setSearchProfileGames(filteredSearchProfileGames);
   };
 
   return (
