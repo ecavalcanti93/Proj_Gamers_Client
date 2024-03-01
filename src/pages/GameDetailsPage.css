@@ -1,3 +1,7 @@
 .game-title {
     color: white;
 }
+
+.buttons-detail{
+    display: flex;
+}
