@@ -3,6 +3,7 @@ import { useState, useEffect, useContext } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 import axios from "axios";
+import { message } from "antd";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -32,7 +33,7 @@ function EditForm() {
 
       .then((response) => {
         handleForm();
-        // navigate("/profile");
+        navigate("/profile");
       });
 
     // .catch((error) => {
