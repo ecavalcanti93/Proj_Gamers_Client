@@ -1,10 +1,11 @@
 import "./gameDetailsPage.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/auth.context";
 import axios from "axios";
 import GameCard from "../components/GameCard";
 import "./GameDetailsPage.css";
-import ModalEdit from "../components/ModalEdit"
+import ModalEdit from "../components/ModalEdit";
 import DeleteGameButton from "../components/ModalDelete";
 import BackToBack from "../components/ModalBack";
 import Comments from "../components/Comments";
@@ -17,6 +18,7 @@ function GameDetailsPage() {
   const [game, setGame] = useState(null);
   const { gameId } = useParams();
   const navigate = useNavigate();
+  const { user } = useContext(AuthContext);
 
   const getGame = () => {
     const storedToken = localStorage.getItem("authToken");
@@ -25,10 +27,10 @@ function GameDetailsPage() {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
 
-      .then((response) => {
-        const oneGame = response.data;
+      .then((res) => {
+        // const oneGame = response.data;
         // console.log(oneGame);
-        setGame(oneGame);
+        setGame(res.data);
         // console.log(game);
       })
       .catch((error) => console.log(error));
@@ -39,8 +41,7 @@ function GameDetailsPage() {
   }, []);
 
   // game ? console.log(game.author.username) : <p>loading...</p>
-  
- 
+
   const deleteGame = () => {
     const storedToken = localStorage.getItem("authToken");
     axios
@@ -53,16 +54,23 @@ function GameDetailsPage() {
       })
       .catch((err) => console.log(err));
   };
-  // console.log({...game});
+  console.log(game);
   return (
     <div>
       <div className="buttons-detail">
-      <ModalEdit />  
-      <DeleteGameButton />    
+        <BackToBack />
+        <ModalEdit />
+        <DeleteGameButton />
       </div>
-      <GameCard {...game} />
-      {/* <BackToBack /> */}
-
+      {/* <div className="buttons-detail">
+        <BackToBack />
+        {user === true && user.username === game.author.username ? (
+          <>
+            <ModalEdit />
+            <DeleteGameButton />
+          </>
+        ) : <p>loading...</p>}
+      </div> */}
     </div>
   );
 }

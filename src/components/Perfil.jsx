@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../context/auth.context";
 import "./Perfil.css";
+import '../assets/logo.png'
 
 const Card = () => {
     const { storeToken, authenticateUser, user } = useContext(AuthContext);

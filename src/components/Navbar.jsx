@@ -9,25 +9,23 @@ function Navbar() {
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
   return (
     <nav>
-    <div className="flex-center">
-      <Link to="/">
-        <img
-          src={logo}
-          alt="logo"
-          style={{ height: "35px", marginLeft: "50px" }}
-        />
-      </Link>
-      {isLoggedIn && (
-         <div>
+      <div className="flex-center">
+        <Link to="/">
+          <img
+            src={logo}
+            alt="logo"
+            style={{ height: "35px", marginLeft: "50px" }}
+          />
+        </Link>
+        {isLoggedIn && (
+          <div>
             <p className="text-nav">Hello, {user && user.username}</p>
           </div>
-      )}
-    </div>
-      
+        )}
+      </div>
 
       {isLoggedIn && (
         <>
-         
           <div>
             <Link to="/games">
               <button>Games</button>
@@ -37,9 +35,20 @@ function Navbar() {
               <button>Your Profile</button>
             </Link>
 
-            <Link to="/profile/edit">
+            {/* <Link to="/profile/edit">
               <button>Settings</button>
-            </Link>
+            </Link> */}
+            <button onClick={()=>{
+              <>
+              <select>
+                <option>Edit your profile</option>
+                <option>Cange your password</option>
+              </select>
+              </>
+              
+            }}>Settings
+              
+            </button>
 
             <button onClick={logOutUser}>Logout</button>
           </div>
