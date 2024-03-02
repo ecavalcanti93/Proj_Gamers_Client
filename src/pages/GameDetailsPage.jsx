@@ -56,12 +56,12 @@ function GameDetailsPage() {
   // console.log({...game});
   return (
     <div>
-      <GameCard {...game} />
       <div className="buttons-detail">
-      <BackToBack />
       <ModalEdit />  
       <DeleteGameButton />    
       </div>
+      <GameCard {...game} />
+      {/* <BackToBack /> */}
 
     </div>
   );

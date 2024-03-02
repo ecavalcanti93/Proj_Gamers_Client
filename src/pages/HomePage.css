@@ -139,7 +139,19 @@ button:hover {
     padding-left: 20px;
 }
 
-.step03{
-    width: 35%;
-    margin-right: -420px;
+.steps{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 70%;
+    padding-bottom: 50px;
+}
+
+.box-steps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding-bottom: 2rem;
 }

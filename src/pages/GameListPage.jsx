@@ -8,6 +8,7 @@ import BasicModal from "../components/Modal";
 import Component from "../components/Footer";
 
 
+
 const API_URL = import.meta.env.VITE_API_URL;
 
 function GameListPage() {

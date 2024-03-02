@@ -38,8 +38,9 @@ function AddComment() {
 
 
   return (
+    <div className="box-comment">
     <div className="container-add">
-      <h3>Create a New Game</h3>
+      <h3>Add a comment</h3>
 
       <form onSubmit={handleSubmit}>
         <label>Content:</label>
@@ -54,6 +55,7 @@ function AddComment() {
         <button type="submit">Add comment</button>
       </form>
 
+    </div>
     </div>
   );
 }

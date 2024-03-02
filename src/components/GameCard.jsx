@@ -4,6 +4,8 @@ import axios from "axios";
 import "./GameCard.css";
 import Comments from "./Comments";
 import AddComment from "./AddComment";
+import BackToBack from "./ModalBack";
+
 
 // We are deconstructing props object directly in the parentheses of the function
 function GameCard({
@@ -33,6 +35,9 @@ function GameCard({
             <b>{title}</b>
           </h1>
           <p className="description">
+            <b>Rating:</b> {rating}
+          </p>
+          <p className="description">
             <b>Genre:</b> {genre}
           </p>
           <p className="description">
@@ -47,24 +52,28 @@ function GameCard({
           <p className="description">
             <b>Description:</b> {description}
           </p>
-          <p className="description">
-            <b>Rating:</b> {rating}
-          </p>
+          <BackToBack/>
         </div>
+        <div></div>
         <div className="div-container3">
+          <div>
+            <AddComment />
+          </div>
           {comments ? (
-            <div>
+            <div className="comments">
               <Comments>
                 {comments ? (
                   comments.map((comment) => {
                     return (
-                      <p key={comment._id}>
+                      <div className="text-padding" key={comment._id}>
+                      <p>
                         <b>{comment.author.username}:</b> {comment.content}
                       </p>
+                      </div>
                     );
                   })
                 ) : (
-                  <p>loadig...</p>
+                  <p>Loading...</p>
                 )}
               </Comments>
               
@@ -72,9 +81,6 @@ function GameCard({
           ) : (
             <p>loading...</p>
           )}
-          <div>
-            <AddComment />
-          </div>
         </div>
       </div>
     </>

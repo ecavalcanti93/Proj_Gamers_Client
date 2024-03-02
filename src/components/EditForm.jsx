@@ -22,6 +22,11 @@ function EditForm() {
   const handleProfileSubmit = (e) => {
     e.preventDefault();
 
+    if (!email) {
+      alert("Required.");
+      return;
+    }
+
     // Create an object representing the request body
     const requestBody = { email, username, userImage };
     // Make an axios request to the API
@@ -32,7 +37,7 @@ function EditForm() {
 
       .then((response) => {
         handleForm();
-        // navigate("/profile");
+        navigate("/profile");
       });
 
     // .catch((error) => {

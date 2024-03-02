@@ -5,7 +5,6 @@
   border-radius: 5px;
   background-color: #2a2a58;
   color: white;
-  margin-top: 75px;
 }
 
 .container-add h3 {
@@ -47,4 +46,9 @@
 
 .container-add form button:hover {
   background-color: #070720;
+}
+
+.box-comment{
+  width: 400px;
+
 }
