@@ -24,6 +24,8 @@ function SignupPage(props) {
 
     // Create an object representing the request body
     const requestBody = { email, password, username, userImage };
+
+    console.log(userImage);
     // Make an axios request to the API
     // If the POST request is a successful redirect to the login page
     // If the request resolves with an error, set the error message in the state
@@ -72,7 +74,7 @@ function SignupPage(props) {
 
           <label>Profile Image:</label>
           <input
-            type="input"
+            type="file"
             name="userImage"
             value={userImage}
             onChange={handleUserImage}
