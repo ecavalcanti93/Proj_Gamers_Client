@@ -28,9 +28,8 @@ function AddComment() {
       { headers: { Authorization: `Bearer ${storedToken}` } }
     )
     .then(() => {
-     // Reset the state
-     setContent("");
-    //  navigate(`/games/${gameId}`)
+    setContent("");
+    navigate(`/games/${gameId}`)
     })
      .catch((error) => console.log(error));
   };

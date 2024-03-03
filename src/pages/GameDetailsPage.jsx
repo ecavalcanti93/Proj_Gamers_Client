@@ -8,9 +8,6 @@ import "./GameDetailsPage.css";
 import ModalEdit from "../components/ModalEdit";
 import DeleteGameButton from "../components/ModalDelete";
 import BackToBack from "../components/ModalBack";
-import Comments from "../components/Comments";
-// import AddTask from "../components/AddTask";
-// import TaskCard from "../components/TaskCard";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -50,7 +47,6 @@ function GameDetailsPage() {
       })
       .then(() => {
         navigate("/games");
-        // navigate("/games");
       })
       .catch((err) => console.log(err));
   };
@@ -62,6 +58,7 @@ function GameDetailsPage() {
         <ModalEdit />
         <DeleteGameButton />
       </div>
+      <GameCard {...game} />
       {/* <div className="buttons-detail">
         <BackToBack />
         {user === true && user.username === game.author.username ? (

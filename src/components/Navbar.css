@@ -38,3 +38,16 @@ nav {
   }
 
 
+  .buttons-nav{
+    display: flex;
+  }
+  
+  .dropdown-item {
+    color: white;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .dropdown-item:hover {
+    background-color: #f8f9fa;
+  }
