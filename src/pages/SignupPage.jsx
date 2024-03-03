@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import {Cloudinary} from "@cloudinary/url-gen";
 import axios from "axios";
 import "./SignupPage.css";
 
@@ -13,6 +14,12 @@ function SignupPage(props) {
   const [errorMessage, setErrorMessage] = useState(undefined);
 
   const navigate = useNavigate();
+    // Create a Cloudinary instance and set your cloud name.
+    const cld = new Cloudinary({
+      cloud: {
+        cloudName: 'demo'
+      }
+    });
 
   const handleEmail = (e) => setEmail(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);

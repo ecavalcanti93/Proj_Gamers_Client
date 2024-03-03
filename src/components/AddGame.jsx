@@ -116,7 +116,7 @@ function AddGame() {
         <br />
         <label>Image:</label>
         <input
-          type="text"
+          type="file"
           name="image"
           value={image}
           onChange={(e) => setImage(e.target.value)}
