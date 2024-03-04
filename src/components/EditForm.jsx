@@ -53,7 +53,7 @@ function EditForm() {
 
   return (
     <>
-      <div>
+      <div className="edit-profile">
         <form onSubmit={handleProfileSubmit}>
           <label>Username:</label>
           <input
@@ -82,35 +82,7 @@ function EditForm() {
           <button type="submit">Save</button>
         </form>
       </div>
-      {/* <div>
-        <form onSubmit={handlePasswordSubmit}>
-          <label>Current password:</label>
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={handleUsername}
-          />
 
-          <label>New password:</label>
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={handleEmail}
-          />
-
-          <label>Repeat New password:</label>
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={handleUserImage}
-          />
-
-          <button type="submit">Save</button>
-        </form>
-      </div> */}
     </>
   );
 }
