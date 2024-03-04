@@ -6,68 +6,82 @@ import "./AddGame.css";
 const API_URL = import.meta.env.VITE_API_URL;
 
 function AddCreatedGame(props) {
-  const [title, setTitle] = useState("");
-  const [genre, setGenre] = useState("");
-  const [company, setCompany] = useState("");
-  const [platform, setPlatform] = useState("");
-  const [rating, setRating] = useState(null);
-  const [age, setAge] = useState(0);
-  const [description, setDescription] = useState("");
-  const [image, setImage] = useState("");
+//   const [title, setTitle] = useState("");
+//   const [genre, setGenre] = useState("");
+//   const [company, setCompany] = useState("");
+//   const [platform, setPlatform] = useState("");
+//   const [rating, setRating] = useState(null);
+//   const [age, setAge] = useState(0);
+//   const [description, setDescription] = useState("");
+//   const [image, setImage] = useState("");
   const [game, setGame] = useState(null);
-  //   const { gameId } = props
+
   const [loading, setLoading] = useState(true);
   // const [author, setAuthor] = useState("");
   // const [comments, setComments] = useState("");
 
   const navigate = useNavigate();
 
+
+
   const getGame = () => {
+
+
     const storedToken = localStorage.getItem("authToken");
     axios
       .get(`${API_URL}/games/${props.gameId}`, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
-
       .then((res) => {
         // const oneGame = response.data;
         // console.log(oneGame);
         setGame(res.data);
-        setLoading(false);
+        return
+        
         // console.log(game);
       })
-      .catch((error) => console.log(error));
-    return;
-  };
-
-  const addGame = () => {
-    const requestBody = {
-      title: game.title,
-      genre: game.genre,
-      company: game.company,
-      platform: game.platform,
-      rating: game.rating,
-      age: game.age,
-      description: game.description,
-      image: game.image,
-    };
-
-    const storedToken = localStorage.getItem("authToken");
-
-    axios
-      .post(`${API_URL}/games`, requestBody, {
-        headers: { Authorization: `Bearer ${storedToken}` },
+      .then(() => {
+        setLoading(false)
+        
+        
       })
+    //   .then(addGame())
       .catch((error) => console.log(error));
+    
   };
 
-  const addThisGame = () => {
-    getGame().then(addGame());
-  };
+//   const addGame = () => {
+//     const requestBody = {
+//       title: game.title,
+//       genre: game.genre,
+//       company: game.company,
+//       platform: game.platform,
+//       rating: game.rating,
+//       age: game.age,
+//       description: game.description,
+//       image: game.image,
+//     };
+
+//     const storedToken = localStorage.getItem("authToken");
+
+//     axios
+//       .post(`${API_URL}/games`, requestBody, {
+//         headers: { Authorization: `Bearer ${storedToken}` },
+//       })
+//       .catch((error) => console.log(error));
+//   };
+  
+
+//   const addThisGame = () => {
+//     getGame()
+//     addGame()
+//   };
 
   const handleOnClick = (e) => {
     // e.preventDefault();
-    addThisGame();
+    // addThisGame();
+    getGame()
+    // addGame()
   };
 
   return (

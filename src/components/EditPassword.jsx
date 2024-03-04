@@ -49,7 +49,7 @@ function EditPassword() {
 
   return (
     <>
-      <div>
+      <div className="edit-profile">
         <form onSubmit={handlePasswordSubmit}>
           <label>Current Password:</label>
           <input

@@ -11,6 +11,7 @@ import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
 import IsPrivate from "./components/IsPrivate";
 import IsAnon from "./components/IsAnon";
+import EditPasswordPage from "./pages/EditPasswordPage";
 
 function App() {
   return (
@@ -55,6 +56,16 @@ function App() {
             <IsPrivate>
               {" "}
               <EditProfilePage />{" "}
+            </IsPrivate>
+          }
+        />
+
+        <Route
+          path="/profile/editPassword"
+          element={
+            <IsPrivate>
+              {" "}
+              <EditPasswordPage />{" "}
             </IsPrivate>
           }
         />

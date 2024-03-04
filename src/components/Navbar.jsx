@@ -56,7 +56,10 @@ function Navbar() {
                   <Link to="/profile/edit">
                     <button>Edit Profile</button>
                   </Link>
-                  <button>Change Password</button>
+                  <Link to="/profile/editPassword">
+                    <button>Change Password</button>
+                  </Link>
+                  
                 </div>
               )}
             </div>
