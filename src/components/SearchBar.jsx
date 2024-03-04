@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./SearchBar.css";
 import BasicModal from "./Modal";
+import Stack from '@mui/material/Stack';
+import CircularProgress from '@mui/material/CircularProgress';
 // import defaultGameImage from "../assets/default-game-image.webp"
 
 const API_URL = import.meta.env.VITE_API_URL;
@@ -68,7 +70,11 @@ function SearchBar() {
       </div>
 
       {loading ? (
-        <h1>Loading...</h1>
+        <div className="loading">
+            <Stack sx={{ color: 'orangered' }} spacing={2} direction="row">
+            <CircularProgress color="inherit" />
+            </Stack>
+            </div>
       ) : (
         <div className="list-container">
           {searchGames.map((game) => (

@@ -6,7 +6,8 @@ import Comments from "./Comments";
 import AddComment from "./AddComment";
 import BackToBack from "./ModalBack";
 import Rating from "./Rating"
-
+import Stack from '@mui/material/Stack';
+import CircularProgress from '@mui/material/CircularProgress';
 
 
 // We are deconstructing props object directly in the parentheses of the function
@@ -76,13 +77,21 @@ function GameCard({
                     );
                   })
                 ) : (
-                  <p>Loading...</p>
+                  <div className="loading">
+                  <Stack sx={{ color: 'orangered' }} spacing={2} direction="row">
+                  <CircularProgress color="inherit" />
+                  </Stack>
+                  </div>
                 )}
               </Comments>
               
             </div>
           ) : (
-            <p>loading...</p>
+            <div className="loading">
+            <Stack sx={{ color: 'orangered' }} spacing={2} direction="row">
+            <CircularProgress color="inherit" />
+            </Stack>
+            </div>
           )}
         </div>
       </div>
