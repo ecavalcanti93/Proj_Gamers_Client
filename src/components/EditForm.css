@@ -1,0 +1,41 @@
+.edit-profile {
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 20px;
+    color: white;
+    border-radius: 5px;
+    background-color: #2a2a58;
+  }
+  
+  .edit-profile label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .edit-profile input[type="text"],
+  .edit-profile input[type="email"],
+  .edit-profile input[type="input"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+  }
+  
+  .edit-profile button[type="submit"] {
+    background-color: #070720;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .edit-profile button[type="submit"]:hover {
+    background-color: #fb3108;
+  }
+  

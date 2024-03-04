@@ -42,12 +42,31 @@ nav {
     display: flex;
   }
   
-  .dropdown-item {
+  .dropdown-content {
     color: white;
     display: flex;
     flex-direction: column;
+    background-color: #fb3108;
+    position: absolute;
+    min-width: 160px;
+    z-index: 1;
+    border-radius: 5px;
+    /* border: 1px solid #ddd; */
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
   }
   
-  .dropdown-item:hover {
-    background-color: #f8f9fa;
+  .dropdown-content button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    text-align: left;
   }
+  
+  .dropdown-content button:hover {
+    background-color: #070720;
+  }
+  

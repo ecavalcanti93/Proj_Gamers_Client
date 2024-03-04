@@ -59,15 +59,7 @@ function GameDetailsPage() {
         <DeleteGameButton />
       </div>
       <GameCard {...game} />
-      {/* <div className="buttons-detail">
-        <BackToBack />
-        {user === true && user.username === game.author.username ? (
-          <>
-            <ModalEdit />
-            <DeleteGameButton />
-          </>
-        ) : <p>loading...</p>}
-      </div> */}
+
     </div>
   );
 }

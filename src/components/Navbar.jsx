@@ -1,14 +1,22 @@
 import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../context/auth.context";
 import "./Navbar.css";
-import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
 import EditForm from "./EditForm";
 import logo from "../assets/logo.png";
 
 function Navbar() {
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  const showDropdownMenu = () => {
+    setShowDropdown(true);
+  };
+
+  const hideDropdownMenu = () => {
+    setShowDropdown(false);
+  };
+
   return (
     <nav>
       <div className="flex-center">
@@ -37,29 +45,28 @@ function Navbar() {
               <button>Profile</button>
             </Link>
 
-            <div className="dropdown-wrapper">
-            <DropdownButton id="dropdown-menu" title="Settings">
-            <Dropdown.Item href="#/action-1">Edit Profile</Dropdown.Item>
-            <Dropdown.Item href="#/action-2">Change Password</Dropdown.Item>
-            </DropdownButton>
+            <div
+              className="dropdown"
+              onMouseEnter={showDropdownMenu}
+              onMouseLeave={hideDropdownMenu}
+            >
+              <button className="dropbtn">Settings</button>
+              {showDropdown && (
+                <div className="dropdown-content">
+                  <Link to="/profile/edit">
+                    <button>Edit Profile</button>
+                  </Link>
+                  <button>Change Password</button>
+                </div>
+              )}
             </div>
 
             {/* <Link to="/profile/edit">
               <button>Settings</button>
             </Link> */}
-            {/* <button onClick={()=>{
-              <>
-              <select>
-                <option>Edit your profile</option>
-                <option>Cange your password</option>
-              </select>
-              </> */}
-{/*               
-            }}>Settings
-              
-            </button> */}
-
+            <div>
             <button onClick={logOutUser}>Logout</button>
+            </div>
           </div>
         </>
       )}
