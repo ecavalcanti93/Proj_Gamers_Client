@@ -37,6 +37,7 @@ function AddCreatedGame(props) {
         // console.log(game);
       })
       .catch((error) => console.log(error));
+    return;
   };
 
   const addGame = () => {
@@ -60,10 +61,13 @@ function AddCreatedGame(props) {
       .catch((error) => console.log(error));
   };
 
+  const addThisGame = () => {
+    getGame().then(addGame());
+  };
+
   const handleOnClick = (e) => {
     // e.preventDefault();
-    getGame();
-    addGame()
+    addThisGame();
   };
 
   return (
