@@ -6,8 +6,9 @@ import Comments from "./Comments";
 import AddComment from "./AddComment";
 import BackToBack from "./ModalBack";
 import Rating from "./Rating"
+import Stack from '@mui/material/Stack';
+import CircularProgress from '@mui/material/CircularProgress';
 
-const API_URL = import.meta.env.VITE_API_URL;
 
 
 
@@ -100,13 +101,21 @@ function GameCard({
                     );
                   })
                 ) : (
-                  <p>Loading...</p>
+                  <div className="loading">
+                  <Stack sx={{ color: 'orangered' }} spacing={2} direction="row">
+                  <CircularProgress color="inherit" />
+                  </Stack>
+                  </div>
                 )}
               </Comments>
               
             </div>
           ) : (
-            <p>loading...</p>
+            <div className="loading">
+            <Stack sx={{ color: 'orangered' }} spacing={2} direction="row">
+            <CircularProgress color="inherit" />
+            </Stack>
+            </div>
           )}
         </div>
       </div>

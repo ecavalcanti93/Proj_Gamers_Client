@@ -90,19 +90,6 @@ function SearchProfile() {
           ))}
         </div>
 
-      {/* {loading ? (
-        <h1>Loading...</h1>
-      ) : (
-        <div className="list-container">
-          {searchProfileGames.map((game) => (
-            <div key={game._id}>
-              <Link to={`/games/${game._id}`}>
-                <img src={game.image} alt={game.title} className="list-img" />
-              </Link>
-            </div>
-          ))}
-        </div>
-      )} */}
     </div>
   );
 }

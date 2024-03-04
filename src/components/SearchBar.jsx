@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./SearchBar.css";
 import BasicModal from "./Modal";
+import Stack from '@mui/material/Stack';
+import CircularProgress from '@mui/material/CircularProgress';
 import AddCreatedGame from "./AddCreatedGame";
 import { filter } from "lodash";
 // import defaultGameImage from "../assets/default-game-image.webp"
@@ -87,7 +89,11 @@ function SearchBar() {
       </div>
 
       {loading ? (
-        <h1>Loading...</h1>
+        <div className="loading">
+            <Stack sx={{ color: 'orangered' }} spacing={2} direction="row">
+            <CircularProgress color="inherit" />
+            </Stack>
+            </div>
       ) : (
         <div className="list-container">
           {searchGames.map((game) => (
