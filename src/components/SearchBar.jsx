@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./SearchBar.css";
 import BasicModal from "./Modal";
+import AddCreatedGame from "./AddCreatedGame";
 // import defaultGameImage from "../assets/default-game-image.webp"
 
 const API_URL = import.meta.env.VITE_API_URL;
@@ -75,7 +76,9 @@ function SearchBar() {
             <div key={game._id}>
               <Link to={`/games/${game._id}`}>
                 <img src={game.image} alt={game.title} className="list-img" />
+                
               </Link>
+              <AddCreatedGame />
             </div>
           ))}
         </div>

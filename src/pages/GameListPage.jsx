@@ -32,7 +32,7 @@ function GameListPage() {
   useEffect(() => {
     getAllGames();
   }, []);
-console.log(games);
+  
   return (
     <>
       <div>
