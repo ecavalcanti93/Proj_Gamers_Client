@@ -26,13 +26,12 @@ function GameDetailsPage() {
       })
 
       .then((res) => {
-        // const oneGame = response.data;
-        // console.log(oneGame);
         setGame(res.data);
         // console.log(game);
       })
       .catch((error) => console.log(error));
   };
+
 
   useEffect(() => {
     getGame();
@@ -58,7 +57,7 @@ function GameDetailsPage() {
         <ModalEdit />
         <DeleteGameButton />
       </div>
-      <GameCard {...game} />
+      <GameCard {...game} updateGame={getGame}/>
       <div>
     <Component />
     </div>

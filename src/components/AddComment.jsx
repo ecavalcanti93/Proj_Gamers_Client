@@ -6,7 +6,7 @@ import "./AddComment.css"
 
 const API_URL = import.meta.env.VITE_API_URL;
 
-function AddComment() {
+function AddComment(props) {
   const [content, setContent] = useState("");
   const { gameId } = useParams();
   
@@ -16,6 +16,7 @@ function AddComment() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
 
     const requestBody = { content };
     
@@ -29,7 +30,8 @@ function AddComment() {
     )
     .then(() => {
     setContent("");
-    navigate(`/games/${gameId}`)
+    return props.updateGame()
+    // navigate(`/games/${gameId}`)
     })
      .catch((error) => console.log(error));
   };

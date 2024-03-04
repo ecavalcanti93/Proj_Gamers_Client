@@ -23,6 +23,7 @@ function GameCard({
   age,
   description,
   comments,
+  updateGame,
 }) {
   const { gameId } = useParams();
   const navigate = useNavigate();
@@ -61,10 +62,10 @@ function GameCard({
           <h1 className="titlecard">
             <b>{title}</b>
           </h1>
-          <p className="description">
+          <div className="description">
             <b>Rating:</b> 
             <Rating>{rating}</Rating> 
-          </p>
+          </div>
           <p className="description">
             <b>Genre:</b> {genre}
           </p>
@@ -85,7 +86,7 @@ function GameCard({
         <div></div>
         <div className="div-container3">
           <div>
-            <AddComment />
+            <AddComment updateGame={updateGame}/>
           </div>
           {comments ? (
             <div className="comments">
