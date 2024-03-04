@@ -19,15 +19,15 @@ function SearchBar() {
 
   const storedToken = localStorage.getItem("authToken");
 
-  const handleGamesTitelesNoRepeat = () => {
-    const gamesTitles = games.map((game) => {
-      return game.title.toLowerCase()
-    })
-    const gamesTitlesFiltered = new Set(gamesTitles)
-    let gamesTitelesNoRepeat = [...gamesTitlesFiltered]
-    return gamesTitelesNoRepeat
-    // setSearchGames(searchGamesFiltered);
-  }
+  // const handleGamesTitelesNoRepeat = () => {
+  //   const gamesTitles = games.map((game) => {
+  //     return game.title.toLowerCase()
+  //   })
+  //   const gamesTitlesFiltered = new Set(gamesTitles)
+  //   let gamesTitelesNoRepeat = [...gamesTitlesFiltered]
+  //   return gamesTitelesNoRepeat
+  //   // setSearchGames(searchGamesFiltered);
+  // }
 
   const fetchGames = () => {
     axios
@@ -43,7 +43,7 @@ function SearchBar() {
         setLoading(false);
       })
       .then(
-        console.log(handleGamesTitelesNoRepeat())
+        // console.log(handleGamesTitelesNoRepeat())
         
         )
       .catch((error) => {

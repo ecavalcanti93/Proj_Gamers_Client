@@ -34,16 +34,17 @@ function AddCreatedGame(props) {
       })
       .then((res) => {
         // const oneGame = response.data;
-        // console.log(oneGame);
+        // console.log(res.data);
         setGame(res.data);
-        return
-        
+        setLoading(false)
+        return game
+
         // console.log(game);
       })
-      .then(() => {
-        setLoading(false)
-        
-        
+      .then((res) => {
+        console.log(res);
+        // setLoading(false)
+        // if(loading === false) {console.log(game)} else loading
       })
     //   .then(addGame())
       .catch((error) => console.log(error));

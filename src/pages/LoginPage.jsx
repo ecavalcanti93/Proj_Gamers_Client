@@ -7,7 +7,7 @@ import "./LoginPage.css";
 const API_URL = import.meta.env.VITE_API_URL;
 
 function LoginPage(props) {
-  const [username, serUsername] = useState("marcel");
+  const [username, setUsername] = useState("marcel");
   const [password, setPassword] = useState("Marcel123");
   const [errorMessage, setErrorMessage] = useState(undefined);
 
@@ -15,7 +15,7 @@ function LoginPage(props) {
 
   const { storeToken, authenticateUser } = useContext(AuthContext);
 
-  const handleUsername = (e) => serUsername(e.target.value);
+  const handleUsername = (e) => setUsername(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
 
   const handleLoginSubmit = (e) => {
