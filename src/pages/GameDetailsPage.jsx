@@ -28,7 +28,7 @@ function GameDetailsPage() {
         // const oneGame = response.data;
         // console.log(oneGame);
         setGame(res.data);
-        console.log(game);
+        // console.log(game);
       })
       .catch((error) => console.log(error));
   };
@@ -37,7 +37,6 @@ function GameDetailsPage() {
     getGame();
   }, []);
 
-  // game ? console.log(game.author.username) : <p>loading...</p>
 
   const deleteGame = () => {
     const storedToken = localStorage.getItem("authToken");
@@ -50,7 +49,7 @@ function GameDetailsPage() {
       })
       .catch((err) => console.log(err));
   };
-  console.log(game);
+  // console.log(game);
   return (
     <div>
       <div className="buttons-detail">

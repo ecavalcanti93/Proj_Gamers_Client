@@ -3,8 +3,12 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./SearchBar.css";
 import BasicModal from "./Modal";
+<<<<<<< HEAD
 import Stack from '@mui/material/Stack';
 import CircularProgress from '@mui/material/CircularProgress';
+=======
+import AddCreatedGame from "./AddCreatedGame";
+>>>>>>> b7947a0f09ce7c9e0e58531ec67be273239cb791
 // import defaultGameImage from "../assets/default-game-image.webp"
 
 const API_URL = import.meta.env.VITE_API_URL;
@@ -81,7 +85,9 @@ function SearchBar() {
             <div key={game._id}>
               <Link to={`/games/${game._id}`}>
                 <img src={game.image} alt={game.title} className="list-img" />
+                
               </Link>
+              <AddCreatedGame />
             </div>
           ))}
         </div>

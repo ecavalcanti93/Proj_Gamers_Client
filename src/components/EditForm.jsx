@@ -47,9 +47,9 @@ function EditForm() {
     // });
   };
 
-  const handlePasswordSubmit = (e) => {
-    e.preventDefault();
-  };
+//   const handlePasswordSubmit = (e) => {
+//     e.preventDefault();
+//   };
 
   return (
     <>
@@ -73,7 +73,7 @@ function EditForm() {
 
           <label>Profile Image:</label>
           <input
-            type="file"
+            type="text"
             name="userImage"
             value={userImage}
             onChange={handleUserImage}
