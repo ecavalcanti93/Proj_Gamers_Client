@@ -21,7 +21,7 @@ function Navbar() {
         </Link>
         {isLoggedIn && (
           <div>
-            <p className="text-nav">Hello, {user && user.username}</p>
+            <p className="text-nav">Hello, <Link to="/profile">{user && user.username}</Link></p>
           </div>
         )}
       </div>
@@ -34,7 +34,7 @@ function Navbar() {
             </Link>
 
             <Link to="/profile">
-              <button>Your Profile</button>
+              <button>Profile</button>
             </Link>
 
             <div className="dropdown-wrapper">

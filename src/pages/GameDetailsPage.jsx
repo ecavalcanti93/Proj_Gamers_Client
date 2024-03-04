@@ -28,7 +28,7 @@ function GameDetailsPage() {
         // const oneGame = response.data;
         // console.log(oneGame);
         setGame(res.data);
-        // console.log(game);
+        console.log(game);
       })
       .catch((error) => console.log(error));
   };

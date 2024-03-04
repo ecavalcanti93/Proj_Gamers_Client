@@ -5,6 +5,8 @@ import "./GameCard.css";
 import Comments from "./Comments";
 import AddComment from "./AddComment";
 import BackToBack from "./ModalBack";
+import Rating from "./Rating"
+
 
 
 // We are deconstructing props object directly in the parentheses of the function
@@ -35,7 +37,8 @@ function GameCard({
             <b>{title}</b>
           </h1>
           <p className="description">
-            <b>Rating:</b> {rating}
+            <b>Rating:</b> 
+            <Rating>{rating}</Rating> 
           </p>
           <p className="description">
             <b>Genre:</b> {genre}

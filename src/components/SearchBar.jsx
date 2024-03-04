@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./SearchBar.css";
 import BasicModal from "./Modal";
+// import defaultGameImage from "../assets/default-game-image.webp"
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -42,6 +43,17 @@ function SearchBar() {
     });
     setSearchGames(filteredGames);
   };
+  
+
+  // const handleGameImage = ()=>{
+  //   searchGames ? ( searchGames.map((game)=>{
+  //     if (game.image === defaultGameImage) {
+  //     return defaultGameImage
+  //   }else return game.image
+  //   })) : loading   
+  // }
+
+  
 
   return (
     <div className="center">

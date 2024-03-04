@@ -73,7 +73,7 @@ function EditForm() {
 
           <label>Profile Image:</label>
           <input
-            type="input"
+            type="file"
             name="userImage"
             value={userImage}
             onChange={handleUserImage}
