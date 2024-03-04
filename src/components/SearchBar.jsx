@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import "./SearchBar.css";
 import BasicModal from "./Modal";
 import AddCreatedGame from "./AddCreatedGame";
+import { filter } from "lodash";
 // import defaultGameImage from "../assets/default-game-image.webp"
 
 const API_URL = import.meta.env.VITE_API_URL;
@@ -11,9 +12,20 @@ const API_URL = import.meta.env.VITE_API_URL;
 function SearchBar() {
   const [games, setGames] = useState([]);
   const [searchGames, setSearchGames] = useState([]);
+  // const [searchGamesFiltered, setSearchGamesFiltered] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const storedToken = localStorage.getItem("authToken");
+
+  const handleGamesTitelesNoRepeat = () => {
+    const gamesTitles = games.map((game) => {
+      return game.title.toLowerCase()
+    })
+    const gamesTitlesFiltered = new Set(gamesTitles)
+    let gamesTitelesNoRepeat = [...gamesTitlesFiltered]
+    return gamesTitelesNoRepeat
+    // setSearchGames(searchGamesFiltered);
+  }
 
   const fetchGames = () => {
     axios
@@ -28,6 +40,10 @@ function SearchBar() {
         setSearchGames(sortedGames);
         setLoading(false);
       })
+      .then(
+        console.log(handleGamesTitelesNoRepeat())
+        
+        )
       .catch((error) => {
         console.error("Error fetching games:", error);
       });
@@ -44,6 +60,8 @@ function SearchBar() {
     });
     setSearchGames(filteredGames);
   };
+
+
   
 
   // const handleGameImage = ()=>{
@@ -78,7 +96,7 @@ function SearchBar() {
                 <img src={game.image} alt={game.title} className="list-img" />
                 
               </Link>
-              <AddCreatedGame />
+              <AddCreatedGame gameId = {game._id} />
             </div>
           ))}
         </div>

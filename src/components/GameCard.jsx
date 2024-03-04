@@ -7,6 +7,8 @@ import AddComment from "./AddComment";
 import BackToBack from "./ModalBack";
 import Rating from "./Rating"
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 
 
 // We are deconstructing props object directly in the parentheses of the function
@@ -25,12 +27,34 @@ function GameCard({
   const navigate = useNavigate();
   const [game, setGame] = useState(null);
 
+  const addGame = () => {
+    const requestBody = {
+      title: title,
+      genre: genre,
+      company: company,
+      platform: platform,
+      rating: rating,
+      age: age,
+      description: description,
+      image: image,
+    };
+
+    const storedToken = localStorage.getItem("authToken");
+
+    axios
+      .post(`${API_URL}/games`, requestBody, {
+        headers: { Authorization: `Bearer ${storedToken}` },
+      })
+      .catch((error) => console.log(error));
+  };
+
   return (
     <>
       <div className="gamecard">
         <div className="div-container1">
           <img className="card" src={image} alt="game image" />
           {/* <span className="material-symbols-outlined">+</span> */}
+          <button onClick={()=>{addGame()}}>Add game</button>
         </div>
         <div className="div-container2">
           <h1 className="titlecard">

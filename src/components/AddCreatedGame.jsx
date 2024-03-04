@@ -15,7 +15,7 @@ function AddCreatedGame(props) {
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
   const [game, setGame] = useState(null);
-//   const { gameId } = props
+  //   const { gameId } = props
   const [loading, setLoading] = useState(true);
   // const [author, setAuthor] = useState("");
   // const [comments, setComments] = useState("");
@@ -39,46 +39,31 @@ function AddCreatedGame(props) {
       .catch((error) => console.log(error));
   };
 
-  const addGame = ()=>{
+  const addGame = () => {
     const requestBody = {
-        title: game.title,
-        genre: game.genre,
-        company: game.company,
-        platform: game.platform,
-        rating: game.rating,
-        age: game.age,
-        description: game.description,
-        image: game.image,
-      };
-  
-      const storedToken = localStorage.getItem("authToken");
-  
-      axios
-        .post(`${API_URL}/games`, requestBody, {
-          headers: { Authorization: `Bearer ${storedToken}` },
-        })
-        // .then(() => {
-        //  // Reset the state
-        //  setTitle("");
-        //  setGenre("");
-        //  setCompany("");
-        //  setPlatform("");
-        //  setRating(0);
-        //  setAge(0);
-        //  setDescription("");
-        //  setImage("");
-        //  navigate("/games")
-        // })
-        .catch((error) => console.log(error));
-  }
+      title: game.title,
+      genre: game.genre,
+      company: game.company,
+      platform: game.platform,
+      rating: game.rating,
+      age: game.age,
+      description: game.description,
+      image: game.image,
+    };
+
+    const storedToken = localStorage.getItem("authToken");
+
+    axios
+      .post(`${API_URL}/games`, requestBody, {
+        headers: { Authorization: `Bearer ${storedToken}` },
+      })
+      .catch((error) => console.log(error));
+  };
 
   const handleOnClick = (e) => {
     // e.preventDefault();
-
     getGame();
-    !loading && addGame()
-    
-    
+    addGame()
   };
 
   return (
