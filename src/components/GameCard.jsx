@@ -9,7 +9,7 @@ import Rating from "./Rating"
 import Stack from '@mui/material/Stack';
 import CircularProgress from '@mui/material/CircularProgress';
 
-
+const API_URL = import.meta.env.VITE_API_URL;
 
 
 // We are deconstructing props object directly in the parentheses of the function
