@@ -1,10 +1,11 @@
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { AuthContext } from "../context/auth.context";
 import "./SearchBar.css";
 import BasicModal from "./Modal";
-import Stack from '@mui/material/Stack';
-import CircularProgress from '@mui/material/CircularProgress';
+import Stack from "@mui/material/Stack";
+import CircularProgress from "@mui/material/CircularProgress";
 import AddCreatedGame from "./AddCreatedGame";
 import { filter } from "lodash";
 // import defaultGameImage from "../assets/default-game-image.webp"
@@ -14,6 +15,8 @@ const API_URL = import.meta.env.VITE_API_URL;
 function SearchBar() {
   const [games, setGames] = useState([]);
   const [searchGames, setSearchGames] = useState([]);
+  const { user } = useContext(AuthContext);
+  const [gamesId, setGamesId] = useState([]);
   const navigate = useNavigate();
   // const [searchGamesFiltered, setSearchGamesFiltered] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -43,10 +46,9 @@ function SearchBar() {
         setSearchGames(sortedGames);
         setLoading(false);
       })
-      .then(
-        // console.log(handleGamesTitelesNoRepeat())
-        
-        )
+      .then
+      // console.log(handleGamesTitelesNoRepeat())
+      ()
       .catch((error) => {
         console.error("Error fetching games:", error);
       });
@@ -54,6 +56,9 @@ function SearchBar() {
 
   useEffect(() => {
     fetchGames();
+    user.games.map((game) => {
+      gamesId.push(game._id);
+    });
   }, []);
 
   const handleSearchInputChange = (e) => {
@@ -65,25 +70,28 @@ function SearchBar() {
   };
 
   const handleAddGame = (game) => {
-    const storedToken = localStorage.getItem('authToken');
+    const storedToken = localStorage.getItem("authToken");
 
     axios
-    .post( `${API_URL}/games`,
-    game,
-      { headers: { Authorization: `Bearer ${storedToken}` } }
-    ).then(navigate ('/profile'))
-  }
-  
+      .post(`${API_URL}/games`, game, {
+        headers: { Authorization: `Bearer ${storedToken}` },
+      })
+      .then(navigate("/profile"));
+  };
+
+  // useEffect(() => {
+  //   user.games.map((game) => {
+  //     gamesId.push(game._id)
+  //   })
+  // }, []);
 
   // const handleGameImage = ()=>{
   //   searchGames ? ( searchGames.map((game)=>{
   //     if (game.image === defaultGameImage) {
   //     return defaultGameImage
   //   }else return game.image
-  //   })) : loading   
+  //   })) : loading
   // }
-
-  
 
   return (
     <div className="center">
@@ -99,19 +107,37 @@ function SearchBar() {
 
       {loading ? (
         <div className="loading">
-            <Stack sx={{ color: 'orangered' }} spacing={2} direction="row">
+          <Stack sx={{ color: "orangered" }} spacing={2} direction="row">
             <CircularProgress color="inherit" />
-            </Stack>
-            </div>
+          </Stack>
+        </div>
       ) : (
         <div className="list-container">
           {searchGames.map((game) => (
-            <div key={game._id}>
+            <div key={game._id} className="column">
               <Link to={`/games/${game._id}`}>
                 <img src={game.image} alt={game.title} className="list-img" />
-                
               </Link>
-              <button onClick={()=>{handleAddGame(game)}}>Add Game</button>
+              {gamesId.includes(game._id) ? (
+                <button
+                  hidden
+                  onClick={() => {
+                    handleAddGame(game);
+                  }}
+                >
+                  Add game
+                </button>
+              ) : (
+                <button
+                  onClick={() => {
+                    handleAddGame(game);
+                  }}
+                >
+                  Add this game
+                </button>
+              )}
+
+              {/* <button onClick={()=>{handleAddGame(game)}}>Add Game</button> */}
               {/* <AddCreatedGame gameId = {game._id} /> */}
             </div>
           ))}

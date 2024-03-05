@@ -14,9 +14,14 @@ const API_URL = import.meta.env.VITE_API_URL;
 
 function GameDetailsPage() {
   const [game, setGame] = useState(null);
+  // const [canEdit, setCanEdit] = useState(false);
   const { gameId } = useParams();
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
+
+  // const handleCanEdit = () => {
+  //   user.username === game.author.username ? setCanEdit(true) : canEdit;
+  // };
 
   const getGame = () => {
     const storedToken = localStorage.getItem("authToken");
@@ -24,7 +29,6 @@ function GameDetailsPage() {
       .get(`${API_URL}/games/${gameId}`, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
-
       .then((res) => {
         setGame(res.data);
         // console.log(game);
@@ -32,20 +36,19 @@ function GameDetailsPage() {
       .catch((error) => console.log(error));
   };
 
-
   useEffect(() => {
     getGame();
   }, []);
 
   const handleAddGame = () => {
-    const storedToken = localStorage.getItem('authToken');
+    const storedToken = localStorage.getItem("authToken");
 
     axios
-    .post( `${API_URL}/games`,
-    game,
-      { headers: { Authorization: `Bearer ${storedToken}` } }
-    ).then(navigate ('/profile'))
-  }
+      .post(`${API_URL}/games`, game, {
+        headers: { Authorization: `Bearer ${storedToken}` },
+      })
+      .then(navigate("/profile"));
+  };
 
   // const deleteGame = () => {
   //   const storedToken = localStorage.getItem("authToken");
@@ -63,13 +66,20 @@ function GameDetailsPage() {
     <div>
       <div className="buttons-detail">
         <BackToBack />
-        <ModalEdit />
-        <DeleteGameButton />
+        {game && user._id.toString() === game.author._id.toString() && (
+          <>
+            <ModalEdit />
+            <DeleteGameButton />
+          </>
+        )}
+
+        {/* <ModalEdit /> */}
+        {/* <DeleteGameButton /> */}
       </div>
-      <GameCard {...game} updateGame={getGame} addGame={handleAddGame}/>
+      <GameCard {...game} updateGame={getGame} addGame={handleAddGame} />
       <div>
-    <Component />
-    </div>
+        <Component />
+      </div>
     </div>
   );
 }
