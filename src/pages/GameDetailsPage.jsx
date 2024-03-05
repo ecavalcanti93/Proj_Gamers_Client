@@ -37,18 +37,27 @@ function GameDetailsPage() {
     getGame();
   }, []);
 
+  const handleAddGame = () => {
+    const storedToken = localStorage.getItem('authToken');
 
-  const deleteGame = () => {
-    const storedToken = localStorage.getItem("authToken");
     axios
-      .delete(`${API_URL}/games/${gameId}`, {
-        headers: { Authorization: `Bearer ${storedToken}` },
-      })
-      .then(() => {
-        navigate("/games");
-      })
-      .catch((err) => console.log(err));
-  };
+    .post( `${API_URL}/games`,
+    game,
+      { headers: { Authorization: `Bearer ${storedToken}` } }
+    ).then(navigate ('/profile'))
+  }
+
+  // const deleteGame = () => {
+  //   const storedToken = localStorage.getItem("authToken");
+  //   axios
+  //     .delete(`${API_URL}/games/${gameId}`, {
+  //       headers: { Authorization: `Bearer ${storedToken}` },
+  //     })
+  //     .then(() => {
+  //       navigate("/games");
+  //     })
+  //     .catch((err) => console.log(err));
+  // };
   // console.log(game);
   return (
     <div>
@@ -57,7 +66,7 @@ function GameDetailsPage() {
         <ModalEdit />
         <DeleteGameButton />
       </div>
-      <GameCard {...game} updateGame={getGame}/>
+      <GameCard {...game} updateGame={getGame} addGame={handleAddGame}/>
       <div>
     <Component />
     </div>

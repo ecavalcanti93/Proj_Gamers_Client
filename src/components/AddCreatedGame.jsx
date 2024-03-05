@@ -6,14 +6,7 @@ import "./AddGame.css";
 const API_URL = import.meta.env.VITE_API_URL;
 
 function AddCreatedGame(props) {
-//   const [title, setTitle] = useState("");
-//   const [genre, setGenre] = useState("");
-//   const [company, setCompany] = useState("");
-//   const [platform, setPlatform] = useState("");
-//   const [rating, setRating] = useState(null);
-//   const [age, setAge] = useState(0);
-//   const [description, setDescription] = useState("");
-//   const [image, setImage] = useState("");
+
   const [game, setGame] = useState(null);
 
   const [loading, setLoading] = useState(true);
@@ -63,14 +56,14 @@ function AddCreatedGame(props) {
 //       image: game.image,
 //     };
 
-//     const storedToken = localStorage.getItem("authToken");
+  //   const storedToken = localStorage.getItem("authToken");
 
-//     axios
-//       .post(`${API_URL}/games`, requestBody, {
-//         headers: { Authorization: `Bearer ${storedToken}` },
-//       })
-//       .catch((error) => console.log(error));
-//   };
+  //   axios
+  //     .post(`${API_URL}/games`, requestBody, {
+  //       headers: { Authorization: `Bearer ${storedToken}` },
+  //     })
+  //     .catch((error) => console.log(error));
+  // };
   
 
 //   const addThisGame = () => {

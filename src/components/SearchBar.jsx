@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./SearchBar.css";
 import BasicModal from "./Modal";
@@ -14,6 +14,7 @@ const API_URL = import.meta.env.VITE_API_URL;
 function SearchBar() {
   const [games, setGames] = useState([]);
   const [searchGames, setSearchGames] = useState([]);
+  const navigate = useNavigate();
   // const [searchGamesFiltered, setSearchGamesFiltered] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -63,7 +64,15 @@ function SearchBar() {
     setSearchGames(filteredGames);
   };
 
+  const handleAddGame = (game) => {
+    const storedToken = localStorage.getItem('authToken');
 
+    axios
+    .post( `${API_URL}/games`,
+    game,
+      { headers: { Authorization: `Bearer ${storedToken}` } }
+    ).then(navigate ('/profile'))
+  }
   
 
   // const handleGameImage = ()=>{
@@ -102,7 +111,8 @@ function SearchBar() {
                 <img src={game.image} alt={game.title} className="list-img" />
                 
               </Link>
-              <AddCreatedGame gameId = {game._id} />
+              <button onClick={()=>{handleAddGame(game)}}>Add Game</button>
+              {/* <AddCreatedGame gameId = {game._id} /> */}
             </div>
           ))}
         </div>

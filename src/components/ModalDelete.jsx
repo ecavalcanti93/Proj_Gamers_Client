@@ -26,6 +26,19 @@ function DeleteGameButton() {
           .catch((error) => console.log(error));
       };
 
+  //   const deleteGame = () => {
+  //   const storedToken = localStorage.getItem("authToken");
+  //   axios
+  //     .delete(`${API_URL}/games/${gameId}`, {
+  //       headers: { Authorization: `Bearer ${storedToken}` },
+  //     })
+  //     .then(() => {
+  //       navigate("/games");
+  //       // navigate("/games");
+  //     })
+  //     .catch((err) => console.log(err));
+  // };
+
     const deleteGame = () => {
     const storedToken = localStorage.getItem("authToken");
     axios

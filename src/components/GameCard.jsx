@@ -24,31 +24,43 @@ function GameCard({
   description,
   comments,
   updateGame,
+  addGame
 }) {
   const { gameId } = useParams();
   const navigate = useNavigate();
-  const [game, setGame] = useState(null);
+  // const [game, setGame] = useState(null);
 
-  const addGame = () => {
-    const requestBody = {
-      title: title,
-      genre: genre,
-      company: company,
-      platform: platform,
-      rating: rating,
-      age: age,
-      description: description,
-      image: image,
-    };
+  // const addGame = () => {
+  //   const requestBody = {
+  //     title: title,
+  //     genre: genre,
+  //     company: company,
+  //     platform: platform,
+  //     rating: rating,
+  //     age: age,
+  //     description: description,
+  //     image: image,
+  //   };
 
-    const storedToken = localStorage.getItem("authToken");
+  //   const storedToken = localStorage.getItem("authToken");
 
-    axios
-      .post(`${API_URL}/games`, requestBody, {
-        headers: { Authorization: `Bearer ${storedToken}` },
-      })
-      .catch((error) => console.log(error));
-  };
+  //   axios
+  //     .post(`${API_URL}/games`, requestBody, {
+  //       headers: { Authorization: `Bearer ${storedToken}` },
+  //     })
+  //     .catch((error) => console.log(error));
+  // };
+
+  // const handleAddGame = (game) => {
+  //   const storedToken = localStorage.getItem('authToken');
+
+  //   axios
+  //   .post( `${API_URL}/games`,
+  //   game,
+  //     { headers: { Authorization: `Bearer ${storedToken}` } }
+  //   ).then(navigate ('/profile'))
+  // }
+  
 
   return (
     <>
@@ -56,7 +68,7 @@ function GameCard({
         <div className="div-container1">
           <img className="card" src={image} alt="game image" />
           {/* <span className="material-symbols-outlined">+</span> */}
-          <button onClick={()=>{addGame()}}>Add game</button>
+          <button onClick={()=>{addGame=addGame()}}>Add game</button>
         </div>
         <div className="div-container2">
           <h1 className="titlecard">
