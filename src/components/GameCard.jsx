@@ -9,7 +9,6 @@ import BackToBack from "./ModalBack";
 import Rating from "./Rating"
 import Stack from '@mui/material/Stack';
 import CircularProgress from '@mui/material/CircularProgress';
-import { Hidden } from "@mui/material";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -46,10 +45,6 @@ function GameCard({
           <img className="card" src={image} alt="game image" />
           {/* <span className="material-symbols-outlined">+</span> */}
 
-          {gamesId.includes(gameId) ? (
-            <button hidden onClick={()=>{addGame=addGame()}}>Add this game</button>
-          ) : <button onClick={()=>{addGame=addGame()}}>Add this game</button>
-          }
 
           {/* <button onClick={()=>{addGame=addGame()}}>Add game</button> */}
         </div>
@@ -76,7 +71,13 @@ function GameCard({
           <p className="description">
             <b>Description:</b> {description}
           </p>
+          <div className="btn-details">
           <BackToBack/>
+          {gamesId.includes(gameId) ? (
+            <button className="add-game" hidden onClick={()=>{addGame=addGame()}}>A</button>
+          ) : <button className="add-game"  onClick={()=>{addGame=addGame()}}></button>
+          }
+          </div>
         </div>
         <div></div>
         <div className="div-container3">

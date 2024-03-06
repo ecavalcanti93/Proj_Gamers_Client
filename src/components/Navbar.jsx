@@ -42,8 +42,8 @@ function Navbar() {
             </Link>
 
             <Link to="/profile">
-              <button>Profile</button>
-            </Link>
+                <button>My Library</button>
+              </Link>
 
             <div
               className="dropdown"
