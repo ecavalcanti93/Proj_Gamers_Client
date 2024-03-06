@@ -17,8 +17,8 @@ function HomePage() {
     <>
       <div className="container">
         <div className="menu-div1">
-          <h1>Create your own game library!</h1>
-          <h3>Remember forever the games you've played.</h3>
+          <h1 className="title-home">Create your own game library!</h1>
+          <h3 className="subtitle-home">Remember forever the games you've played.</h3>
           {!isLoggedIn && (
             <div className="menu-button">
               <Link to="/signup">

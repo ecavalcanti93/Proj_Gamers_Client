@@ -3,3 +3,18 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+@font-face {
+    font-family: "Nexa";
+    src: 
+    local("../src/static/Nexa-Heavy.ttf") format("ttf"),
+    local("../src/static/Nexa-ExtraLight.ttf") format("ttf");
+}
+
+h1{
+    font-family: "Nexa";
+}
+
+h3{
+    font-family: "Nexa";
+}

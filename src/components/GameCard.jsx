@@ -74,8 +74,8 @@ function GameCard({
           <div className="btn-details">
           <BackToBack/>
           {gamesId.includes(gameId) ? (
-            <button className="add-game" hidden onClick={()=>{addGame=addGame()}}>A</button>
-          ) : <button className="add-game"  onClick={()=>{addGame=addGame()}}></button>
+            <button className="add-game2" hidden onClick={()=>{addGame=addGame()}}>A</button>
+          ) : <button className="add-game2"  onClick={()=>{addGame=addGame()}}></button>
           }
           </div>
         </div>

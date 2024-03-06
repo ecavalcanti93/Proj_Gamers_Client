@@ -155,3 +155,12 @@ button:hover {
     background-color: white;
     padding-bottom: 2rem;
 }
+
+.title-home{
+    font-size: 90px;
+    margin-left: 150px;
+}
+
+.subtitle-home{
+    font-size: 32px;
+}
