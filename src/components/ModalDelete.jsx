@@ -10,21 +10,21 @@ function DeleteGameButton() {
     const [game, setGame] = useState(null);
     const { gameId } = useParams();
     const navigate = useNavigate();
-    const getGame = () => {
-        const storedToken = localStorage.getItem("authToken");
-        axios
-          .get(`${API_URL}/games/${gameId}`, {
-            headers: { Authorization: `Bearer ${storedToken}` },
-          })
+    // const getGame = () => {
+    //     const storedToken = localStorage.getItem("authToken");
+    //     axios
+    //       .get(`${API_URL}/games/${gameId}`, {
+    //         headers: { Authorization: `Bearer ${storedToken}` },
+    //       })
     
-          .then((response) => {
-            const oneGame = response.data;
-            // console.log(oneGame);
-            setGame(oneGame);
-            // console.log(game);
-          })
-          .catch((error) => console.log(error));
-      };
+    //       .then((response) => {
+    //         const oneGame = response.data;
+    //         // console.log(oneGame);
+    //         setGame(oneGame);
+    //         // console.log(game);
+    //       })
+    //       .catch((error) => console.log(error));
+    //   };
 
   //   const deleteGame = () => {
   //   const storedToken = localStorage.getItem("authToken");
@@ -42,19 +42,19 @@ function DeleteGameButton() {
     const deleteGame = () => {
     const storedToken = localStorage.getItem("authToken");
     axios
-      .delete(`${API_URL}/games/${gameId}`, {
+      .put(`${API_URL}/games/${gameId}/delete`, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then(() => {
-        navigate("/games");
+        navigate("/profile");
         // navigate("/games");
       })
       .catch((err) => console.log(err));
   };
 
-  useEffect(() => {
-    getGame();
-  }, []);
+  // useEffect(() => {
+  //   getGame();
+  // }, []);
 
   return (
     <button className='button-delete' onClick={deleteGame}></button>

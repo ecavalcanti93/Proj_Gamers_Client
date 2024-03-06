@@ -66,12 +66,8 @@ function GameDetailsPage() {
     <div>
       <div className="buttons-detail">
         {/* <BackToBack /> */}
-        {game && user._id.toString() === game.author._id.toString() && (
-          <>
-            <ModalEdit />
-            <DeleteGameButton />
-          </>
-        )}
+        {game && user._id.toString() === game.author._id.toString() && <ModalEdit />}
+        {/* {game && user.games.includes(game._id) && <DeleteGameButton />} */}
 
         {/* <ModalEdit /> */}
         {/* <DeleteGameButton /> */}

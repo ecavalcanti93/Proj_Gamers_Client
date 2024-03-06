@@ -35,6 +35,10 @@ function HomePage() {
               <Link to="/games">
                 <button>Games</button>
               </Link>
+
+              <Link to="/profile">
+                <button>My Library</button>
+              </Link>
               {/* <button
               
                 onClick={() => {
@@ -43,7 +47,7 @@ function HomePage() {
               >
                 Add Game
               </button> */}
-              <BasicModal/>
+              {/* <BasicModal/> */}
               {/* {editForm && <AddGame />} */}
             </div>
           )}
