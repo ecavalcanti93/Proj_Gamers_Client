@@ -1,6 +1,7 @@
 import React from "react";
 import "./Footer.css";
-import logo from "../assets/logo_slogan.png"
+import logo from "../assets/logo_slogan.png";
+import { Link } from "react-router-dom";
 import { Footer } from "flowbite-react";
 import {
   BsFacebook,
@@ -14,9 +15,11 @@ const Component = () => {
         <div className="footer">
             <div className="sb-footer section-padding">
                 <div className="sb-footer-links">
+                    <Link to="/">
                     <div className="sb-footer-links-div">
-                        <img className="logo" src={logo} alt="logo"/>
+                    <img className="logo" src={logo} alt="logo"/>
                     </div>
+                    </Link>
 
                     <div className="sb-footer-links-div">
                         <h4>About us</h4>
