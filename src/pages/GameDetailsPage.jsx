@@ -7,7 +7,7 @@ import GameCard from "../components/GameCard";
 import "./GameDetailsPage.css";
 import ModalEdit from "../components/ModalEdit";
 import DeleteGameButton from "../components/ModalDelete";
-import BackToBack from "../components/ModalBack";
+// import BackToBack from "../components/ModalBack";
 import Component from "../components/Footer";
 
 const API_URL = import.meta.env.VITE_API_URL;
@@ -65,7 +65,7 @@ function GameDetailsPage() {
   return (
     <div>
       <div className="buttons-detail">
-        <BackToBack />
+        {/* <BackToBack /> */}
         {game && user._id.toString() === game.author._id.toString() && (
           <>
             <ModalEdit />

@@ -1,65 +1,80 @@
+import React from "react";
+import "./Footer.css";
+import logo from "../assets/logo_slogan.png"
 import { Footer } from "flowbite-react";
-import { Link } from "react-router-dom";
 import {
-  BsDribbble,
   BsFacebook,
   BsGithub,
   BsInstagram,
   BsTwitter,
 } from "react-icons/bs";
-import logo from "../assets/logo_horizontal.png";
-import "./Footer.css";
 
-function Component() {
-  return (
-    <Footer container>
-      <div className="w-full">
-        <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
-          <div>
-            <Link to="/">
-              <Footer.Brand
-                src={logo}
-                width={250}
-                alt="GamersBin Logo"
-                name="GarmersBin"
-              />
-            </Link>
-          </div>
-          <div className="grid grid-cols-2 gap-8 sm:mt-4 sm:grid-cols-3 sm:gap-6">
-            <div>
-              <Footer.Title title="About" />
-              <Footer.LinkGroup col>
-                <Footer.Link href="#">GamerBin</Footer.Link>
-                <Footer.Link href="#">Tailwind CSS</Footer.Link>
-              </Footer.LinkGroup>
+const Component = () => {
+    return (
+        <div className="footer">
+            <div className="sb-footer section-padding">
+                <div className="sb-footer-links">
+                    <div className="sb-footer-links-div">
+                        <img className="logo" src={logo} alt="logo"/>
+                    </div>
+
+                    <div className="sb-footer-links-div">
+                        <h4>About us</h4>
+                        <a className="link-footer" href="/"><p>Data</p></a>
+                        <a className="link-footer" href="/"><p>Carrers</p></a>
+                        <a className="link-footer" href="/"><p>Press & News</p></a>
+                        <a className="link-footer" href="/"><p>Privacy Policy</p></a>
+                        <a className="link-footer" href="/"><p>Terms of Services</p></a>
+                    </div>
+
+                    <div className="sb-footer-links-div">
+                        <h4>Support</h4>
+                        <a className="link-footer" href="/"><p>Contact Us</p></a>
+                        <a className="link-footer" href="/"><p>Documentation</p></a>
+                        <a className="link-footer" href="/"><p>Help & Support</p></a>
+                    </div>
+
+                    <div className="sb-footer-links-div">
+                        <h4>Community</h4>
+                        <a className="link-footer" href="/"><p>Blog</p></a>
+                        <a className="link-footer" href="/"><p>Forum</p></a>
+                        <a className="link-footer" href="/"><p>Invite a Friend</p></a>
+                        <a className="link-footer" href="/"><p>Community Standards</p></a>
+                        <a className="link-footer" href="/"><p>Professional Services</p></a>
+                    </div>
+
+                    <div className="sb-footer-links-div">
+                        <h4>Social Media</h4>
+                        <div className="socialmedia">
+                            <Footer.Icon className="socialmedia-icon" href="#" icon={BsFacebook} />
+                            <Footer.Icon className="socialmedia-icon" href="#" icon={BsInstagram} />
+                            <Footer.Icon className="socialmedia-icon" href="#" icon={BsTwitter} />
+                            <Footer.Icon className="socialmedia-icon" href="#" icon={BsGithub} />
+                        </div>
+                    </div>
+
+                </div>
+
+                <hr></hr>
+
+                <div className="sb-footer-below">
+                    <div className="sb-footer-copyright">
+                        <p>
+                            @{new Date().getFullYear()} GamersBin. All right reserved.
+                        </p>
+                    </div>
+                    <div className="sb-footer-below-links">
+                        <a href="/"><div><p>Terms & Conditions</p></div></a>
+                        <a href="/"><div><p>Privacy</p></div></a>
+                        <a href="/"><div><p>Security</p></div></a>
+                        <a href="/"><div><p>Cookies</p></div></a>
+                    
+                    </div>
+                </div>
+
             </div>
-            <div>
-              <Footer.Title title="Follow us" />
-              <Footer.LinkGroup col>
-                <Footer.Link href="#">Github</Footer.Link>
-                <Footer.Link href="#">Discord</Footer.Link>
-              </Footer.LinkGroup>
-            </div>
-            <div>
-              <Footer.Title title="Legal" />
-              <Footer.LinkGroup col>
-                <Footer.Link href="#">Privacy Policy</Footer.Link>
-                <Footer.Link href="#">Terms &amp; Conditions</Footer.Link>
-              </Footer.LinkGroup>
-            </div>
-          </div>
         </div>
-        <div className="w-full sm:flex sm:items-center sm:justify-between">
-          <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
-            <Footer.Icon href="#" icon={BsFacebook} />
-            <Footer.Icon href="#" icon={BsInstagram} />
-            <Footer.Icon href="#" icon={BsTwitter} />
-            <Footer.Icon href="#" icon={BsGithub} />
-            {/* <Footer.Icon href="#" icon={BsDribbble} /> */}
-          </div>
-        </div>
-      </div>
-    </Footer>
-  );
+    )
 }
+
 export default Component;
