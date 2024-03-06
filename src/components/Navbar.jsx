@@ -42,7 +42,7 @@ function Navbar() {
             </Link>
 
             <Link to="/profile">
-              <button>Profile</button>
+              <button>My Library</button>
             </Link>
 
             <div
