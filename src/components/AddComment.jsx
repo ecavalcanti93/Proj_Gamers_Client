@@ -36,8 +36,6 @@ function AddComment(props) {
      .catch((error) => console.log(error));
   };
 
-
-
   return (
     <div className="box-comment">
     <div className="container-add">

@@ -6,12 +6,12 @@ import "./GameCard.css";
 import Comments from "./Comments";
 import AddComment from "./AddComment";
 import BackToBack from "./ModalBack";
-import Rating from "./Rating"
-import Stack from '@mui/material/Stack';
-import CircularProgress from '@mui/material/CircularProgress';
+import Rating from "./Rating";
+import Stack from "@mui/material/Stack";
+import CircularProgress from "@mui/material/CircularProgress";
+import DeleteGameButton from "./ModalDelete";
 
 const API_URL = import.meta.env.VITE_API_URL;
-
 
 // We are deconstructing props object directly in the parentheses of the function
 function GameCard({
@@ -25,7 +25,7 @@ function GameCard({
   description,
   comments,
   updateGame,
-  addGame
+  addGame,
 }) {
   const { gameId } = useParams();
   const [gamesId, setGamesId] = useState([]);
@@ -34,8 +34,8 @@ function GameCard({
 
   useEffect(() => {
     user.games.map((game) => {
-      gamesId.push(game._id)
-    })
+      gamesId.push(game._id);
+    });
   }, []);
 
   return (
@@ -45,7 +45,6 @@ function GameCard({
           <img className="card" src={image} alt="game image" />
           {/* <span className="material-symbols-outlined">+</span> */}
 
-
           {/* <button onClick={()=>{addGame=addGame()}}>Add game</button> */}
         </div>
         <div className="div-container2">
@@ -53,8 +52,8 @@ function GameCard({
             <b>{title}</b>
           </h1>
           <div className="description">
-            <b>Rating:</b> 
-            <Rating>{rating}</Rating> 
+            <b>Rating:</b>
+            <Rating>{rating}</Rating>
           </div>
           <p className="description">
             <b>Genre:</b> {genre}
@@ -72,17 +71,23 @@ function GameCard({
             <b>Description:</b> {description}
           </p>
           <div className="btn-details">
-          <BackToBack/>
-          {gamesId.includes(gameId) ? (
-            <button className="add-game2" hidden onClick={()=>{addGame=addGame()}}>A</button>
-          ) : <button className="add-game2"  onClick={()=>{addGame=addGame()}}></button>
-          }
+            <BackToBack />
+            {gamesId.includes(gameId) ? (
+              <DeleteGameButton />
+            ) : (
+                <button
+                  className="add-game"
+                  onClick={() => {
+                    addGame = addGame();
+                  }}
+                ></button>
+            )}
           </div>
         </div>
         <div></div>
         <div className="div-container3">
           <div>
-            <AddComment updateGame={updateGame}/>
+            <AddComment updateGame={updateGame} />
           </div>
           {comments ? (
             <div className="comments">
@@ -91,27 +96,30 @@ function GameCard({
                   comments.map((comment) => {
                     return (
                       <div className="text-padding" key={comment._id}>
-                      <p>
-                        <b>{comment.author.username}:</b> {comment.content}
-                      </p>
+                        <p>
+                          <b>{comment.author.username}:</b> {comment.content}
+                        </p>
                       </div>
                     );
                   })
                 ) : (
                   <div className="loading">
-                  <Stack sx={{ color: 'orangered' }} spacing={2} direction="row">
-                  <CircularProgress color="inherit" />
-                  </Stack>
+                    <Stack
+                      sx={{ color: "orangered" }}
+                      spacing={2}
+                      direction="row"
+                    >
+                      <CircularProgress color="inherit" />
+                    </Stack>
                   </div>
                 )}
               </Comments>
-              
             </div>
           ) : (
             <div className="loading">
-            <Stack sx={{ color: 'orangered' }} spacing={2} direction="row">
-            <CircularProgress color="inherit" />
-            </Stack>
+              <Stack sx={{ color: "orangered" }} spacing={2} direction="row">
+                <CircularProgress color="inherit" />
+              </Stack>
             </div>
           )}
         </div>
