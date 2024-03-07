@@ -77,13 +77,14 @@
     padding: 10px;
 }
 
-.add-game{
+.add-game2{
     width: 50px;
     height: 50px;
+    border-radius: 50%;
     padding: 0;
     border: 0 none;
-    background-image: url("/src/assets/plus.png");
-    background-size: 25px;
+    background-image: url("/src/assets/AddLibrary.png");
+    background-size: 30px;
     background-repeat: no-repeat;
     background-position: center center;
     background-color: #fb3108;

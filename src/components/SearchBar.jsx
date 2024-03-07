@@ -120,20 +120,20 @@ function SearchBar() {
               </Link>
               {gamesId.includes(game._id) ? (
                 <button
+                  className="btn-add-list"
                   hidden
                   onClick={() => {
                     handleAddGame(game);
                   }}
                 >
-                  Add game
                 </button>
               ) : (
                 <button
+                className="btn-add-list"
                   onClick={() => {
                     handleAddGame(game);
                   }}
                 >
-                  Add this game
                 </button>
               )}
 
