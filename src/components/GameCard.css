@@ -89,3 +89,86 @@
     background-position: center center;
     background-color: #fb3108;
 }
+
+@media (max-width: 850px) {
+
+    .card{
+        position: relative;
+    }
+
+    .gamecard {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .div-container2{
+        width: 80%;
+        margin-top: 30px;
+    }
+
+    .titlecard{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .button-back{
+        margin-bottom: 25px;
+    }
+  }
+  
+  /* Estilos para largura de tela até 550px */
+  @media (max-width: 550px) {
+
+    .card{
+        position: relative;
+    }
+
+    .gamecard {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .div-container2{
+        width: 80%;
+        margin-top: 30px;
+    }
+
+    .titlecard{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .button-back{
+        margin-bottom: 25px;
+    }
+  }
+  
+  /* Estilos para largura de tela até 400px */
+  @media (max-width: 400px) {
+
+    .card{
+        position: relative;
+    }
+
+    .gamecard {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .div-container2{
+        width: 80%;
+        margin-top: 30px;
+    }
+
+    .titlecard{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .button-back{
+        margin-bottom: 25px;
+    }
+  }

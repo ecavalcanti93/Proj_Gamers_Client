@@ -29,7 +29,7 @@ function Navbar() {
         </Link>
         {isLoggedIn && (
           <div>
-            <p className="text-nav">Hello, <Link style={{ marginLeft: "5px" }} to="/profile">{user && user.username}</Link></p>
+            <p className="text-nav">Hello, <Link style={{ marginLeft: "5px", color: "orangeRed" }} to="/profile">{user && user.username}</Link></p>
           </div>
         )}
       </div>

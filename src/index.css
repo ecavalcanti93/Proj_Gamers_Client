@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-@font-face {
+ /* @font-face {
     font-family: "Nexa";
     src: 
     local("../src/static/Nexa-Heavy.ttf") format("ttf"),
@@ -13,8 +13,36 @@
 
 h1{
     font-family: "Nexa";
+} */
+
+/* h3{
+    font-family: "Nexa";
+} */
+
+/* @font-face {
+    font-family: "Mont";
+    src: 
+    src("../src/static/Mont-HeavyDEMO.otf") format("otf"),
+} */
+
+@font-face {
+    font-family: "Mont";
+    src: 
+    local("Mont-HeavyDEMO")
+    url("Mont-HeavyDEMO.otf") format("truetype");
 }
 
-h3{
-    font-family: "Nexa";
+h1 {
+    font-family: "Mont";
+}
+
+@font-face {
+    font-family: "Chopin";
+    src:
+    local("Chopin-Light")
+    url("Chopin-Light.ttf") format("truetype");
+}
+
+h3 {
+    font-family: "Chopin";
 }

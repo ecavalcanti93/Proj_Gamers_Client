@@ -5,7 +5,6 @@ import { Accordion } from "../components/Accordion";
 import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../context/auth.context";
-import BasicModal from "../components/Modal2";
 import steps from "../assets/Steps.svg"
 
 function HomePage() {
@@ -17,7 +16,7 @@ function HomePage() {
     <>
       <div className="container">
         <div className="menu-div1">
-          <h1 className="title-home">Create your own game library!</h1>
+          <h1 className="title-home">Create your <br/><span className="own">own</span> game <br/>library!</h1>
           <h3 className="subtitle-home">Remember forever the games you've played.</h3>
           {!isLoggedIn && (
             <div className="menu-button">
@@ -39,16 +38,6 @@ function HomePage() {
               <Link to="/profile">
                 <button>My Library</button>
               </Link>
-              {/* <button
-              
-                onClick={() => {
-                  handleForm();
-                }}
-              >
-                Add Game
-              </button> */}
-              {/* <BasicModal/> */}
-              {/* {editForm && <AddGame />} */}
             </div>
           )}
         </div>
@@ -58,8 +47,8 @@ function HomePage() {
       </div>
       <div className="section2">
         <div className="section2-text">
-          <h1>Your library for games of the past, present, and future!</h1>
-          <h3>Find and add games to your virtual shelf.</h3>
+          <h1 className="section2-sub">Your library for games of the past, present, and future!</h1>
+          <h3 className="section2-sub2">Find and add games to your virtual shelf.</h3>
         </div>
         <Accordion />
       </div>
