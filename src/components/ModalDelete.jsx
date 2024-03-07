@@ -9,7 +9,7 @@ function DeleteGameButton() {
   const { gameId } = useParams();
   const navigate = useNavigate();
 
-  const deleteGame = () => {
+  const fakeDeleteGame = () => {
     const storedToken = localStorage.getItem("authToken");
     axios
       .put(`${API_URL}/games/${gameId}/delete`, {
@@ -26,7 +26,7 @@ function DeleteGameButton() {
   //   getGame();
   // }, []);
 
-  return <button className="button-delete" onClick={deleteGame()}></button>;
+  return <button className="button-delete" onClick={fakeDeleteGame()}></button>;
 }
 
 export default DeleteGameButton;

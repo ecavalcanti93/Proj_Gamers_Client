@@ -50,6 +50,7 @@ function GameDetailsPage() {
       .then(navigate("/profile"));
   };
 
+
   // const deleteGame = () => {
   //   const storedToken = localStorage.getItem("authToken");
   //   axios
