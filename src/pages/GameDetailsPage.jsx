@@ -17,7 +17,7 @@ function GameDetailsPage() {
   // const [canEdit, setCanEdit] = useState(false);
   const { gameId } = useParams();
   const navigate = useNavigate();
-  const { user } = useContext(AuthContext);
+  const { user, authenticateUser } = useContext(AuthContext);
 
   // const handleCanEdit = () => {
   //   user.username === game.author.username ? setCanEdit(true) : canEdit;
@@ -47,9 +47,11 @@ function GameDetailsPage() {
       .post(`${API_URL}/games`, game, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
-      .then(navigate("/profile"));
+      .then(() => {
+        authenticateUser()
+        navigate("/profile");
+      });
   };
-
 
   // const deleteGame = () => {
   //   const storedToken = localStorage.getItem("authToken");
@@ -67,7 +69,9 @@ function GameDetailsPage() {
     <div>
       <div className="buttons-detail">
         {/* <BackToBack /> */}
-        {game && user._id.toString() === game.author._id.toString() && <ModalEdit />}
+        {game && user._id.toString() === game.author._id.toString() && (
+          <ModalEdit />
+        )}
         {/* {game && user.games.includes(game._id) && <DeleteGameButton />} */}
 
         {/* <ModalEdit /> */}

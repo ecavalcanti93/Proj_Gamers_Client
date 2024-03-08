@@ -10,6 +10,7 @@ import Rating from "./Rating";
 import Stack from "@mui/material/Stack";
 import CircularProgress from "@mui/material/CircularProgress";
 import DeleteGameButton from "./ModalDelete";
+import Pegi from "./Pegi";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -51,36 +52,32 @@ function GameCard({
           <h1 className="titlecard">
             <b>{title}</b>
           </h1>
-          <div className="description">
-            <b>Rating:</b>
             <Rating>{rating}</Rating>
-          </div>
           <p className="description">
-            <b>Genre:</b> {genre}
+            <b style={{color: "#fb3108"}}>Genre:</b> {genre}
           </p>
           <p className="description">
-            <b>Platform:</b> {platform}
+            <b style={{color: "#fb3108"}}>Platform:</b> {platform}
           </p>
           <p className="description">
-            <b>Company:</b> {company}
+            <b style={{color: "#fb3108"}}>Company:</b> {company}
           </p>
           <p className="description">
-            <b>PEGI:</b> {age}
+            <b style={{color: "#fb3108"}}>Description:</b> {description}
           </p>
-          <p className="description">
-            <b>Description:</b> {description}
-          </p>
+          <Pegi>{age}</Pegi>
+
           <div className="btn-details">
             <BackToBack />
             {gamesId.includes(gameId) ? (
               <DeleteGameButton />
             ) : (
-                <button
-                  className="add-game"
-                  onClick={() => {
-                    addGame = addGame();
-                  }}
-                ></button>
+              <button
+                className="add-game"
+                onClick={() => {
+                  addGame = addGame();
+                }}
+              ></button>
             )}
           </div>
         </div>

@@ -1,4 +1,6 @@
 /* eslint-disable react/prop-types */
+import "./Rating.css"
+
 function Rating (props) {
 
     function result() {

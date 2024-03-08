@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../context/auth.context";
 import "./SearchBar.css";
@@ -13,7 +13,8 @@ function SearchProfile() {
   const [searchProfileGames, setSearchProfileGames] = useState([]);
   const [profileGames, setProfileGames] = useState([]);
   const [loading, setLoading] = useState(false);
-  const { user } = useContext(AuthContext);
+  const { user, authenticateUser } = useContext(AuthContext);
+  const location = useLocation();
   
 
 //   const storedToken = localStorage.getItem("authToken");
@@ -50,9 +51,7 @@ function SearchProfile() {
   useEffect(() => {
     setProfileGames(user.games)
     setSearchProfileGames(user.games)
-  }, []);
-  
-
+  }, [user.games]);
 
 //   const handleProfileGames = () => {
 //     const filteredProfileGames = games.filter((game)=>{

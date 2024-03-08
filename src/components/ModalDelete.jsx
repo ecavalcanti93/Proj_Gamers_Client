@@ -1,4 +1,4 @@
-// import * as React from "react";
+import * as React from "react";
 import { useState, useEffect, useContext } from "react";
 import { useParams, useNavigate, } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
@@ -16,7 +16,7 @@ function DeleteGameButton() {
     const storedToken = localStorage.getItem("authToken");
     // console.log(storedToken);
     axios
-      .put(`${API_URL}/games/${gameId}/remove`, {
+      .delete(`${API_URL}/games/${gameId}`, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then(() => {

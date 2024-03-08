@@ -15,7 +15,7 @@ const API_URL = import.meta.env.VITE_API_URL;
 function SearchBar() {
   const [games, setGames] = useState([]);
   const [searchGames, setSearchGames] = useState([]);
-  const { user } = useContext(AuthContext);
+  const { user, authenticateUser } = useContext(AuthContext);
   const [gamesId, setGamesId] = useState([]);
   const navigate = useNavigate();
   // const [searchGamesFiltered, setSearchGamesFiltered] = useState([]);
@@ -76,7 +76,13 @@ function SearchBar() {
       .post(`${API_URL}/games`, game, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
-      .then(navigate("/profile"));
+      .then(() => {
+        authenticateUser()
+      })
+      .then((res) => {
+        // res && console.log(res.data);
+        res && navigate("/profile")
+      })
   };
 
   // useEffect(() => {
