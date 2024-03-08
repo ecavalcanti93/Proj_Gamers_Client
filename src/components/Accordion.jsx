@@ -71,7 +71,7 @@ export const Accordion = () => {
   const handleToggle = (index) => setActive(index);
 
   return (
-    <section>
+    <section className="accordions">
       {cards.map((card, index) => {
         const isActive = active === index ? "active" : "";
         return (

@@ -180,3 +180,148 @@ button:hover {
     color: #070720;
     font-size: 20px;
 }
+
+/*---------responsive----------------------------*/
+
+/* >>>>>>>>>>>>>>>>>>>>>iPAD<<<<<<<<<<<<<<<<<<<<<<<< */
+@media screen and (max-width:1050px) {
+    .container{
+        top: 0;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+.title-home{
+    text-justify: distribute-all-lines;
+}
+
+.menu-button{
+    align-items: center;
+}
+
+.banner2{
+    top: 0;
+}
+
+.subtitle-home{
+    align-content: center;
+}
+
+    .steps{
+        width: 100%;
+    }
+
+    .menu-div1{
+        display: flex;
+        /* align-items: center; */
+        justify-content: center;
+        width: 100%;
+        height: 80%;
+    }
+
+    .menu-div2{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+}
+
+
+@media screen and (max-width:700px) {
+    .container{
+        top: 0;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+.title-home{
+    text-justify: distribute-all-lines;
+}
+
+.menu-button{
+    align-items: center;
+}
+
+.banner2{
+    top: 0;
+}
+
+.subtitle-home{
+    align-content: center;
+}
+
+    .steps{
+        width: 100%;
+    }
+
+    .menu-div1{
+        display: flex;
+        /* align-items: center; */
+        justify-content: center;
+        width: 100%;
+        height: 80%;
+    }
+
+    .menu-div2{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width:550px) {
+    .container{
+        top: 0;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+.title-home{
+    text-justify: distribute-all-lines;
+}
+
+.menu-button{
+    align-items: center;
+}
+
+.banner2{
+    top: 0;
+}
+
+.title-home{
+    font-size: 80px;
+    text-align: center;
+}
+
+.subtitle-home{
+    align-content: center;
+}
+
+    .steps{
+        width: 100%;
+    }
+
+    .menu-div1{
+        display: flex;
+        width: 30%;
+        height: 80%;
+    }
+
+    button{
+        display: flex;
+        flex-direction: column;
+        padding: 8px 40px;
+    }
+
+    .menu-div2{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+}

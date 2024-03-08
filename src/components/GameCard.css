@@ -91,7 +91,7 @@
     background-color: #fb3108;
 }
 
-@media (max-width: 850px) {
+@media screen and (max-width: 1050px) {
 
     .card{
         position: relative;
@@ -121,7 +121,7 @@
   }
   
   /* Estilos para largura de tela até 550px */
-  @media (max-width: 550px) {
+  @media screen and  (max-width: 700px) {
 
     .text-padding{
         border-radius: 5px;
@@ -135,7 +135,7 @@
   }
   
   /* Estilos para largura de tela até 400px */
-  @media (max-width: 400px) {
+  @media screen and (max-width:550px) {
 
     .text-padding{
         border-radius: 5px;
