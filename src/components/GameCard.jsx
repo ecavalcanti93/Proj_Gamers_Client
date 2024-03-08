@@ -11,6 +11,7 @@ import Stack from "@mui/material/Stack";
 import CircularProgress from "@mui/material/CircularProgress";
 import DeleteGameButton from "./ModalDelete";
 import Pegi from "./Pegi";
+import BackToTop from "./ModalTop";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -49,39 +50,42 @@ function GameCard({
           {/* <button onClick={()=>{addGame=addGame()}}>Add game</button> */}
         </div>
         <div className="div-container2">
-          <h1 className="titlecard">
-            <b>{title}</b>
-          </h1>
+          <div className="sticky">
+            <h1 className="titlecard">
+              <b>{title}</b>
+            </h1>
             <Rating>{rating}</Rating>
-          <p className="description">
-            <b style={{color: "#fb3108"}}>Genre:</b> {genre}
-          </p>
-          <p className="description">
-            <b style={{color: "#fb3108"}}>Platform:</b> {platform}
-          </p>
-          <p className="description">
-            <b style={{color: "#fb3108"}}>Company:</b> {company}
-          </p>
-          <p className="description">
-            <b style={{color: "#fb3108"}}>Description:</b> {description}
-          </p>
-          <Pegi>{age}</Pegi>
+            <p className="description">
+              <b style={{ color: "#fb3108" }}>Genre:</b> {genre}
+            </p>
+            <p className="description">
+              <b style={{ color: "#fb3108" }}>Platform:</b> {platform}
+            </p>
+            <p className="description">
+              <b style={{ color: "#fb3108" }}>Company:</b> {company}
+            </p>
+            <p className="description">
+              <b style={{ color: "#fb3108" }}>Description:</b> {description}
+            </p>
+            <Pegi>{age}</Pegi>
 
-          <div className="btn-details">
-            <BackToBack />
-            {gamesId.includes(gameId) ? (
-              <DeleteGameButton />
-            ) : (
-              <button
-                className="add-game"
-                onClick={() => {
-                  addGame = addGame();
-                }}
-              ></button>
-            )}
+            <div className="btn-details">
+              <BackToBack />
+              <BackToTop/>
+              {gamesId.includes(gameId) ? (
+                <DeleteGameButton />
+              ) : (
+                <button
+                  className="add-game"
+                  onClick={() => {
+                    addGame = addGame();
+                  }}
+                ></button>
+              )}
+            </div>
           </div>
         </div>
-        <div></div>
+
         <div className="div-container3">
           <div>
             <AddComment updateGame={updateGame} />

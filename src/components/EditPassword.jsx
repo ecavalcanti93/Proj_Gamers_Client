@@ -19,22 +19,27 @@ function EditPassword() {
   const handleNewPassword = (e) => setNewPassword(e.target.value);
   const handleConfirmNewPassword = (e) => setConfirmNewPassword(e.target.value);
   const handleForm = () => setEditForm(!editForm);
+ 
 
   const handlePasswordSubmit = (e) => {
     e.preventDefault();
+    const storedToken = localStorage.getItem("authToken");
 
-    if (!currentPassword) {
+    if (!currentPassword || !newPassword || !confirmNewPassword) {
       alert("Required.");
       return;
     }
 
     // Create an object representing the request body
     const requestBody = { currentPassword, newPassword, confirmNewPassword };
+
     // Make an axios request to the API
     // If the POST request is a successful redirect to the login page
     // If the request resolves with an error, set the error message in the state
     axios
-      .post(`${API_URL}/passwordupdate`, requestBody)
+      .put(`${API_URL}/passwordupdate`, requestBody, {
+        headers: { Authorization: `Bearer ${storedToken}` },
+      })
 
       .then((response) => {
         handleForm();

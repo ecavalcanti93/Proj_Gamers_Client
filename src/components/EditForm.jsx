@@ -23,10 +23,12 @@ function EditForm() {
   const handleProfileSubmit = (e) => {
     e.preventDefault();
 
-    if (!email) {
+    if (!email || !username) {
       alert("Required.");
       return;
     }
+
+    const storedToken = localStorage.getItem("authToken");
 
     // Create an object representing the request body
     const requestBody = { email, username, userImage };
@@ -34,7 +36,9 @@ function EditForm() {
     // If the PUT request is a successful redirect to the login page
     // If the request resolves with an error, set the error message in the state
     axios
-      .put(`${API_URL}/user/${user._id}`, requestBody)
+      .put(`${API_URL}/user/${user._id}`, requestBody, {
+        headers: { Authorization: `Bearer ${storedToken}` },
+      })
 
       .then((response) => {
         handleForm();

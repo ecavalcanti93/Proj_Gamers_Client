@@ -8,6 +8,8 @@ import Stack from "@mui/material/Stack";
 import CircularProgress from "@mui/material/CircularProgress";
 import AddCreatedGame from "./AddCreatedGame";
 import { filter } from "lodash";
+import BackTop from "antd/es/float-button/BackTop";
+import BackToTop from "./ModalTop";
 // import defaultGameImage from "../assets/default-game-image.webp"
 
 const API_URL = import.meta.env.VITE_API_URL;
@@ -118,7 +120,8 @@ function SearchBar() {
           </Stack>
         </div>
       ) : (
-        <div className="list-container">
+        <>
+          <div className="list-container">
           {searchGames.map((game) => (
             <div key={game._id} className="column">
               <Link to={`/games/${game._id}`}>
@@ -148,6 +151,9 @@ function SearchBar() {
             </div>
           ))}
         </div>
+        <BackToTop/>
+        </>
+        
       )}
     </div>
   );

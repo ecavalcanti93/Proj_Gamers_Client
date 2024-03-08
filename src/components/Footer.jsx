@@ -8,6 +8,7 @@ import {
   BsGithub,
   BsInstagram,
   BsTwitter,
+  BsLinkedin
 } from "react-icons/bs";
 
 const Component = () => {
@@ -49,10 +50,11 @@ const Component = () => {
                     <div className="sb-footer-links-div">
                         <h4>Social Media</h4>
                         <div className="socialmedia">
-                            <Footer.Icon className="socialmedia-icon" href="#" icon={BsFacebook} />
-                            <Footer.Icon className="socialmedia-icon" href="#" icon={BsInstagram} />
-                            <Footer.Icon className="socialmedia-icon" href="#" icon={BsTwitter} />
-                            <Footer.Icon className="socialmedia-icon" href="#" icon={BsGithub} />
+                            <Footer.Icon className="socialmedia-icon" href="https://www.facebook.com" icon={BsFacebook} />
+                            <Footer.Icon className="socialmedia-icon" href="https://www.instagram.com/" icon={BsInstagram} />
+                            <Footer.Icon className="socialmedia-icon" href="https://x.com/" icon={BsTwitter} />
+                            <Footer.Icon className="socialmedia-icon" href="https://linkedin.com/" icon={BsLinkedin} />
+                            <Footer.Icon className="socialmedia-icon" href="https://github.com/" icon={BsGithub} />
                         </div>
                     </div>
 

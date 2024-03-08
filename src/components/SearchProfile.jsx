@@ -5,6 +5,7 @@ import { AuthContext } from "../context/auth.context";
 import "./SearchBar.css";
 import BasicModal from "./Modal";
 import { inputToRGB } from "@ctrl/tinycolor";
+import BackToTop from "./ModalTop";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -88,7 +89,7 @@ function SearchProfile() {
             </div>
           ))}
         </div>
-
+        <BackToTop/>
     </div>
   );
 }

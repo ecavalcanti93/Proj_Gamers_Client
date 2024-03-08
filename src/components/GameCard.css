@@ -52,7 +52,7 @@
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    position: sticky;
+    position: relative;
     top: 20px;
 }
 
@@ -91,7 +91,13 @@
     background-color: #fb3108;
 }
 
-@media (max-width: 850px) {
+.sticky {
+    position: sticky;
+    top: 20px;
+    overflow: hidden;
+}
+
+@media (max-width: 1220px) {
 
     .card{
         position: relative;
@@ -107,6 +113,10 @@
     .div-container2{
         width: 80%;
         margin-top: 30px;
+    }
+
+    .div-container3{
+        padding-top: 20px;
     }
 
     .titlecard{
@@ -132,6 +142,10 @@
         word-break: break-word;
         padding: 10px;
     }
+
+    .div-container3{
+        margin-top: 0.4rem;
+    }
   }
   
   /* Estilos para largura de tela até 400px */
@@ -146,16 +160,22 @@
         word-break: break-word;
         padding: 10px;
     }
+    .div-container3{
+        margin-top: 0.4rem;
+    }
   }
 
   @media (max-width: 850px) {
     .container-add{
-    max-width: 350px;
-    margin: 0 auto;
-    padding: 20px;
-    border-radius: 5px;
-    background-color: #2a2a58;
-    color: white;
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        border-radius: 5px;
+        background-color: #2a2a58;
+        color: white;
+    }
+    .div-container3{
+        margin-top: 0.4rem;
     }
   }
   
@@ -163,14 +183,16 @@
   @media (max-width: 550px) {
     .text-padding{
         border-radius: 5px;
-        width: 350px;
+        width: 400px;
         height: auto;
         background-color: #2a2a58;;
         margin-top: 0.5rem;
         word-break: break-word;
         padding: 10px;
     }
-  
+    .div-container3{
+        margin-top: 0.4rem;
+    }
   }
   
   /* Estilos para largura de tela até 400px */
@@ -183,6 +205,17 @@
         margin-top: 0.5rem;
         word-break: break-word;
         padding: 10px;
+    }
+    .container-add{
+        max-width: 350px;
+        margin: 0 auto;
+        padding: 20px;
+        border-radius: 5px;
+        background-color: #2a2a58;
+        color: white;
+    }
+    .div-container3{
+        margin-top: 0.4rem;
     }
   
   }
