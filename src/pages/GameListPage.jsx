@@ -1,11 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import GameCard from "../components/GameCard";
 import SearchBar from "../components/SearchBar";
 import "./GameListPage.css";
 import AddGame from "../components/AddGame";
-import BasicModal from "../components/Modal";
-import Component from "../components/Footer";
 
 
 
@@ -50,7 +47,6 @@ function GameListPage() {
       {editForm && <AddGame />}   
         <SearchBar />
       </div>
-      <Component/>
     </>
   );
 }

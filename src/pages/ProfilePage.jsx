@@ -4,8 +4,6 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 import axios from "axios";
 import Card from "../components/Perfil";
-import SearchBar from "../components/SearchBar";
-import Component from "../components/Footer";
 import SearchProfile from "../components/SearchProfile";
 
 const API_URL = import.meta.env.VITE_API_URL;
@@ -18,7 +16,6 @@ function ProfilePage() {
     <div>
       <Card />
       <SearchProfile />
-      <Component />
     </div>
   );
 }
