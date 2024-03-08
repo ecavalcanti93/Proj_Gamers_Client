@@ -94,6 +94,8 @@
 
     .card{
         position: relative;
+        width: 350px;
+        height: 400px;
     }
 
     .gamecard {
@@ -109,7 +111,7 @@
     .titlecard{
         display: flex;
         align-items: center;
-        justify-content: center;
+        /* justify-content: center; */
     }
 
     .button-back{
@@ -120,55 +122,66 @@
   /* Estilos para largura de tela até 550px */
   @media (max-width: 550px) {
 
-    .card{
-        position: relative;
-    }
-
-    .gamecard {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .div-container2{
-        width: 80%;
-        margin-top: 30px;
-    }
-
-    .titlecard{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .button-back{
-        margin-bottom: 25px;
+    .text-padding{
+        border-radius: 5px;
+        width: 350px;
+        height: auto;
+        background-color: #2a2a58;;
+        margin-top: 0.5rem;
+        word-break: break-word;
+        padding: 10px;
     }
   }
   
   /* Estilos para largura de tela até 400px */
   @media (max-width: 400px) {
 
-    .card{
-        position: relative;
+    .text-padding{
+        border-radius: 5px;
+        width: 350px;
+        height: auto;
+        background-color: #2a2a58;;
+        margin-top: 0.5rem;
+        word-break: break-word;
+        padding: 10px;
     }
+  }
 
-    .gamecard {
-      flex-direction: column;
-      align-items: center;
+  @media (max-width: 850px) {
+    .container-add{
+    max-width: 350px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #2a2a58;
+    color: white;
     }
-
-    .div-container2{
-        width: 80%;
-        margin-top: 30px;
+  }
+  
+  /* Estilos para largura de tela até 550px */
+  @media (max-width: 550px) {
+    .text-padding{
+        border-radius: 5px;
+        width: 350px;
+        height: auto;
+        background-color: #2a2a58;;
+        margin-top: 0.5rem;
+        word-break: break-word;
+        padding: 10px;
     }
-
-    .titlecard{
-        display: flex;
-        align-items: center;
-        justify-content: center;
+  
+  }
+  
+  /* Estilos para largura de tela até 400px */
+  @media (max-width: 400px) {
+    .text-padding{
+        border-radius: 5px;
+        width: 350px;
+        height: auto;
+        background-color: #2a2a58;;
+        margin-top: 0.5rem;
+        word-break: break-word;
+        padding: 10px;
     }
-
-    .button-back{
-        margin-bottom: 25px;
-    }
+  
   }

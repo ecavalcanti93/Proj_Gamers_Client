@@ -64,9 +64,6 @@ function Navbar() {
               )}
             </div>
 
-            {/* <Link to="/profile/edit">
-              <button>Settings</button>
-            </Link> */}
             <div>
             <button onClick={logOutUser}>Logout</button>
             </div>

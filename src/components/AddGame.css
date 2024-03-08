@@ -52,3 +52,40 @@
   width: 400px;
 
 }
+
+@media (max-width: 850px) {
+  .container-add{
+  max-width: 350px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #2a2a58;
+  color: white;
+  }
+}
+
+/* Estilos para largura de tela até 550px */
+@media (max-width: 550px) {
+  .container-add{
+    max-width: 350px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #2a2a58;
+    color: white;
+    }
+
+}
+
+/* Estilos para largura de tela até 400px */
+@media (max-width: 400px) {
+  .container-add{
+    max-width: 350px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #2a2a58;
+    color: white;
+    }
+
+}
