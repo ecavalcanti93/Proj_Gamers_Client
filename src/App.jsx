@@ -14,6 +14,7 @@ import IsPrivate from "./components/IsPrivate";
 import IsAnon from "./components/IsAnon";
 import EditPasswordPage from "./pages/EditPasswordPage";
 import {Cloudinary} from "@cloudinary/url-gen";
+import Component from "./components/Footer";
 
 function App() {
 
@@ -112,6 +113,7 @@ function App() {
           }
         />
       </Routes>
+    <Component />
     </div>
   );
 }

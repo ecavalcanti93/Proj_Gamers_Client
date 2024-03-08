@@ -1,6 +1,5 @@
 import "./HomePage.css";
 import menu2 from "../assets/menu2.png";
-import Component from "../components/Footer";
 import { Accordion } from "../components/Accordion";
 import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
@@ -56,7 +55,6 @@ function HomePage() {
       <img className="steps" src={steps} alt="steps" />
       </div>
      
-      <Component />
     </>
   );
 }

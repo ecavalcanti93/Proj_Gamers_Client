@@ -66,10 +66,10 @@ const Navbar2 = () => {
                         {!isLoggedIn && (
                             <>
                                 <Link to="/signup">
-                                    <button>Sign Up</button>
+                                    <button className="buttons-nav">Sign Up</button>
                                 </Link>
                                 <Link to="/login">
-                                    <button className="login-button">Login</button>
+                                    <button className="buttons-nav">Login</button>
                                 </Link>
                             </>
                         )}
