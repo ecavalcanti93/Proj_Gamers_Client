@@ -19,8 +19,8 @@ export default function BasicModal() {
     const [image, setImage] = useState("");
     const { gameId } = useParams();
     const [open, setOpen] = React.useState(false);
-  const [scroll, setScroll] = React.useState("body");
-  const navigate = useNavigate();
+    const [scroll, setScroll] = React.useState("body");
+    const navigate = useNavigate();
 
   const handleClickOpen = (scrollType) => () => {
     setOpen(true);
@@ -56,26 +56,43 @@ export default function BasicModal() {
         setRating(oneGame.rating);
         setAge(oneGame.age);
         setDescription(oneGame.description);
-        setImage(oneGame.image);
+        setImage('');
       })
       .catch((error) => console.log(error));
   }, []);
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    const requestBody = {
-      title,
-      genre,
-      company,
-      platform,
-      rating,
-      age,
-      description,
-      image,
-    };
+    const uploadData = new FormData()
+
+    uploadData.set('title', title)
+    uploadData.set('genre', genre)
+    uploadData.set('company', company)
+    uploadData.set('platform', platform)
+    uploadData.set('rating', rating)
+    uploadData.set('age', age)
+    uploadData.set('description', description)
+
+    if(image) {
+      uploadData.append('image', image)
+    }
+
+    // const requestBody = {
+    //   title,
+    //   genre,
+    //   company,
+    //   platform,
+    //   rating,
+    //   age,
+    //   description,
+    //   image,
+    // };
     const storedToken = localStorage.getItem("authToken");
 
-    axios.put(`${API_URL}/games/${gameId}`, requestBody, {
+    // console.log(uploadData);
+    // return
+
+    axios.post(`${API_URL}/games/${gameId}`, uploadData, {
       headers: { Authorization: `Bearer ${storedToken}` },
     }).then(() => {
       navigate(`/games/${gameId}`);
@@ -151,12 +168,13 @@ export default function BasicModal() {
         </select>
         <br />
         <label>PEGI:</label>
-        <input
-          type="number"
-          name="age"
-          value={age}
-          onChange={(e) => setAge(e.target.value)}
-        />
+        <select value={age} onChange={(e) => setAge(e.target.value)}>
+          <option>3</option>
+          <option>7</option>
+          <option>12</option>
+          <option>16</option>
+          <option>18</option>
+        </select>
         <br />
         <label>Description:</label>
         <textarea
@@ -169,10 +187,10 @@ export default function BasicModal() {
         <br />
         <label>Image:</label>
         <input
-          type="text"
+          type="file"
           name="image"
-          value={image}
-          onChange={(e) => setImage(e.target.value)}
+          // value={image}
+          onChange={(e) => setImage(e.target.files[0])}
         />
         <br />
 

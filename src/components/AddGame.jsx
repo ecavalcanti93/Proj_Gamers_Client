@@ -25,6 +25,7 @@ function AddGame() {
     const requestBody = { title, genre, company, platform, rating, age, description, image };
 
     const storedToken = localStorage.getItem('authToken');
+    const uploadData = new FormData()
 
     axios
     .post( `${API_URL}/games`,
@@ -118,7 +119,7 @@ function AddGame() {
           type="file"
           name="image"
           value={image}
-          onChange={(e) => setImage(e.target.value)}
+          onChange={(e) => setImage(e.target.files[0])}
         />
         <br />
 
