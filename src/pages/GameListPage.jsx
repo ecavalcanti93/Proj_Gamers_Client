@@ -4,8 +4,6 @@ import SearchBar from "../components/SearchBar";
 import "./GameListPage.css";
 import AddGame from "../components/AddGame";
 
-
-
 const API_URL = import.meta.env.VITE_API_URL;
 
 function GameListPage() {
@@ -29,14 +27,13 @@ function GameListPage() {
   useEffect(() => {
     getAllGames();
   }, []);
-  
+
   return (
     <>
       <div>
-      
-      {/* <ModalForm /> */}
-      {/* <BasicModal /> */}
-      {/* <button
+        {/* <ModalForm /> */}
+        {/* <BasicModal /> */}
+        {/* <button
         className="add-game"
         onClick={() => {
         handleForm();
@@ -44,7 +41,7 @@ function GameListPage() {
       >
         +
       </button> */}
-      {editForm && <AddGame />}   
+        {editForm && <AddGame updateGames={getAllGames} />}
         <SearchBar />
       </div>
     </>

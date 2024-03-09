@@ -5,7 +5,9 @@ import "./AddGame.css";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
-function AddGame() {
+function AddGame({refreshedGames, handleClose}) {
+  // console.log(props);
+  // return
   const [title, setTitle] = useState("");
   const [genre, setGenre] = useState("");
   const [company, setCompany] = useState("");
@@ -54,7 +56,8 @@ function AddGame() {
         setAge(0);
         setDescription("");
         setImage("");
-        navigate("/games");
+        handleClose();
+        return refreshedGames()
       })
       .catch((error) => console.log(error));
   };
@@ -98,6 +101,7 @@ function AddGame() {
         <br />
         <label>Rating:</label>
         <select value={rating} onChange={(e) => setRating(e.target.value)}>
+          <option></option>
           <option>0</option>
           <option>1</option>
           <option>2</option>

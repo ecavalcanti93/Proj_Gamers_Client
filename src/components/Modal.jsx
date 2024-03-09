@@ -4,7 +4,7 @@ import Modal from '@mui/material/Modal';
 import AddGame from './AddGame';
 import "./Modal.css"
 
-export default function BasicModal() {
+export default function BasicModal({ refreshedGames }) {
   const [open, setOpen] = React.useState(false);
   const [scroll, setScroll] = React.useState("body");
 
@@ -51,7 +51,7 @@ export default function BasicModal() {
         aria-labelledby="scroll-dialog-title"
         aria-describedby="scroll-dialog-description"
       >
-            <AddGame />
+            <AddGame refreshedGames={refreshedGames} handleClose={handleClose} />
         </Dialog>
       </Modal>
     </div>

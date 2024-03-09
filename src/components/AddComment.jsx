@@ -6,7 +6,7 @@ import "./AddComment.css"
 
 const API_URL = import.meta.env.VITE_API_URL;
 
-function AddComment(props) {
+function AddComment({updateGame}) {
   const [content, setContent] = useState("");
   const { gameId } = useParams();
   
@@ -30,7 +30,7 @@ function AddComment(props) {
     )
     .then(() => {
     setContent("");
-    return props.updateGame()
+    return updateGame()
     // navigate(`/games/${gameId}`)
     })
      .catch((error) => console.log(error));
