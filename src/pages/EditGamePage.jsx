@@ -117,7 +117,7 @@ function EditGamePage(props) {
         </select>
         <br />
         <label>PEGI:</label>
-        <select value={rating} onChange={(e) => setRating(e.target.value)}>
+        <select value={age} onChange={(e) => setAge(e.target.value)}>
           <option>3</option>
           <option>7</option>
           <option>12</option>

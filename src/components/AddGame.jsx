@@ -16,8 +16,6 @@ function AddGame({refreshedGames, handleClose}) {
   const [age, setAge] = useState(0);
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
-  // const [author, setAuthor] = useState("");
-  // const [comments, setComments] = useState("");
 
   const navigate = useNavigate();
 
@@ -43,6 +41,25 @@ function AddGame({refreshedGames, handleClose}) {
     const storedToken = localStorage.getItem("authToken");
 
     axios
+<<<<<<< HEAD
+    .post( `${API_URL}/games`,
+      requestBody,
+      { headers: { Authorization: `Bearer ${storedToken}` } }
+    )
+    .then(() => {
+     // Reset the state
+     setTitle("");
+     setGenre("");
+     setCompany("");
+     setPlatform("");
+     setRating(0);
+     setAge("");
+     setDescription("");
+     setImage("");
+     navigate("/games")
+    })
+     .catch((error) => console.log(error));
+=======
       .post(`${API_URL}/games`, uploadData, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
@@ -60,6 +77,7 @@ function AddGame({refreshedGames, handleClose}) {
         return refreshedGames()
       })
       .catch((error) => console.log(error));
+>>>>>>> 975a1bbab92e884a47e4c2dda3f5a70510a11028
   };
 
   return (

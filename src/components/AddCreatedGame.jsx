@@ -44,33 +44,6 @@ function AddCreatedGame(props) {
     
   };
 
-//   const addGame = () => {
-//     const requestBody = {
-//       title: game.title,
-//       genre: game.genre,
-//       company: game.company,
-//       platform: game.platform,
-//       rating: game.rating,
-//       age: game.age,
-//       description: game.description,
-//       image: game.image,
-//     };
-
-  //   const storedToken = localStorage.getItem("authToken");
-
-  //   axios
-  //     .post(`${API_URL}/games`, requestBody, {
-  //       headers: { Authorization: `Bearer ${storedToken}` },
-  //     })
-  //     .catch((error) => console.log(error));
-  // };
-  
-
-//   const addThisGame = () => {
-//     getGame()
-//     addGame()
-//   };
-
   const handleOnClick = (e) => {
     // e.preventDefault();
     // addThisGame();
@@ -87,79 +60,6 @@ function AddCreatedGame(props) {
       >
         Add game
       </button>
-      {/* <h3>Create a New Game</h3> */}
-
-      {/* <form onSubmit={handleSubmit}>
-        <label>Title:</label>
-        <input
-          type="text"
-          name="title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
-        <br />
-        <label>Genre:</label>
-        <input
-          type="text"
-          name="genre"
-          value={genre}
-          onChange={(e) => setGenre(e.target.value)}
-        />
-        <br />
-        <label>Company:</label>
-        <input
-          type="text"
-          name="company"
-          value={company}
-          onChange={(e) => setCompany(e.target.value)}
-        />
-        <br />
-        <label>Platform:</label>
-        <input
-          type="text"
-          name="platform"
-          value={platform}
-          onChange={(e) => setPlatform(e.target.value)}
-        />
-        <br />
-        <label>Rating:</label>
-        <select value={rating} onChange={(e) => setRating(e.target.value)}>
-          <option>0</option>
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </select>
-        <br />
-        <label>PEGI:</label>
-        <input
-          type="number"
-          name="age"
-          value={age}
-          onChange={(e) => setAge(e.target.value)}
-        />
-        <br />
-        <label>Description:</label>
-        <textarea
-          name="description"
-          value={description}
-          rows="10"
-          cols="50"
-          onChange={(e) => setDescription(e.target.value)}
-        />
-        <br />
-        <label>Image:</label>
-        <input
-          type="file"
-          name="image"
-          value={image}
-          onChange={(e) => setImage(e.target.value)}
-        />
-        <br />
-
-        <button type="submit">Add game</button>
-      </form> */}
     </div>
   );
 }

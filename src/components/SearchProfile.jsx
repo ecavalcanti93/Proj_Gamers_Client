@@ -18,36 +18,36 @@ function SearchProfile() {
   const location = useLocation();
   
 
-//   const storedToken = localStorage.getItem("authToken");
+// const storedToken = localStorage.getItem("authToken");
 
-//   const fetchMyGames = () => {
+// const fetchMyGames = () => {
     
-//     axios
-//       .get(`${API_URL}/games/myGames`, {
-//         headers: { Authorization: `Bearer ${storedToken}` },
-//       })
-//       .then((res) => {
-//         res.data.filter((game)=>{
-//             if (game.author !== undefined && user === game.author) return game
-//         //    console.log(game.author); 
-//         //    console.log(game);
-//         })
+// axios
+// .get(`${API_URL}/games/myGames`, {
+//  headers: { Authorization: `Bearer ${storedToken}` },
+// })
+// .then((res) => {
+// res.data.filter((game)=>{
+// if (game.author !== undefined && user === game.author) return game
+// console.log(game.author); 
+// console.log(game);
+// })
         
-//         return filteredProfileGames
-//       })
-//       .then((res) => {
-//         console.log(res);
-//         const sortedGames = res.data.sort((a, b) => {
-//           return a.title.localeCompare(b.title);
-//         });
-//         setProfileGames(sortedGames);
-//         setSearchProfileGames(sortedGames);
-//         setLoading(false);
-//       })
-//       .catch((error) => {
-//         console.error("Error fetching games:", error);
-//       });
-//   };
+// return filteredProfileGames
+// })
+// .then((res) => {
+// console.log(res);
+// const sortedGames = res.data.sort((a, b) => {
+//   return a.title.localeCompare(b.title);
+// });
+// setProfileGames(sortedGames);
+// setSearchProfileGames(sortedGames);
+// setLoading(false);
+// })
+// .catch((error) => {
+//   console.error("Error fetching games:", error);
+// });
+// };
 
   useEffect(() => {
     setProfileGames(user.games)
