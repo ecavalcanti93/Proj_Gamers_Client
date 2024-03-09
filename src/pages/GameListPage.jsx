@@ -3,8 +3,7 @@ import axios from "axios";
 import SearchBar from "../components/SearchBar";
 import "./GameListPage.css";
 import AddGame from "../components/AddGame";
-
-
+import { Routes, Route } from "react-router-dom";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -33,18 +32,12 @@ function GameListPage() {
   return (
     <>
       <div>
-      
-      {/* <ModalForm /> */}
-      {/* <BasicModal /> */}
-      {/* <button
-        className="add-game"
-        onClick={() => {
-        handleForm();
-        }}
-      >
-        +
-      </button> */}
-      {editForm && <AddGame />}   
+        <Routes>
+          <Route
+            path="/games/:gameId"
+            element={editForm ? <AddGame /> : null}
+          /> 
+        </Routes>
         <SearchBar />
       </div>
     </>

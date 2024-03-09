@@ -36,7 +36,7 @@
   }
   
   article.active {
-    width: 400px;
+    width: 365px;
     height: 550px;
     opacity: 1;
     object-fit: cover;
@@ -81,4 +81,39 @@
     translate: -50% -50%;
     height: 100%;
     /* filter: grayscale(0.5); */
+  }
+
+
+  @media screen and (max-width:1050px) {
+
+    .accordions {
+      display: flex;
+      gap: 10px;
+      cursor: pointer;
+      justify-content: center;
+      align-items: center;
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+
+    article.active {
+      width: 500px;
+      height: 550px;
+      opacity: 1;
+      object-fit: cover;
+    }
+
+    article {
+      position: relative;
+      overflow: hidden;
+      background: #ffffff;
+      width: 50px;
+      height: 550px;
+      border-radius: 36px;
+      display: flex;
+      align-items: flex-end;
+      opacity: 0.9;
+      transition: 0.5s;
+      border: 2px solid #2323A1;
+    }
   }

@@ -15,8 +15,6 @@ function AddGame() {
   const [age, setAge] = useState(0);
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
-  // const [author, setAuthor] = useState("");
-  // const [comments, setComments] = useState("");
 
   const navigate = useNavigate();
 
@@ -40,7 +38,7 @@ function AddGame() {
      setCompany("");
      setPlatform("");
      setRating(0);
-     setAge(0);
+     setAge("");
      setDescription("");
      setImage("");
      navigate("/games")
@@ -98,20 +96,13 @@ function AddGame() {
         </select>
         <br />
         <label>PEGI:</label>
-        <select value={rating} onChange={(e) => setRating(e.target.value)}>
+        <select value={age} onChange={(e) => setAge(e.target.value)}>
           <option>3</option>
           <option>7</option>
           <option>12</option>
           <option>16</option>
           <option>18</option>
         </select>
-        {/* <label>PEGI:</label>
-        <input
-          type="number"
-          name="age"
-          value={age}
-          onChange={(e) => setAge(e.target.value)}
-        /> */}
         <br />
         <label>Description:</label>
         <textarea

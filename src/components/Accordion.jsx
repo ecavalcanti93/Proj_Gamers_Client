@@ -8,7 +8,7 @@ import image6 from "../assets/image6.jpg";
 import image7 from "../assets/image7.webp";
 import image8 from "../assets/image8.jpg";
 import image9 from "../assets/image9.jpg";
-import image10 from "../assets/image10.jpg";
+import image10 from "../assets/image10.jpeg";
 
 import "./Accordion.css";
 
@@ -19,9 +19,9 @@ const cards = [
     text: `Warner Bros Games`,
   },
   {
-    header: "Donkey Kong Country 3",
+    header: "The Legend of Zelda",
     image: image2,
-    text: `Nintendo of America Inc`,
+    text: `Nintendo`,
   },
   {
     header: "Tekken 3",
@@ -54,12 +54,12 @@ const cards = [
     text: `Supermassive Games`,
   },
   {
-    header: "Grand Theft Auto: San Andreas",
+    header: "Bully",
     image: image9,
     text: `Rockstar Games`,
   },
   {
-    header: "Far Cry 3",
+    header: "Far Cry 6",
     image: image10,
     text: `Ubisoft`,
   },

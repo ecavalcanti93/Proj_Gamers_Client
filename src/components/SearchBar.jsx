@@ -23,16 +23,6 @@ function SearchBar() {
 
   const storedToken = localStorage.getItem("authToken");
 
-  // const handleGamesTitelesNoRepeat = () => {
-  //   const gamesTitles = games.map((game) => {
-  //     return game.title.toLowerCase()
-  //   })
-  //   const gamesTitlesFiltered = new Set(gamesTitles)
-  //   let gamesTitelesNoRepeat = [...gamesTitlesFiltered]
-  //   return gamesTitelesNoRepeat
-  //   // setSearchGames(searchGamesFiltered);
-  // }
-
   const fetchGames = () => {
     axios
       .get(`${API_URL}/games`, {
@@ -85,20 +75,6 @@ function SearchBar() {
       })
   };
 
-  // useEffect(() => {
-  //   user.games.map((game) => {
-  //     gamesId.push(game._id)
-  //   })
-  // }, []);
-
-  // const handleGameImage = ()=>{
-  //   searchGames ? ( searchGames.map((game)=>{
-  //     if (game.image === defaultGameImage) {
-  //     return defaultGameImage
-  //   }else return game.image
-  //   })) : loading
-  // }
-
   return (
     <div className="center">
       <div className="search-box flex-center">
@@ -143,8 +119,6 @@ function SearchBar() {
                 </button>
               )}
 
-              {/* <button onClick={()=>{handleAddGame(game)}}>Add Game</button> */}
-              {/* <AddCreatedGame gameId = {game._id} /> */}
             </div>
           ))}
         </div>
