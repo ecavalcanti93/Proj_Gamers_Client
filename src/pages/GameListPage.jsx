@@ -3,10 +3,6 @@ import axios from "axios";
 import SearchBar from "../components/SearchBar";
 import "./GameListPage.css";
 import AddGame from "../components/AddGame";
-<<<<<<< HEAD
-=======
-import { Routes, Route } from "react-router-dom";
->>>>>>> b197d34fd45baf0d1fd9e3a6f62b092515f4c075
 
 const API_URL = import.meta.env.VITE_API_URL;
 
