@@ -37,7 +37,7 @@ function EditPassword() {
     // If the POST request is a successful redirect to the login page
     // If the request resolves with an error, set the error message in the state
     axios
-      .put(`${API_URL}/passwordupdate`, requestBody, {
+      .post(`${API_URL}/passwordupdate`, requestBody, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
 
