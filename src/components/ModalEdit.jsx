@@ -8,7 +8,7 @@ import "./ModalEdit.css";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
-export default function BasicModal() {
+export default function BasicModal({ refreshedGame }) {
     const [title, setTitle] = useState("");
     const [genre, setGenre] = useState("");
     const [company, setCompany] = useState("");
@@ -95,6 +95,8 @@ export default function BasicModal() {
     axios.post(`${API_URL}/games/${gameId}`, uploadData, {
       headers: { Authorization: `Bearer ${storedToken}` },
     }).then(() => {
+      handleClose()
+      refreshedGame()
       navigate(`/games/${gameId}`);
     });
   };

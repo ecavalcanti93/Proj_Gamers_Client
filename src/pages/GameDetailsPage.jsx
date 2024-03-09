@@ -66,7 +66,7 @@ function GameDetailsPage() {
       <div className="buttons-detail">
         {/* <BackToBack /> */}
         {game && user._id.toString() === game.author._id.toString() && (
-          <ModalEdit />
+          <ModalEdit refreshedGame = {getGame} />
         )}
         {/* {game && user.games.includes(game._id) && <DeleteGameButton />} */}
 
