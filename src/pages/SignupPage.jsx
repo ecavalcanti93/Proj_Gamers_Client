@@ -14,30 +14,33 @@ function SignupPage(props) {
   const [errorMessage, setErrorMessage] = useState(undefined);
 
   const navigate = useNavigate();
-    // Create a Cloudinary instance and set your cloud name.
-    const cld = new Cloudinary({
-      cloud: {
-        cloudName: 'demo'
-      }
-    });
 
   const handleEmail = (e) => setEmail(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
   const handleUsername = (e) => setUsername(e.target.value);
-  const handleUserImage = (e) => setUserImage(e.target.value);
+  const handleUserImage = (e) => setUserImage(e.target.files[0]);
 
   const handleSignupSubmit = (e) => {
     e.preventDefault();
 
     // Create an object representing the request body
-    const requestBody = { email, password, username, userImage };
+    // const requestBody = { email, password, username, userImage };
 
-    console.log(userImage);
+    const uploadData = new FormData();
+
+    uploadData.set("email", email);
+    uploadData.set("password", password);
+    uploadData.set("username", username);
+
+    if (userImage) {
+      uploadData.append("userImage", userImage);
+    }
+
     // Make an axios request to the API
     // If the POST request is a successful redirect to the login page
     // If the request resolves with an error, set the error message in the state
     axios
-      .post(`${API_URL}/signup`, requestBody)
+      .post(`${API_URL}/signup`, uploadData)
 
       .then((response) => {
         navigate("/login");
@@ -83,7 +86,7 @@ function SignupPage(props) {
           <input
             type="file"
             name="userImage"
-            value={userImage}
+            // value={userImage}
             onChange={handleUserImage}
           />
 

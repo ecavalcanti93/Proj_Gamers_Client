@@ -17,11 +17,20 @@ function EditForm() {
 
   const handleEmail = (e) => setEmail(e.target.value);
   const handleUsername = (e) => setUsername(e.target.value);
-  const handleUserImage = (e) => setUserImage(e.target.value);
+  const handleUserImage = (e) => setUserImage(e.target.files[0]);
   const handleForm = () => setEditForm(!editForm);
 
   const handleProfileSubmit = (e) => {
     e.preventDefault();
+
+    const uploadData = new FormData()
+
+    uploadData.set('username', username)
+    uploadData.set('email', email)
+
+    if(userImage) {
+      uploadData.append('userImage', userImage)
+    }
 
     if (!email || !username) {
       alert("Required.");
@@ -31,12 +40,13 @@ function EditForm() {
     const storedToken = localStorage.getItem("authToken");
 
     // Create an object representing the request body
-    const requestBody = { email, username, userImage };
+    // const requestBody = { email, username, userImage };
+
     // Make an axios request to the API
     // If the PUT request is a successful redirect to the login page
     // If the request resolves with an error, set the error message in the state
     axios
-      .put(`${API_URL}/user/${user._id}`, requestBody, {
+      .put(`${API_URL}/user/${user._id}`, uploadData, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
 
@@ -77,9 +87,9 @@ function EditForm() {
 
           <label>Profile Image:</label>
           <input
-            type="text"
+            type="file"
             name="userImage"
-            value={userImage}
+            // value={userImage}
             onChange={handleUserImage}
           />
 

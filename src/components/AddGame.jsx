@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import "./AddGame.css"
-
+import "./AddGame.css";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -18,16 +17,29 @@ function AddGame() {
 
   const navigate = useNavigate();
 
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const requestBody = { title, genre, company, platform, rating, age, description, image };
+    const uploadData = new FormData();
 
-    const storedToken = localStorage.getItem('authToken');
-    const uploadData = new FormData()
+    uploadData.set("title", title);
+    uploadData.set("genre", genre);
+    uploadData.set("company", company);
+    uploadData.set("platform", platform);
+    uploadData.set("rating", rating);
+    uploadData.set("age", age);
+    uploadData.set("description", description);
+
+    if (image) {
+      uploadData.append("image", image);
+    }
+
+    // const requestBody = { title, genre, company, platform, rating, age, description, image };
+
+    const storedToken = localStorage.getItem("authToken");
 
     axios
+<<<<<<< HEAD
     .post( `${API_URL}/games`,
       requestBody,
       { headers: { Authorization: `Bearer ${storedToken}` } }
@@ -45,9 +57,25 @@ function AddGame() {
      navigate("/games")
     })
      .catch((error) => console.log(error));
+=======
+      .post(`${API_URL}/games`, uploadData, {
+        headers: { Authorization: `Bearer ${storedToken}` },
+      })
+      .then(() => {
+        // Reset the state
+        setTitle("");
+        setGenre("");
+        setCompany("");
+        setPlatform("");
+        setRating(0);
+        setAge(0);
+        setDescription("");
+        setImage("");
+        navigate("/games");
+      })
+      .catch((error) => console.log(error));
+>>>>>>> 975a1bbab92e884a47e4c2dda3f5a70510a11028
   };
-
-
 
   return (
     <div className="container-add">
@@ -98,6 +126,7 @@ function AddGame() {
         <br />
         <label>PEGI:</label>
         <select value={age} onChange={(e) => setAge(e.target.value)}>
+          <option></option>
           <option>3</option>
           <option>7</option>
           <option>12</option>
@@ -118,14 +147,13 @@ function AddGame() {
         <input
           type="file"
           name="image"
-          value={image}
+          // value={image}
           onChange={(e) => setImage(e.target.files[0])}
         />
         <br />
 
         <button type="submit">Submit</button>
       </form>
-
     </div>
   );
 }
