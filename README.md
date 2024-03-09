@@ -8,7 +8,7 @@
 
 <h2>Project Screenshots:</h2>
 
-<img src="./src/assets/HomePage.png" width="400" height="400/">
+<img src="./src/assets/HomePage.png" width="1350" height="641/">
 
 <h2>🛠️ Installation Steps:</h2>
 
