@@ -32,12 +32,7 @@ function GameListPage() {
   return (
     <>
       <div>
-        <Routes>
-          <Route
-            path="/games/:gameId"
-            element={editForm ? <AddGame /> : null}
-          /> 
-        </Routes>
+            {editForm && <AddGame />}
         <SearchBar />
       </div>
     </>
