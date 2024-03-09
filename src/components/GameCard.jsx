@@ -33,11 +33,25 @@ function GameCard({
   const [gamesId, setGamesId] = useState([]);
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
+  const storedToken = localStorage.getItem("authToken");
+
+  const fetchUser = () => {
+    axios
+      .get(`${API_URL}/user/${user._id}`, {
+        headers: { Authorization: `Bearer ${storedToken}` },
+      })
+      .then((res) => {
+        res.data.games.map((game) => {
+          gamesId.push(game._id);
+        });
+      });
+  };
 
   useEffect(() => {
-    user.games.map((game) => {
-      gamesId.push(game._id);
-    });
+    fetchUser()
+    // user.games.map((game) => {
+    //   gamesId.push(game._id);
+    // });
   }, []);
 
   return (

@@ -17,7 +17,7 @@ const API_URL = import.meta.env.VITE_API_URL;
 function SearchBar() {
   const [games, setGames] = useState([]);
   const [searchGames, setSearchGames] = useState([]);
-  const { user, authenticateUser } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const [gamesId, setGamesId] = useState([]);
   const navigate = useNavigate();
   // const [searchGamesFiltered, setSearchGamesFiltered] = useState([]);
@@ -38,18 +38,31 @@ function SearchBar() {
         setSearchGames(sortedGames);
         setLoading(false);
       })
-      .then(()=>{
-        user.games.map((game) => {
-          gamesId.push(game._id);
-        });
-      })
+      // .then(()=>{
+      //   user.games.map((game) => {
+      //     gamesId.push(game._id);
+      //   });
+      // })
       .catch((error) => {
         console.error("Error fetching games:", error);
       });
   };
 
+  const fetchUser = () => {
+    axios
+      .get(`${API_URL}/user/${user._id}`, {
+        headers: { Authorization: `Bearer ${storedToken}` },
+      })
+      .then((res)=>{
+        res.data.games.map((game) => {
+          gamesId.push(game._id);
+        });
+      })
+  };
+
   useEffect(() => {
-    fetchGames();
+    fetchGames()
+    fetchUser()
     // user.games.map((game) => {
     //   gamesId.push(game._id);
     // });
@@ -71,11 +84,7 @@ function SearchBar() {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then(() => {
-        authenticateUser()
-      })
-      .then((res) => {
-        // res && console.log(res.data);
-        res && navigate("/profile")
+        navigate("/profile")
       })
   };
 

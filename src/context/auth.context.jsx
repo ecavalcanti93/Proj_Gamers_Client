@@ -14,6 +14,8 @@ function AuthProviderWrapper({children}) {
     localStorage.setItem("authToken", token);
   };
 
+  const storedToken = localStorage.getItem("authToken");
+
   const authenticateUser = () => {
     // Get the stored token from the localStorage
     const storedToken = localStorage.getItem("authToken");
@@ -33,7 +35,7 @@ function AuthProviderWrapper({children}) {
           setUser(user);
         })
 
-        .catch(() => {
+        .catch((error) => {
           // If the server sends an error response (invalid token)
           // Update state variables
           setIsLoggedIn(false);
@@ -59,13 +61,23 @@ function AuthProviderWrapper({children}) {
     authenticateUser();
   };
 
+  const refreshUser = () => {
+    axios
+      .get(`${API_URL}/user/${user._id}`, {
+        headers: { Authorization: `Bearer ${storedToken}` },
+      })
+      .then((res)=>{
+      return setUser(res.data)
+      })
+  };
+
   useEffect(() => {
     authenticateUser();
   }, []);
 
   return (
     <AuthContext.Provider
-    value={{ isLoggedIn, isLoading, user, storeToken, authenticateUser, logOutUser }}>
+    value={{ isLoggedIn, isLoading, user, storeToken, authenticateUser, logOutUser, refreshUser }}>
       {children}
     </AuthContext.Provider>
   );

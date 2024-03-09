@@ -9,27 +9,51 @@ const API_URL = import.meta.env.VITE_API_URL;
 
 function EditForm() {
   const navigate = useNavigate();
-  const { storeToken, authenticateUser, user } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const [email, setEmail] = useState(user.email);
   const [username, setUsername] = useState(user.username);
   const [userImage, setUserImage] = useState(user.userImage);
   const [editForm, setEditForm] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(undefined);
 
   const handleEmail = (e) => setEmail(e.target.value);
   const handleUsername = (e) => setUsername(e.target.value);
   const handleUserImage = (e) => setUserImage(e.target.files[0]);
   const handleForm = () => setEditForm(!editForm);
 
+  const storedToken = localStorage.getItem("authToken");
+
+  const fetchUser = () => {
+    axios
+      .get(`${API_URL}/user/${user._id}`, {
+        headers: { Authorization: `Bearer ${storedToken}` },
+      })
+      .then((res) => {
+        console.log(res.data);
+        setUsername(res.data.username);
+        setEmail(res.data.email);
+        setUserImage(res.data.userImage);
+      });
+  };
+
+  // const deleteImage = () => {
+  //   setUserImage(undefined);
+  // }
+
+  useEffect(() => {
+    fetchUser();
+  }, []);
+
   const handleProfileSubmit = (e) => {
     e.preventDefault();
 
-    const uploadData = new FormData()
+    const uploadData = new FormData();
 
-    uploadData.set('username', username)
-    uploadData.set('email', email)
+    uploadData.set("username", username);
+    uploadData.set("email", email);
 
-    if(userImage) {
-      uploadData.append('userImage', userImage)
+    if (userImage) {
+      uploadData.append("userImage", userImage);
     }
 
     if (!email || !username) {
@@ -37,7 +61,7 @@ function EditForm() {
       return;
     }
 
-    const storedToken = localStorage.getItem("authToken");
+    // const storedToken = localStorage.getItem("authToken");
 
     // Create an object representing the request body
     // const requestBody = { email, username, userImage };
@@ -53,20 +77,21 @@ function EditForm() {
       .then((response) => {
         handleForm();
         navigate("/profile");
+      })
+      .catch((error) => {
+        const errorDescription = error.response.data.message;
+        setErrorMessage(errorDescription);
       });
-
-    // .catch((error) => {
-    //   const errorDescription = error.response.data.message;
-    //   setErrorMessage(errorDescription);
-    // });
   };
-
-//   const handlePasswordSubmit = (e) => {
-//     e.preventDefault();
-//   };
 
   return (
     <>
+    <div>
+      <img className="image" src={userImage} alt="Profile Image" />
+      {/* <button className="button-delete" onClick={()=>{
+        deleteImage()
+      }}></button> */}
+    </div>
       <div className="edit-profile">
         <form onSubmit={handleProfileSubmit}>
           <label>Username:</label>
@@ -96,7 +121,6 @@ function EditForm() {
           <button type="submit">Save</button>
         </form>
       </div>
-
     </>
   );
 }

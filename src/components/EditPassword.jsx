@@ -14,12 +14,12 @@ function EditPassword() {
   const [newPassword, setNewPassword] = useState("");
   const [confirmNewPassword, setConfirmNewPassword] = useState("");
   const [editForm, setEditForm] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(undefined);
 
   const handleCurrentPassword = (e) => setCurrentPassword(e.target.value);
   const handleNewPassword = (e) => setNewPassword(e.target.value);
   const handleConfirmNewPassword = (e) => setConfirmNewPassword(e.target.value);
   const handleForm = () => setEditForm(!editForm);
- 
 
   const handlePasswordSubmit = (e) => {
     e.preventDefault();
@@ -44,12 +44,11 @@ function EditPassword() {
       .then((response) => {
         handleForm();
         navigate("/login");
+      })
+      .catch((error) => {
+        const errorDescription = error.response.data.message;
+        setErrorMessage(errorDescription);
       });
-
-    // .catch((error) => {
-    //   const errorDescription = error.response.data.message;
-    //   setErrorMessage(errorDescription);
-    // });
   };
 
   return (

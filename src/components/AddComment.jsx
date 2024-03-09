@@ -31,7 +31,6 @@ function AddComment({updateGame}) {
     .then(() => {
     setContent("");
     return updateGame()
-    // navigate(`/games/${gameId}`)
     })
      .catch((error) => console.log(error));
   };
