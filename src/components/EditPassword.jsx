@@ -9,7 +9,7 @@ const API_URL = import.meta.env.VITE_API_URL;
 
 function EditPassword() {
   const navigate = useNavigate();
-  const { storeToken, authenticateUser, user } = useContext(AuthContext);
+  const { logOutUser } = useContext(AuthContext);
   const [currentPassword, setCurrentPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [confirmNewPassword, setConfirmNewPassword] = useState("");
@@ -43,6 +43,7 @@ function EditPassword() {
 
       .then((response) => {
         handleForm();
+        logOutUser()
         navigate("/login");
       })
       .catch((error) => {

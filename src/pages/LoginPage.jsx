@@ -7,8 +7,8 @@ import "./LoginPage.css";
 const API_URL = import.meta.env.VITE_API_URL;
 
 function LoginPage(props) {
-  const [username, setUsername] = useState("marcel");
-  const [password, setPassword] = useState("Marcel123");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
 
   const navigate = useNavigate();
