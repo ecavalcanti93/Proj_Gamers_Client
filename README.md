@@ -10,6 +10,9 @@
 
 <img src="./src/assets/HomePage.png" width="800" height="384/">
 
+<h2>🛠️ Created by:</h2>
+<p><a href="https://www.linkedin.com/in/ecavalcanti93/"> Eric Cavalcanti</a> and Marcel</p>
+
 <h2>🛠️ Installation Steps:</h2>
 
 <p>1. Clone the repository</p>
