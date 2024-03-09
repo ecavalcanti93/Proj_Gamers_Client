@@ -3,7 +3,6 @@ import axios from "axios";
 import SearchBar from "../components/SearchBar";
 import "./GameListPage.css";
 import AddGame from "../components/AddGame";
-import { Routes, Route } from "react-router-dom";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -28,11 +27,21 @@ function GameListPage() {
   useEffect(() => {
     getAllGames();
   }, []);
-  
+
   return (
     <>
       <div>
-            {editForm && <AddGame />}
+        {/* <ModalForm /> */}
+        {/* <BasicModal /> */}
+        {/* <button
+        className="add-game"
+        onClick={() => {
+        handleForm();
+        }}
+      >
+        +
+      </button> */}
+        {editForm && <AddGame updateGames={getAllGames} />}
         <SearchBar />
       </div>
     </>

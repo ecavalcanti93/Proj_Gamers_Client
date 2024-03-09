@@ -38,9 +38,11 @@ function SearchBar() {
         setSearchGames(sortedGames);
         setLoading(false);
       })
-      .then
-      // console.log(handleGamesTitelesNoRepeat())
-      ()
+      .then(()=>{
+        user.games.map((game) => {
+          gamesId.push(game._id);
+        });
+      })
       .catch((error) => {
         console.error("Error fetching games:", error);
       });
@@ -48,9 +50,9 @@ function SearchBar() {
 
   useEffect(() => {
     fetchGames();
-    user.games.map((game) => {
-      gamesId.push(game._id);
-    });
+    // user.games.map((game) => {
+    //   gamesId.push(game._id);
+    // });
   }, []);
 
   const handleSearchInputChange = (e) => {
@@ -80,7 +82,7 @@ function SearchBar() {
   return (
     <div className="center">
       <div className="search-box flex-center">
-        <BasicModal />
+        <BasicModal refreshedGames={fetchGames} />
         <input
           type="text"
           placeholder="Search for games..."

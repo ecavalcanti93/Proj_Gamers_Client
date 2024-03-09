@@ -71,7 +71,7 @@ function GameCard({
 
             <div className="btn-details">
               <BackToBack />
-              <BackToTop/>
+              
               {gamesId.includes(gameId) ? (
                 <DeleteGameButton />
               ) : (
@@ -115,6 +115,8 @@ function GameCard({
                   </div>
                 )}
               </Comments>
+              <BackToTop/>
+
             </div>
           ) : (
             <div className="loading">
