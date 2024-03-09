@@ -1,4 +1,3 @@
-import "./gameDetailsPage.css";
 import { useState, useEffect, useContext } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
@@ -6,7 +5,6 @@ import axios from "axios";
 import GameCard from "../components/GameCard";
 import "./GameDetailsPage.css";
 import ModalEdit from "../components/ModalEdit";
-import DeleteGameButton from "../components/ModalDelete";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
