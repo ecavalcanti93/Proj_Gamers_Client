@@ -1,5 +1,5 @@
 <h1 align="center" id="title">Project IronHack - GamersBin</h1>
-
+<img src="./src/assets/logo_horizontal.png" width="200" height="auto" align="center" />
 <p id="description">Created to be a virtual library of games GamersBin is a project designed to help gamers remember the games they've played and that have left a mark on their lives.</p>
 
 <h2>🚀 Demo</h2>
@@ -10,7 +10,7 @@
 
 <img src="./src/assets/HomePage.png" width="800" height="384/">
 
-<h2>🛠️ Created by:</h2>
+<h2>🔰 Created by:</h2>
 <p><a href="https://www.linkedin.com/in/ecavalcanti93/" target="_blank"> Eric Cavalcanti</a> and Marcel</p>
 
 <h2>🛠️ Installation Steps:</h2>
