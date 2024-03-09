@@ -16,7 +16,8 @@
   
   .edit-profile input[type="text"],
   .edit-profile input[type="email"],
-  .edit-profile input[type="input"] {
+  .edit-profile input[type="input"],
+  .edit-profile input[type="password"] {
     width: 100%;
     padding: 8px;
     margin-bottom: 15px;
