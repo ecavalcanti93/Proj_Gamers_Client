@@ -27,6 +27,7 @@ function AddGame() {
     const requestBody = { title, genre, company, platform, rating, age, description, image };
 
     const storedToken = localStorage.getItem('authToken');
+    const uploadData = new FormData()
 
     axios
     .post( `${API_URL}/games`,
@@ -98,7 +99,7 @@ function AddGame() {
         </select>
         <br />
         <label>PEGI:</label>
-        <select value={rating} onChange={(e) => setRating(e.target.value)}>
+        <select value={age} onChange={(e) => setAge(e.target.value)}>
           <option>3</option>
           <option>7</option>
           <option>12</option>
@@ -127,7 +128,7 @@ function AddGame() {
           type="file"
           name="image"
           value={image}
-          onChange={(e) => setImage(e.target.value)}
+          onChange={(e) => setImage(e.target.files[0])}
         />
         <br />
 
