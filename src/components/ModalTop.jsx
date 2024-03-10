@@ -11,9 +11,11 @@ function BackToTop() {
   const navigate = useNavigate();
 
   return (
+    <div className="btn-top">
     <button className="button-top" onClick={()=>{
         scroll.scrollToTop();
     }}></button>
+    </div>
   );
 }
 

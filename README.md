@@ -8,7 +8,7 @@
 
 <h2>Project Screenshots:</h2>
 
-<img src="./src/assets/HomePage.png" width="800" height="384/">
+<img src="./src/assets/HomePage2.png" width="850" height="609/">
 
 <h2>🔰 Created by:</h2>
 <p><a href="https://www.linkedin.com/in/ecavalcanti93/" target="_blank"> Eric Cavalcanti</a> and Marcel</p>
