@@ -95,39 +95,42 @@ const Navbar2 = () => {
                                 {isLoggedIn && (
                             <>
                                 <Link to="/games">
-                                    <button className="buttons-nav2">Games</button>
+                                    <button onClick={() => setToggleMenu(false)} className="buttons-nav2">Games</button>
                                 </Link>
                                 <Link to="/profile">
-                                    <button className="buttons-nav2">My Library</button>
+                                    <button onClick={() => setToggleMenu(false)} className="buttons-nav2">My Library</button>
                                 </Link>
                                 <div
                                     className="dropdown"
                                     onMouseEnter={showDropdownMenu}
                                     onMouseLeave={hideDropdownMenu}
                                 >
-                                    <button className="buttons-nav2">Settings</button>
+                                    <button  className="buttons-nav2">Settings</button>
                                     {showDropdown && (
                                         <div className="dropdown-content2">
                                             <Link to="/profile/edit">
-                                                <button className="font-drop">Edit Profile</button>
+                                                <button onClick={() => setToggleMenu(false)} className="font-drop">Edit Profile</button>
                                             </Link>
                                             <Link to="/profile/editPassword">
-                                                <button className="font-drop">Change Password</button>
+                                                <button onClick={() => setToggleMenu(false)} className="font-drop">Change Password</button>
                                             </Link>
                                         </div>
                                     )}
                                 </div>
-                                <button className="buttons-nav2" onClick={logOutUser}>Logout</button>
+                                <button className="buttons-nav2" onClick={()=>{
+                                  logOutUser()
+                                  setToggleMenu(false)
+                                }}>Logout</button>
                             </>
                         )}
 
                         {!isLoggedIn && (
                             <>
                                 <Link to="/signup">
-                                    <button className="buttons-nav2">Sign Up</button>
+                                    <button onClick={() => setToggleMenu(false)} className="buttons-nav2">Sign Up</button>
                                 </Link>
                                 <Link to="/login">
-                                    <button className="buttons-nav2">Login</button>
+                                    <button onClick={() => setToggleMenu(false)} className="buttons-nav2">Login</button>
                                 </Link>
                             </>
                         )}
