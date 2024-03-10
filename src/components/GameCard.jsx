@@ -58,10 +58,26 @@ function GameCard({
     <>
       <div className="gamecard">
         <div className="div-container1">
+          <div className="test">
           <img className="card" src={image} alt="game image" />
           {/* <span className="material-symbols-outlined">+</span> */}
 
           {/* <button onClick={()=>{addGame=addGame()}}>Add game</button> */}
+            <div className="btn-details">
+              <BackToBack />
+              
+              {gamesId.includes(gameId) ? (
+                <DeleteGameButton />
+              ) : (
+                <button
+                  className="add-game"
+                  onClick={() => {
+                    addGame = addGame();
+                  }}
+                ></button>
+              )}
+            </div>
+            </div>
         </div>
         <div className="div-container2">
           <div className="sticky">
@@ -83,20 +99,6 @@ function GameCard({
             </p>
             <Pegi>{age}</Pegi>
 
-            <div className="btn-details">
-              <BackToBack />
-              
-              {gamesId.includes(gameId) ? (
-                <DeleteGameButton />
-              ) : (
-                <button
-                  className="add-game"
-                  onClick={() => {
-                    addGame = addGame();
-                  }}
-                ></button>
-              )}
-            </div>
           </div>
         </div>
 
@@ -112,7 +114,7 @@ function GameCard({
                     return (
                       <div className="text-padding" key={comment._id}>
                         <p>
-                          <b>{comment.author.username}:</b> {comment.content}
+                          <b className="comment-author">{comment.author.username}:</b> {comment.content}
                         </p>
                       </div>
                     );
