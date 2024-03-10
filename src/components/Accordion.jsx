@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import image1 from "../assets/image1.jpg";
 import image2 from "../assets/image2.jpg";
 import image3 from "../assets/image3.jpg";
@@ -82,7 +83,7 @@ export const Accordion = () => {
           >
             <img src={card.image} alt={card.header} />
             <div className="content">
-              <span className="material-symbols-outlined">+</span>
+              {/* <span className="material-symbols-outlined">+</span> */}
               <div>
                 <h2>{card.header}</h2>
                 <p>{card.text}</p>

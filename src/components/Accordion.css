@@ -42,7 +42,7 @@
     object-fit: cover;
   }
   
-  article .material-symbols-outlined {
+  /* article .material-symbols-outlined {
     display: grid;
     place-items: center;
     width: 50px;
@@ -50,7 +50,7 @@
     background: rgb(255 255 255 / 80%);
     border-radius: 50%;
     font-size: 28px;
-  }
+  } */
   
   article .content {
     position: absolute;
@@ -82,6 +82,11 @@
     height: 100%;
     /* filter: grayscale(0.5); */
   }
+/* 
+  .color-sub{
+    color: #fb3108;
+    font-weight: 800;
+  } */
 
 
   @media screen and (max-width:1050px) {
@@ -117,3 +122,4 @@
       border: 2px solid #2323A1;
     }
   }
+
