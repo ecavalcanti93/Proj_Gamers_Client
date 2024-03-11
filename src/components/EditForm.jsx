@@ -86,13 +86,10 @@ function EditForm() {
 
   return (
     <>
+      <div className="edit-profile">
     <div>
       <img className="image" src={userImage} alt="Profile Image" />
-      {/* <button className="button-delete" onClick={()=>{
-        deleteImage()
-      }}></button> */}
     </div>
-      <div className="edit-profile">
         <form onSubmit={handleProfileSubmit}>
           <label>Username:</label>
           <input
