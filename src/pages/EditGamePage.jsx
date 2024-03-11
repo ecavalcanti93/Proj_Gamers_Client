@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./EditGamePage.css"
+import { animateScroll as scroll} from "react-scroll";
+
 const API_URL = import.meta.env.VITE_API_URL;
 
 function EditGamePage(props) {
@@ -35,6 +37,7 @@ function EditGamePage(props) {
         setAge(oneGame.age);
         setDescription(oneGame.description);
         setImage(oneGame.image);
+        scroll.scrollToTop();
       })
       .catch((error) => console.log(error));
   }, []);

@@ -136,7 +136,9 @@ function SearchBar() {
             </div>
           ))}
         </div>
+        <div className="btn-top-search">
         <BackToTop/>
+        </div>
         </>
         
       )}

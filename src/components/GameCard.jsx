@@ -131,7 +131,6 @@ function GameCard({
                   </div>
                 )}
               </Comments>
-              
             </div>
           ) : (
             <div className="loading">
@@ -142,7 +141,9 @@ function GameCard({
           )}
         </div>
       </div>
-      <BackToTop />
+      <div className="backtotop">
+              <BackToTop/>
+              </div>
     </>
   );
 }

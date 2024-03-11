@@ -8,7 +8,7 @@
     font-family: "Mont";
     src: 
     local("Mont-HeavyDEMO")
-    url("Mont-HeavyDEMO.otf") format("truetype");
+    url("https://www.dafont.com/es/mont.font") format("truetype");
 }
 
 h1 {
@@ -19,7 +19,7 @@ h1 {
     font-family: "Chopin";
     src:
     local("Chopin-Light")
-    url("Chopin-Light.ttf") format("truetype");
+    url("https://www.dafont.com/es/chopin.font") format("truetype");
 }
 
 h3 {

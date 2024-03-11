@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
+import { animateScroll as scroll} from "react-scroll";
 import axios from "axios";
 import GameCard from "../components/GameCard";
 import "./GameDetailsPage.css";
@@ -34,6 +35,7 @@ function GameDetailsPage() {
 
   useEffect(() => {
     getGame();
+    scroll.scrollToTop();
   }, []);
 
   const handleAddGame = () => {
