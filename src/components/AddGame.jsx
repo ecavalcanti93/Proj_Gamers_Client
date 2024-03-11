@@ -45,7 +45,7 @@ function AddGame({refreshedGames, handleClose}) {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then(() => {
-        // Reset the state
+        // Reset the state/
         setTitle("");
         setGenre("");
         setCompany("");
