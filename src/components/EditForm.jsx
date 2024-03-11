@@ -10,6 +10,7 @@ const API_URL = import.meta.env.VITE_API_URL;
 function EditForm() {
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
+  const [updatedUser, setUpdatedUser] = useState(null);
   const [email, setEmail] = useState(user.email);
   const [username, setUsername] = useState(user.username);
   const [userImage, setUserImage] = useState(user.userImage);
@@ -29,16 +30,12 @@ function EditForm() {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then((res) => {
-        console.log(res.data);
+        setUpdatedUser(res.data)
         setUsername(res.data.username);
         setEmail(res.data.email);
         setUserImage(res.data.userImage);
       });
   };
-
-  // const deleteImage = () => {
-  //   setUserImage(undefined);
-  // }
 
   useEffect(() => {
     fetchUser();

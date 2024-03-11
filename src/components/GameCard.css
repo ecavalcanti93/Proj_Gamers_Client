@@ -77,6 +77,11 @@
     color: #fb3108;
 }
 
+.no-comments{
+    background-color: #fb3108;
+    height: 100px;
+}
+
 .text-padding{
 
     border-radius: 5px;
