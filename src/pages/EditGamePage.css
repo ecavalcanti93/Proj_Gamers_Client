@@ -38,6 +38,7 @@
     background-color: black;
     color: #fff;
     cursor: pointer;
+    margin-top: 10px;
   }
   
   .game-title button[type="submit"]:hover {
