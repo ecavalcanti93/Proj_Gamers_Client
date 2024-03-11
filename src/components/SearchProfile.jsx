@@ -104,7 +104,9 @@ function SearchProfile() {
           </div>
         ))}
       </div>
+      <div className="btn-top-search">
       <BackToTop />
+      </div>
     </div>
   );
 }

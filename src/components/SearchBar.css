@@ -54,6 +54,12 @@
   transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
 }
 
+.btn-top-search{
+  margin-right: 75px;
+  width: 100%;
+  float: right;
+}
+
 .input-search:focus{
   width: 300px;
   border-radius: 0px;
