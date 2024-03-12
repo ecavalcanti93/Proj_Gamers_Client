@@ -15,6 +15,7 @@ function ProfilePage() {
 
   useEffect(() => {
     scroll.scrollToTop();
+    console.log(user);
   }, []);
   
 
