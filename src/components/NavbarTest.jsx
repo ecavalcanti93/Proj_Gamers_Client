@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../context/auth.context";
 import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
-import logo from "../public/logo.png";
+import logo from "../assets/logo.png";
 import "./NavbarTest2.css";
 
 const Navbar2 = () => {

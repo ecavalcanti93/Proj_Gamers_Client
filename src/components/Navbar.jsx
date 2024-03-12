@@ -3,7 +3,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../context/auth.context";
 import "./Navbar.css";
 import EditForm from "./EditForm";
-import logo from "../public/logo.png";
+import logo from "../assets/logo.png";
 
 function Navbar() {
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);

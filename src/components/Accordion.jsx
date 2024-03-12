@@ -5,16 +5,16 @@ import "./Accordion.css";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
-// import image1 from "../public/image1.jpg";
-// import image2 from "../public/image2.jpg";
-// import image3 from "../public/image3.jpg";
-// import image4 from "../public/image4.jpeg";
-// import image5 from "../public/image5.jpg";
-// import image6 from "../public/image6.jpg";
-// import image7 from "../public/image7.webp";
-// import image8 from "../public/image8.jpg";
-// import image9 from "../public/image9.jpg";
-// import image10 from "../public/image10.jpeg";
+// import image1 from "../assets/image1.jpg";
+// import image2 from "../assets/image2.jpg";
+// import image3 from "../assets/image3.jpg";
+// import image4 from "../assets/image4.jpeg";
+// import image5 from "../assets/image5.jpg";
+// import image6 from "../assets/image6.jpg";
+// import image7 from "../assets/image7.webp";
+// import image8 from "../assets/image8.jpg";
+// import image9 from "../assets/image9.jpg";
+// import image10 from "../assets/image10.jpeg";
 
 // const cards = [
 //   {
