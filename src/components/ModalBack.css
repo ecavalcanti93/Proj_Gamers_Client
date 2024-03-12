@@ -9,7 +9,7 @@
     outline: none;
     border-radius: 25px;
     transition: all .5s ease-in-out;
-    background-image: url("/src/assets/return.png");
+    background-image: url("/src/public/return.png");
     background-size: 25px;
     background-repeat: no-repeat;
     background-position: center center;

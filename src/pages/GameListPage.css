@@ -28,7 +28,7 @@
     font-size: 18px;
     letter-spacing: 2px;
     outline: none;
-    background-image: url("/src/assets/AddLibrary.png");
+    background-image: url("/src/public/AddLibrary.png");
     border-radius: 25px;
     background-size: 25px;
     background-repeat: no-repeat;

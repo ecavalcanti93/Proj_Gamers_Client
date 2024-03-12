@@ -3,7 +3,7 @@ import axios from "axios";
 import { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../context/auth.context";
 import "./Perfil.css";
-import logo from "../assets/logo.png";
+import logo from "../public/logo.png";
 import Stack from "@mui/material/Stack";
 import CircularProgress from "@mui/material/CircularProgress";
 

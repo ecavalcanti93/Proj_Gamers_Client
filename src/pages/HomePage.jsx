@@ -1,10 +1,10 @@
 import "./HomePage.css";
-import menu2 from "../assets/menu2.png";
+import menu2 from "../public/menu2.png";
 import { Accordion } from "../components/Accordion";
 import { Link } from "react-router-dom";
 import { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../context/auth.context";
-import steps from "../assets/Steps.svg"
+import steps from "../public/Steps.svg"
 import { animateScroll as scroll} from "react-scroll";
 
 function HomePage() {

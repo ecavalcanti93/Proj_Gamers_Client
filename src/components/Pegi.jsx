@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
-import pegi3 from "../assets/age-3-black_0.jpg"
-import pegi7 from "../assets/age-7-black.jpg"
-import pegi12 from "../assets/age-12-black.jpg"
-import pegi16 from "../assets/age-16-black.jpg"
-import pegi18 from "../assets/age-18-black 2_0.jpg"
+import pegi3 from "../public/age-3-black_0.jpg"
+import pegi7 from "../public/age-7-black.jpg"
+import pegi12 from "../public/age-12-black.jpg"
+import pegi16 from "../public/age-16-black.jpg"
+import pegi18 from "../public/age-18-black 2_0.jpg"
 import "./Pegi.css"
 import { Link } from "react-router-dom";
 

@@ -18,14 +18,14 @@ import Component from "./components/Footer";
 
 function App() {
 
-  const CLOUDINARY_NAME = import.meta.env.VITE_CLOUDINARY_NAME;
+  // const CLOUDINARY_NAME = import.meta.env.VITE_CLOUDINARY_NAME;
 
-  // Create a Cloudinary instance and set your cloud name.
-  const cld = new Cloudinary({
-    cloud: {
-      cloudName: CLOUDINARY_NAME
-    }
-  });
+  // // Create a Cloudinary instance and set your cloud name.
+  // const cld = new Cloudinary({
+  //   cloud: {
+  //     cloudName: CLOUDINARY_NAME
+  //   }
+  // });
 
   return (
     <div className="App">

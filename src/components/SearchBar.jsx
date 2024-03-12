@@ -10,7 +10,7 @@ import AddCreatedGame from "./AddCreatedGame";
 import { filter } from "lodash";
 import BackTop from "antd/es/float-button/BackTop";
 import BackToTop from "./ModalTop";
-// import defaultGameImage from "../assets/default-game-image.webp"
+// import defaultGameImage from "../public/default-game-image.webp"
 
 const API_URL = import.meta.env.VITE_API_URL;
 

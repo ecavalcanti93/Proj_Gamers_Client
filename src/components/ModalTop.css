@@ -9,7 +9,7 @@
     outline: none;
     border-radius: 25px;
     transition: all .5s ease-in-out;
-    background-image: url("/src/assets/up-round-svgrepo-com-white.svg");
+    background-image: url("/src/public/up-round-svgrepo-com-white.svg");
     background-size: 30px;
     background-repeat: no-repeat;
     background-position: center center;
