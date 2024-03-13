@@ -55,6 +55,7 @@ function AddGame({refreshedGames, handleClose}) {
         setDescription("");
         setImage("");
         handleClose();
+        navigate("/profile")
         return refreshedGames()
       })
       .catch((error) => console.log(error));
