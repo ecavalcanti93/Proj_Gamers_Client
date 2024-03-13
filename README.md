@@ -11,7 +11,7 @@
 <img src="./src/assets/HomePage2.png" width="850" height="609/">
 
 <h2>🔰 Created by:</h2>
-<p><a href="https://www.linkedin.com/in/ecavalcanti93/" target="_blank"> Eric Cavalcanti</a> and Marcel</p>
+<p><a href="https://github.com/ecavalcanti93" target="_blank"> Eric Cavalcanti</a> and <a href="https://github.com/MarcelCostaFerre" target="_blank">Marcel Costa</a></p>
 
 <h2>🛠️ Installation Steps:</h2>
 

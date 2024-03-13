@@ -154,6 +154,10 @@ hr{
             font-size: 27px;
             line-height: 38px;
         }
+
+        .sb-footer{
+            flex-direction: column;
+        }
     }
 }
 
