@@ -298,7 +298,9 @@ button:hover {
 }
 
 .subtitle-home{
-    align-content: center;
+    /* align-content: center; */
+    font-size: 25px;
+    width: 260px;
 }
 
     .steps{
@@ -312,9 +314,11 @@ button:hover {
     }
 
     button{
-        display: flex;
-        flex-direction: column;
-        padding: 8px 40px;
+        width: 300px;
+        margin-bottom: 1rem;
+        /* display: flex;
+        flex-direction: column; */
+        /* padding: 8px 40px; */
     }
 
     .menu-div2{
