@@ -44,7 +44,7 @@ function AddGame({refreshedGames, handleClose}) {
       .post(`${API_URL}/games`, uploadData, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
-      .then(() => {
+      .then((res) => {
         // Reset the state//
         setTitle("");
         setGenre("");
@@ -55,7 +55,7 @@ function AddGame({refreshedGames, handleClose}) {
         setDescription("");
         setImage("");
         handleClose();
-        navigate("/profile")
+        navigate(`/games/${res.data.games[res.data.games.length -1]}`)
         return refreshedGames()
       })
       .catch((error) => console.log(error));
