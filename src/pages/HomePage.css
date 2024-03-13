@@ -285,7 +285,10 @@ button:hover {
 }
 
 .menu-button{
-    align-items: center;
+    /* align-items: center; */
+    display: flex;
+    margin-left: auto;
+    flex-direction: column;
 }
 
 .banner2{
