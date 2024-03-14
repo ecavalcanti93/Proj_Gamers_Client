@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useState, useEffect, useContext } from "react";
+import { useContext } from "react";
 import { useParams, useNavigate, } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 import axios from "axios";
@@ -14,14 +14,12 @@ function DeleteGameButton() {
 
   const fakeDeleteGame = () => {
     const storedToken = localStorage.getItem("authToken");
-    // console.log(storedToken);
     axios
       .delete(`${API_URL}/games/${gameId}`, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then(() => {
         navigate("/profile");
-        // navigate("/games");
       })
       .catch((err) => console.log(err));
   };

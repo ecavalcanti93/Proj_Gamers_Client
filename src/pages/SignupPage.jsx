@@ -25,7 +25,6 @@ function SignupPage(props) {
     e.preventDefault();
 
     // Create an object representing the request body
-    // const requestBody = { email, password, username, userImage };
 
     const uploadData = new FormData();
 
@@ -47,10 +46,6 @@ function SignupPage(props) {
         navigate("/login");
       });
 
-    // .catch((error) => {
-    //   const errorDescription = error.response.data.message;
-    //   setErrorMessage(errorDescription);
-    // });
   };
 
   useEffect(() => {
@@ -92,7 +87,6 @@ function SignupPage(props) {
           <input
             type="file"
             name="userImage"
-            // value={userImage}
             onChange={handleUserImage}
           />
 

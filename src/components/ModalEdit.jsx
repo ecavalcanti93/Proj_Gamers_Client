@@ -77,20 +77,7 @@ export default function BasicModal({ refreshedGame }) {
       uploadData.append('image', image)
     }
 
-    // const requestBody = {
-    //   title,
-    //   genre,
-    //   company,
-    //   platform,
-    //   rating,
-    //   age,
-    //   description,
-    //   image,
-    // };
     const storedToken = localStorage.getItem("authToken");
-
-    // console.log(uploadData);
-    // return
 
     axios.post(`${API_URL}/games/${gameId}`, uploadData, {
       headers: { Authorization: `Bearer ${storedToken}` },
@@ -191,7 +178,6 @@ export default function BasicModal({ refreshedGame }) {
         <input
           type="file"
           name="image"
-          // value={image}
           onChange={(e) => setImage(e.target.files[0])}
         />
         <br />

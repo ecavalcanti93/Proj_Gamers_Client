@@ -1,23 +1,17 @@
-/* App.module.css */
-
 .footer {
-    padding: 50px 0; /* Adapte conforme necessário */
+    padding: 50px 0; 
   }
   
   .socialBtn {
-    /* Estilos para os botões de mídia social */
     font-size: 24px;
   }
   
   .newsletter {
-    /* Estilos para o formulário de inscrição na newsletter */
     align-items: center;
   }
   
   .copyRight {
-    /* Estilos para o rodapé de direitos autorais */
     font-size: 14px;
   }
   
-  /* Adicione mais estilos conforme necessário para personalizar sua aplicação */
   

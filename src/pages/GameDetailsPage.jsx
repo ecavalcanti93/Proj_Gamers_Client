@@ -11,14 +11,10 @@ const API_URL = import.meta.env.VITE_API_URL;
 
 function GameDetailsPage() {
   const [game, setGame] = useState(null);
-  // const [canEdit, setCanEdit] = useState(false);
   const { gameId } = useParams();
   const navigate = useNavigate();
   const { user, authenticateUser } = useContext(AuthContext);
 
-  // const handleCanEdit = () => {
-  //   user.username === game.author.username ? setCanEdit(true) : canEdit;
-  // };
 
   const getGame = () => {
     const storedToken = localStorage.getItem("authToken");
@@ -28,7 +24,6 @@ function GameDetailsPage() {
       })
       .then((res) => {
         setGame(res.data);
-        // console.log(game);
       })
       .catch((error) => console.log(error));
   };
@@ -51,29 +46,12 @@ function GameDetailsPage() {
       });
   };
 
-  // const deleteGame = () => {
-  //   const storedToken = localStorage.getItem("authToken");
-  //   axios
-  //     .delete(`${API_URL}/games/${gameId}`, {
-  //       headers: { Authorization: `Bearer ${storedToken}` },
-  //     })
-  //     .then(() => {
-  //       navigate("/games");
-  //     })
-  //     .catch((err) => console.log(err));
-  // };
-  // console.log(game);
   return (
     <div>
       <div className="buttons-detail">
-        {/* <BackToBack /> */}
         {game && user._id.toString() === game.author._id.toString() && (
           <ModalEdit refreshedGame = {getGame} />
         )}
-        {/* {game && user.games.includes(game._id) && <DeleteGameButton />} */}
-
-        {/* <ModalEdit /> */}
-        {/* <DeleteGameButton /> */}
       </div>
       <GameCard {...game} updateGame={getGame} addGame={handleAddGame} />
       <div>

@@ -7,7 +7,6 @@ import { animateScroll as scroll} from "react-scroll";
 const API_URL = import.meta.env.VITE_API_URL;
 
 function EditGamePage(props) {
-  // const [game, setGame] = useState(null);
 
   const [title, setTitle] = useState("");
   const [genre, setGenre] = useState("");
@@ -62,15 +61,6 @@ function EditGamePage(props) {
       navigate(`/games/${gameId}`);
     });
   };
-
-  // const deleteGame = () => {
-  //   axios
-  //     .delete(`${API_URL}/games/${gameId}`)
-  //     .then(() => {
-  //       navigate("/games");
-  //     })
-  //     .catch((err) => console.log(err));
-  // };
 
   return (
     <div className="game-title">
@@ -127,13 +117,6 @@ function EditGamePage(props) {
           <option>16</option>
           <option>18</option>
         </select>
-        {/* <label>PEGI:</label>
-        <input
-          type="number"
-          name="age"
-          value={age}
-          onChange={(e) => setAge(e.target.value)}
-        /> */}
         <br />
         <label>Description:</label>
         <textarea
@@ -156,7 +139,6 @@ function EditGamePage(props) {
         <button className="button-submit" type="submit">Update Game</button>
       </form>
 
-      {/* <button onClick={deleteGame}>Delete Game</button> */}
     </div>
   );
 }

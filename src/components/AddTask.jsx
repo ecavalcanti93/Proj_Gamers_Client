@@ -11,7 +11,6 @@ function AddTask(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // We need the project id when creating the new task
     const { projectId } = props;
     // Create an object representing the body of the POST request
     const requestBody = { title, description, projectId };
@@ -23,8 +22,6 @@ function AddTask(props) {
         setTitle("");
         setDescription("");
       
-        // Invoke the callback function coming through the props
-        // from the ProjectDetailsPage, to refresh the project details
         props.refreshProject();
       })
       .catch((error) => console.log(error));

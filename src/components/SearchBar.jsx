@@ -6,11 +6,7 @@ import "./SearchBar.css";
 import BasicModal from "./Modal";
 import Stack from "@mui/material/Stack";
 import CircularProgress from "@mui/material/CircularProgress";
-import AddCreatedGame from "./AddCreatedGame";
-import { filter } from "lodash";
-import BackTop from "antd/es/float-button/BackTop";
 import BackToTop from "./ModalTop";
-// import defaultGameImage from "../assets/default-game-image.webp"
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -20,7 +16,6 @@ function SearchBar() {
   const { user } = useContext(AuthContext);
   const [gamesId, setGamesId] = useState([]);
   const navigate = useNavigate();
-  // const [searchGamesFiltered, setSearchGamesFiltered] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const storedToken = localStorage.getItem("authToken");
@@ -38,11 +33,6 @@ function SearchBar() {
         setSearchGames(sortedGames);
         setLoading(false);
       })
-      // .then(()=>{
-      //   user.games.map((game) => {
-      //     gamesId.push(game._id);
-      //   });
-      // })
       .catch((error) => {
         console.error("Error fetching games:", error);
       });
@@ -63,9 +53,6 @@ function SearchBar() {
   useEffect(() => {
     fetchGames()
     fetchUser()
-    // user.games.map((game) => {
-    //   gamesId.push(game._id);
-    // });
   }, []);
 
   const handleSearchInputChange = (e) => {

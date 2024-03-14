@@ -147,13 +147,8 @@
     .titlecard{
         display: flex;
         align-items: center;
-        /* justify-content: center; */
     }
 
-    /* .button-back{
-        margin-bottom: 25px;
-    } */
-  }
   
   /* Estilos para largura de tela até 550px */
   @media screen and  (max-width: 700px) {
