@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 import { animateScroll as scroll} from "react-scroll";
 import axios from "axios";
@@ -11,14 +11,9 @@ const API_URL = import.meta.env.VITE_API_URL;
 
 function GameDetailsPage() {
   const [game, setGame] = useState(null);
-  // const [canEdit, setCanEdit] = useState(false);
   const { gameId } = useParams();
   const navigate = useNavigate();
   const { user, authenticateUser } = useContext(AuthContext);
-
-  // const handleCanEdit = () => {
-  //   user.username === game.author.username ? setCanEdit(true) : canEdit;
-  // };
 
   const getGame = () => {
     const storedToken = localStorage.getItem("authToken");
@@ -28,7 +23,6 @@ function GameDetailsPage() {
       })
       .then((res) => {
         setGame(res.data);
-        // console.log(game);
       })
       .catch((error) => console.log(error));
   };
@@ -63,16 +57,14 @@ function GameDetailsPage() {
   //     .catch((err) => console.log(err));
   // };
   // console.log(game);
+
   return (
     <div>
       <div className="buttons-detail">
-        {/* <BackToBack /> */}
         {game && user._id.toString() === game.author._id.toString() && (
           <ModalEdit refreshedGame = {getGame} />
         )}
         {/* {game && user.games.includes(game._id) && <DeleteGameButton />} */}
-
-        {/* <ModalEdit /> */}
         {/* <DeleteGameButton /> */}
       </div>
       <GameCard {...game} updateGame={getGame} addGame={handleAddGame} />

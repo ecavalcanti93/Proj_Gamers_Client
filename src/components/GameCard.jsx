@@ -1,4 +1,4 @@
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../context/auth.context";
 import axios from "axios";
@@ -49,9 +49,6 @@ function GameCard({
 
   useEffect(() => {
     fetchUser()
-    // user.games.map((game) => {
-    //   gamesId.push(game._id);
-    // });
   }, []);
 
   return (
@@ -62,7 +59,6 @@ function GameCard({
           <img className="card" src={image} alt="game image" />
           {/* <span className="material-symbols-outlined">+</span> */}
 
-          {/* <button onClick={()=>{addGame=addGame()}}>Add game</button> */}
             <div className="btn-details">
               <BackToBack />
               

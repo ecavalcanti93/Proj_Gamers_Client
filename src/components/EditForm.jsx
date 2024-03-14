@@ -1,6 +1,6 @@
 import "./EditForm.css";
 import { useState, useEffect, useContext } from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 import axios from "axios";
 import { message } from "antd";
@@ -58,11 +58,6 @@ function EditForm() {
       return;
     }
 
-    // const storedToken = localStorage.getItem("authToken");
-
-    // Create an object representing the request body
-    // const requestBody = { email, username, userImage };
-
     // Make an axios request to the API
     // If the PUT request is a successful redirect to the login page
     // If the request resolves with an error, set the error message in the state
@@ -71,7 +66,7 @@ function EditForm() {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
 
-      .then((response) => {
+      .then(() => {
         handleForm();
         navigate("/profile");
       })

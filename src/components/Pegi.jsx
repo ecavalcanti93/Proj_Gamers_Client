@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import pegi3 from "../assets/age-3-black_0.jpg"
 import pegi7 from "../assets/age-7-black.jpg"
 import pegi12 from "../assets/age-12-black.jpg"
@@ -9,14 +8,6 @@ import { Link } from "react-router-dom";
 
 
 function Pegi (props) {
-
-    // function result() {
-    //     if(props.children >= 0) {
-    //         if(props.children <= 5) {
-    //             return Math.round(props.children)
-    //         }else {return 'Choose a number between 0 and 5'}
-    //     }else {return 'Choose a number between 0 and 5'}
-    // }
 
     function logoPegi() {
         switch (props.children) {
@@ -34,7 +25,7 @@ function Pegi (props) {
     }
 
     return (
-        <Link to="https://pegi.info/"><img src={logoPegi()} alt="pegi logo" className='logo-pegi'/></Link>
+        <Link to="https://pegi.info/" target="_blank"><img src={logoPegi()} alt="pegi logo" className='logo-pegi'/></Link>
     )
 }
 

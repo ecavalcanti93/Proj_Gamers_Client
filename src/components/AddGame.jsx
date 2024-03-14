@@ -1,13 +1,12 @@
 import { useState } from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./AddGame.css";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
 function AddGame({refreshedGames, handleClose}) {
-  // console.log(props);
-  // return
+
   const [title, setTitle] = useState("");
   const [genre, setGenre] = useState("");
   const [company, setCompany] = useState("");
@@ -35,8 +34,6 @@ function AddGame({refreshedGames, handleClose}) {
     if (image) {
       uploadData.append("image", image);
     }
-
-    // const requestBody = { title, genre, company, platform, rating, age, description, image };
 
     const storedToken = localStorage.getItem("authToken");
 

@@ -1,6 +1,6 @@
 import "./EditForm.css";
-import { useState, useEffect, useContext } from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 import axios from "axios";
 import { message } from "antd";
@@ -41,7 +41,7 @@ function EditPassword() {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
 
-      .then((response) => {
+      .then(() => {
         handleForm();
         logOutUser()
         navigate("/login");

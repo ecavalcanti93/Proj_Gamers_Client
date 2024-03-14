@@ -11,7 +11,6 @@ export default function BasicModal({ updategames }) {
 
   return (
     <div>
-      {/* <Button className='button' onClick={handleOpen}></Button> */}
       <button className="button-home-add" onClick={handleOpen}>
         Add Game
       </button>

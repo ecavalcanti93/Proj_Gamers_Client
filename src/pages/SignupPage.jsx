@@ -1,13 +1,12 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import {Cloudinary} from "@cloudinary/url-gen";
 import axios from "axios";
 import "./SignupPage.css";
-import { animateScroll as scroll} from "react-scroll";
+import { animateScroll as scroll } from "react-scroll";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
-function SignupPage(props) {
+function SignupPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
@@ -23,9 +22,6 @@ function SignupPage(props) {
 
   const handleSignupSubmit = (e) => {
     e.preventDefault();
-
-    // Create an object representing the request body
-    // const requestBody = { email, password, username, userImage };
 
     const uploadData = new FormData();
 
@@ -43,20 +39,18 @@ function SignupPage(props) {
     axios
       .post(`${API_URL}/signup`, uploadData)
 
-      .then((response) => {
+      .then(() => {
         navigate("/login");
+      })
+      .catch((error) => {
+        const errorDescription = error.response.data.message;
+        setErrorMessage(errorDescription);
       });
-
-    // .catch((error) => {
-    //   const errorDescription = error.response.data.message;
-    //   setErrorMessage(errorDescription);
-    // });
   };
 
   useEffect(() => {
     scroll.scrollToTop();
   }, []);
-  
 
   return (
     <div className="signup-container">

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import "./AddComment.css"
 
@@ -11,7 +11,7 @@ function AddComment({updateGame}) {
   const { gameId } = useParams();
   
 
-  const navigate = useNavigate();
+
 
 
   const handleSubmit = (e) => {

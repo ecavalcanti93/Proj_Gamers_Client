@@ -33,16 +33,6 @@ function GameListPage() {
   return (
     <>
       <div>
-        {/* <ModalForm /> */}
-        {/* <BasicModal /> */}
-        {/* <button
-        className="add-game"
-        onClick={() => {
-        handleForm();
-        }}
-      >
-        +
-      </button> */}
         {editForm && <AddGame updateGames={getAllGames} />}
         <SearchBar />
       </div>

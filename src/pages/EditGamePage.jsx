@@ -7,7 +7,6 @@ import { animateScroll as scroll} from "react-scroll";
 const API_URL = import.meta.env.VITE_API_URL;
 
 function EditGamePage(props) {
-  // const [game, setGame] = useState(null);
 
   const [title, setTitle] = useState("");
   const [genre, setGenre] = useState("");
@@ -127,13 +126,6 @@ function EditGamePage(props) {
           <option>16</option>
           <option>18</option>
         </select>
-        {/* <label>PEGI:</label>
-        <input
-          type="number"
-          name="age"
-          value={age}
-          onChange={(e) => setAge(e.target.value)}
-        /> */}
         <br />
         <label>Description:</label>
         <textarea

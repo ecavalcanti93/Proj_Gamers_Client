@@ -13,19 +13,9 @@ import LoginPage from "./pages/LoginPage";
 import IsPrivate from "./components/IsPrivate";
 import IsAnon from "./components/IsAnon";
 import EditPasswordPage from "./pages/EditPasswordPage";
-import {Cloudinary} from "@cloudinary/url-gen";
 import Component from "./components/Footer";
 
 function App() {
-
-  // const CLOUDINARY_NAME = import.meta.env.VITE_CLOUDINARY_NAME;
-
-  // // Create a Cloudinary instance and set your cloud name.
-  // const cld = new Cloudinary({
-  //   cloud: {
-  //     cloudName: CLOUDINARY_NAME
-  //   }
-  // });
 
   return (
     <div className="App">
