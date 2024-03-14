@@ -57,6 +57,8 @@ function GameCard({
         <div className="div-container1">
           <div className="test">
           <img className="card" src={image} alt="game image" />
+          {/* <span className="material-symbols-outlined">+</span> */}
+
             <div className="btn-details">
               <BackToBack />
               

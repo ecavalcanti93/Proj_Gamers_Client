@@ -47,7 +47,6 @@ function AddCreatedGame(props) {
           handleOnClick();
         }}
       >
-        Add game
       </button>
     </div>
   );

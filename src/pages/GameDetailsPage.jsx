@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 import { animateScroll as scroll} from "react-scroll";
 import axios from "axios";
@@ -14,7 +14,6 @@ function GameDetailsPage() {
   const { gameId } = useParams();
   const navigate = useNavigate();
   const { user, authenticateUser } = useContext(AuthContext);
-
 
   const getGame = () => {
     const storedToken = localStorage.getItem("authToken");
@@ -45,6 +44,7 @@ function GameDetailsPage() {
         navigate("/profile");
       });
   };
+
 
   return (
     <div>

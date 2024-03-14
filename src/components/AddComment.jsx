@@ -9,9 +9,6 @@ const API_URL = import.meta.env.VITE_API_URL;
 function AddComment({updateGame}) {
   const [content, setContent] = useState("");
   const { gameId } = useParams();
-  
-
-  const navigate = useNavigate();
 
 
   const handleSubmit = (e) => {

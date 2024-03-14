@@ -8,7 +8,6 @@
     color: white;
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
     justify-content: center;
     height: 100vh;
     margin-left: 50px;
@@ -282,7 +281,6 @@ button:hover {
 }
 
 .menu-button{
-    /* align-items: center; */
     display: flex;
     margin-left: auto;
     flex-direction: column;
@@ -298,7 +296,6 @@ button:hover {
 }
 
 .subtitle-home{
-    /* align-content: center; */
     font-size: 25px;
     width: 260px;
 }
@@ -316,9 +313,6 @@ button:hover {
     button{
         width: 300px;
         margin-bottom: 1rem;
-        /* display: flex;
-        flex-direction: column; */
-        /* padding: 8px 40px; */
     }
 
     .menu-div2{

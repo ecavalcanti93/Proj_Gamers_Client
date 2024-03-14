@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./ModalBack.css";
-
-const API_URL = import.meta.env.VITE_API_URL;
 
 function BackToBack () {
   const navigate = useNavigate();

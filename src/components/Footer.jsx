@@ -24,10 +24,10 @@ const Component = () => {
                     <div className="sb-footer-links-div">
                         <h4>About us</h4>
                         <a className="link-footer" href="/"><p>Data</p></a>
-                        <a className="link-footer" href="/"><p>Carrers</p></a>
+                        <a className="link-footer" href="/"><p>Careers</p></a>
                         <a className="link-footer" href="/"><p>Press & News</p></a>
                         <a className="link-footer" href="/"><p>Privacy Policy</p></a>
-                        <a className="link-footer" href="/"><p>Terms of Services</p></a>
+                        <a className="link-footer" href="/"><p>Terms of Service</p></a>
                     </div>
 
                     <div className="sb-footer-links-div">
@@ -49,11 +49,11 @@ const Component = () => {
                     <div className="sb-footer-links-div">
                         <h4>Social Media</h4>
                         <div className="socialmedia">
-                            <Footer.Icon className="socialmedia-icon" href="https://www.facebook.com" icon={BsFacebook} />
-                            <Footer.Icon className="socialmedia-icon" href="https://www.instagram.com/" icon={BsInstagram} />
-                            <Footer.Icon className="socialmedia-icon" href="https://x.com/" icon={BsTwitter} />
-                            <Footer.Icon className="socialmedia-icon" href="https://linkedin.com/" icon={BsLinkedin} />
-                            <Footer.Icon className="socialmedia-icon" href="https://github.com/" icon={BsGithub} />
+                            <Footer.Icon className="socialmedia-icon" href="https://www.facebook.com" target="_blank" icon={BsFacebook} />
+                            <Footer.Icon className="socialmedia-icon" href="https://www.instagram.com/" target="_blank" icon={BsInstagram} />
+                            <Footer.Icon className="socialmedia-icon" href="https://x.com/" target="_blank" icon={BsTwitter} />
+                            <Footer.Icon className="socialmedia-icon" href="https://linkedin.com/" target="_blank" icon={BsLinkedin} />
+                            <Footer.Icon className="socialmedia-icon" href="https://github.com/" target="_blank" icon={BsGithub} />
                         </div>
                     </div>
 

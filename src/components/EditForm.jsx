@@ -65,7 +65,7 @@ function EditForm() {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
 
-      .then((response) => {
+      .then(() => {
         handleForm();
         navigate("/profile");
       })

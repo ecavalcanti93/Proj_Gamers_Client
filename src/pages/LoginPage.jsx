@@ -1,18 +1,16 @@
 import { useState, useContext, useEffect } from "react";
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 import "./LoginPage.css";
 import { animateScroll as scroll} from "react-scroll";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
-function LoginPage(props) {
+function LoginPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
-
-  const navigate = useNavigate();
 
   const { storeToken, authenticateUser } = useContext(AuthContext);
 

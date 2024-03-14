@@ -13,7 +13,7 @@ function HomePage() {
     scroll.scrollToTop();
   }, []);
   
-  const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
+  const { isLoggedIn } = useContext(AuthContext);
   const [editForm, setEditForm] = useState(false);
   const handleForm = () => setEditForm(!editForm);
 

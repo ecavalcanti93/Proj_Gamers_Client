@@ -1,9 +1,10 @@
 import axios from "axios";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../context/auth.context";
 import "./SearchBar.css";
 import BasicModal from "./Modal";
+import { inputToRGB } from "@ctrl/tinycolor";
 import BackToTop from "./ModalTop";
 
 const API_URL = import.meta.env.VITE_API_URL;
@@ -13,7 +14,6 @@ function SearchProfile() {
   const [profileGames, setProfileGames] = useState([]);
   const [loading, setLoading] = useState(false);
   const { user, refreshUser } = useContext(AuthContext);
-  const location = useLocation();
 
   const storedToken = localStorage.getItem("authToken");
 
@@ -31,11 +31,9 @@ function SearchProfile() {
       });
   };
 
-
   useEffect(() => {
     fetchUser()
   }, []);
-
 
   const handleSearchInputChange = (e) => {
     const searchTerm = e.target.value.toLowerCase();
