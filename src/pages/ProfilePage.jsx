@@ -1,4 +1,3 @@
-import "./ProfilePage.css";
 import { useEffect, useContext } from "react";
 import Card from "../components/Perfil";
 import SearchProfile from "../components/SearchProfile";
