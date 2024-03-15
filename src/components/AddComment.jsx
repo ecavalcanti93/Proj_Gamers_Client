@@ -47,7 +47,7 @@ function AddComment({updateGame}) {
         />
         <br />
         
-        <button className="submit-comment" type="submit">Add comment</button>
+        <button type="submit">Add comment</button>
       </form>
 
     </div>
