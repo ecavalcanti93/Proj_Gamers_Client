@@ -43,3 +43,14 @@
 .loading{
 	margin-top: 20px;
   }
+
+  @media screen and (max-width:550px) {
+	.card-container {
+		background-color: #2a2a58;
+		min-width: 360px;
+		max-width: 600px;
+		height: 350px;
+		border-radius: 14px;
+	}
+
+}
