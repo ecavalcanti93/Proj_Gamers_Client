@@ -41,7 +41,7 @@ function HomePage() {
               </Link>
 
               <Link to="/profile">
-                <button>My Library</button>
+                <button className="margin">My Library</button>
               </Link>
             </div>
           )}
