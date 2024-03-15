@@ -102,3 +102,12 @@
 .column{
   position: relative;
 }
+
+@media screen and (max-width:550px) {
+
+  .search-box{
+      width: 300px;
+      /* margin-bottom: 1rem; */
+  }
+
+}
