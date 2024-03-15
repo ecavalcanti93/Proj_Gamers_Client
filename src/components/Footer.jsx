@@ -64,7 +64,7 @@ const Component = () => {
                 <div className="sb-footer-below">
                     <div className="sb-footer-copyright">
                         <p>
-                            @{new Date().getFullYear()} GamersBin. All right reserved.
+                            @{new Date().getFullYear()} GamersBin. All right reserved. <br/>Created by Eric Cavalcanti and Marcel Costa
                         </p>
                     </div>
                     <div className="sb-footer-below-links">
