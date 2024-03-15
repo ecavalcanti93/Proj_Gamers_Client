@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import "./AddComment"
 
 
 const API_URL = import.meta.env.VITE_API_URL;
@@ -46,7 +47,7 @@ function AddComment({updateGame}) {
         />
         <br />
         
-        <button type="submit">Add comment</button>
+        <button className="submit-comment" type="submit">Add comment</button>
       </form>
 
     </div>
