@@ -133,7 +133,7 @@ function AddGame({refreshedGames, handleClose}) {
         />
         <br />
 
-        <button type="submit">Submit</button>
+        <button className="submitbtn" type="submit">Submit</button>
       </form>
     </div>
   );
