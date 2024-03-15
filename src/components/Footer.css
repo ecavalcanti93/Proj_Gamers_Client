@@ -7,10 +7,10 @@
     background-color: #070720;
 }
 
-.sb-footer{
+/* .sb-footer{
     display: flex;
     flex-direction: column;
-}
+} */
 
 .sb-footer-links-div p:hover {
     color: orangered;
