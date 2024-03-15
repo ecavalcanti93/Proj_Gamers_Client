@@ -77,8 +77,8 @@ function SearchBar() {
 
   return (
     <div className="center">
-      <div className="search-box flex-center">
         <BasicModal refreshedGames={fetchGames} />
+      <div className="search-box flex-center">
         <input
           type="text"
           placeholder="Search for games..."
