@@ -16,6 +16,18 @@ h1 {
 }
 
 @font-face {
+    font-family: "Paytone One";
+    src: 
+    local("PaytoneOne-Regular")
+    url("https://fonts.gstatic.com/s/paytoneone/v23/0nksC9P7MfYHj2oFtYm2ChTigPvNiA.woff2") format('woff2')
+    url("https://fonts.googleapis.com/css2?family=Paytone+One&display=swap") format("truetype");
+}
+
+h1 {
+    font-family: "Paytone One";
+} 
+
+@font-face {
     font-family: "Chopin";
     src:
     local("Chopin-Light")
