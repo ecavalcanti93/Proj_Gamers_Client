@@ -35,7 +35,6 @@ function GameListPage() {
     <>
       <div>
         {editForm && <AddGame updateGames={getAllGames} />}
-        
         <SearchBar />
       </div>
     </>
