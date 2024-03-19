@@ -114,6 +114,22 @@
     article p{
       font-size: 10px;
     }
+
+    article .content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 300px;
+      z-index: 1;
+      opacity: 0;
+      visibility: hidden;
+      padding: 100px 0 20px 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: linear-gradient(to bottom, rgb(0 0 0 / 0%), rgb(0 0 0 / 80%));
+      transition: 0.25s;
+    }
   
   }
 
