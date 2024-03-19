@@ -86,6 +86,10 @@
     margin-right: 2rem;
 }
 
+.sb__navbar-links_container button{
+    margin-right: 10px;
+}
+
 .sb__navbar-button{
     display: flex;
     justify-content: flex-end;

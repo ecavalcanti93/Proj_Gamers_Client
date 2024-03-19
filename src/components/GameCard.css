@@ -23,6 +23,10 @@
     align-items: center;
 }
 
+.btn-details button{
+    margin-right: 10px;
+}
+
 .gamecard{
     display: flex;
 }

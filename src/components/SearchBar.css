@@ -30,6 +30,10 @@
   font-weight: 100;
 }
 
+.search-box button {
+  margin-right: 10px;
+}
+
 .btn-search{
   width: 50px;
   height: 50px;
