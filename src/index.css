@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-@font-face {
+/* @font-face {
     font-family: "Mont";
     src: 
     local("Mont-HeavyDEMO")
@@ -13,9 +13,9 @@
 
 h1 {
     font-family: "Mont";
-}
+} */
 
-@font-face {
+/* @font-face {
     font-family: "Paytone One";
     src: 
     local("PaytoneOne-Regular")
@@ -25,6 +25,23 @@ h1 {
 
 h1 {
     font-family: "Paytone One";
+}  */
+
+@font-face {
+        font-family: 'Bakbak One';
+        src: url('BakbakOne-Regular.eot');
+        src: local('Bakbak One Regular'), local('BakbakOne-Regular'),
+            url('BakbakOne-Regular.eot?#iefix') format('embedded-opentype'),
+            url('BakbakOne-Regular.woff2') format('woff2'),
+            url('BakbakOne-Regular.woff') format('woff'),
+            url('BakbakOne-Regular.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+
+h1 {
+    font-family: "Bakbak One";
 } 
 
 @font-face {

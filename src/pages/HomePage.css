@@ -2,6 +2,11 @@
     display: flex;
 }
 
+.container-menu{
+    min-height: 500px;
+    align-items: center;
+}
+
 .menu-div1{
     width: 50%;
     background-color: #070720;
@@ -158,7 +163,7 @@ button:hover {
 
 .title-home{
     font-size: 90px;
-    font-family: "Paytone One";
+    font-family: "Bakbak One";
     /* margin-left: 150px; */
 }
 
@@ -276,6 +281,10 @@ button:hover {
         justify-content: center;
     }
 
+    .container-menu{
+        align-items: normal;
+    }
+
 .title-home{
     text-justify: distribute-all-lines;
 }
@@ -316,6 +325,10 @@ button:hover {
     }
 
     .margin{
+        margin-top: 1rem;
+    }
+
+    .login-button{
         margin-top: 1rem;
     }
 

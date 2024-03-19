@@ -5,6 +5,7 @@ import "./GameListPage.css";
 import AddGame from "../components/AddGame";
 import { animateScroll as scroll} from "react-scroll";
 
+
 const API_URL = import.meta.env.VITE_API_URL;
 
 function GameListPage() {
@@ -34,6 +35,7 @@ function GameListPage() {
     <>
       <div>
         {editForm && <AddGame updateGames={getAllGames} />}
+        
         <SearchBar />
       </div>
     </>

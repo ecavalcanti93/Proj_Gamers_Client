@@ -70,3 +70,12 @@
   .button-submit{
     margin-right: 0;
   }
+
+
+  @media (max-width: 550px) {
+    .loginbtn{
+      width: 335px;
+    }
+  
+  }
+

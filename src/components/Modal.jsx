@@ -3,6 +3,8 @@ import Dialog from "@mui/material/Dialog";
 import Modal from '@mui/material/Modal';
 import AddGame from './AddGame';
 import "./Modal.css"
+import 'react-tooltip/dist/react-tooltip.css';
+import { Tooltip } from 'react-tooltip'
 
 export default function BasicModal({ refreshedGames }) {
   const [open, setOpen] = React.useState(false);
@@ -30,6 +32,7 @@ export default function BasicModal({ refreshedGames }) {
 
   return (
     <div className='modal-box'>
+    
       <button onClick={handleClickOpen("body")} className='button-size'></button>
       <Modal
         open={open}
@@ -37,6 +40,7 @@ export default function BasicModal({ refreshedGames }) {
         scroll={scroll}
         aria-labelledby="scroll-modal-title"
         aria-describedby="scroll-modal-description"
+        
       >
         <Dialog
           PaperProps={{

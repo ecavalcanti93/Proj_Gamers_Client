@@ -19,9 +19,9 @@ function HomePage() {
 
   return (
     <>
-      <div className="container">
+      <div className="container container-menu">
         <div className="menu-div1">
-          <h1 className="title-home">Create your <br/><span className="own">own</span> game <br/>library!</h1>
+          <h1 className="title-home">Create your <span className="own">own</span> game library!</h1>
           <h3 className="subtitle-home">Remember forever the games you've played.</h3>
           {!isLoggedIn && (
             <div className="menu-button">
