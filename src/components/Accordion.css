@@ -106,3 +106,14 @@
     }
   }
 
+  @media (max-width: 550px) {
+    article h2{
+      font-size: 12px;
+    }
+
+    article p{
+      font-size: 10px;
+    }
+  
+  }
+

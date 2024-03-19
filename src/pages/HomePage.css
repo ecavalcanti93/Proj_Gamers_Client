@@ -319,7 +319,7 @@ button:hover {
         height: 80%;
     }
 
-    button{
+    .menu-button button{
         width: 300px;
         /* margin-bottom: 1rem; */
     }
