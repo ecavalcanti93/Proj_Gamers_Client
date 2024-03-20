@@ -5,6 +5,7 @@ function BackToTop() {
   return (
     <div className="btn-top">
       <button
+      title="Back to Top"
         className="button-top"
         onClick={() => {
           scroll.scrollToTop();

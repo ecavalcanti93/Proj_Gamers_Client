@@ -80,6 +80,7 @@ function SearchBar() {
       <div className="search-box flex-center">
         <BasicModal refreshedGames={fetchGames} />
         <input
+        title="Search a Game"
           type="text"
           placeholder="Search for games..."
           onChange={handleSearchInputChange}
@@ -103,6 +104,7 @@ function SearchBar() {
               </Link>
               {gamesId.includes(game._id) ? (
                 <button
+                  title="Add to Your Library"
                   className="btn-add-list"
                   hidden
                   onClick={() => {
@@ -112,6 +114,7 @@ function SearchBar() {
                 </button>
               ) : (
                 <button
+                title="Add to Your Library"
                 className="btn-add-list"
                   onClick={() => {
                     handleAddGame(game);

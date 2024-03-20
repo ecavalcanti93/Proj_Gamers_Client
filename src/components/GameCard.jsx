@@ -66,6 +66,7 @@ function GameCard({
                 <DeleteGameButton />
               ) : (
                 <button
+                  title="Add to Your Library"
                   className="add-game"
                   onClick={() => {
                     addGame = addGame();

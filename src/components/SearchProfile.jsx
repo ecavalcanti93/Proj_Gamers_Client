@@ -48,6 +48,7 @@ function SearchProfile() {
       <div className="search-box flex-center">
         <BasicModal />
         <input
+        title="Search a Game"
           type="text"
           placeholder="Search for games..."
           onChange={handleSearchInputChange}

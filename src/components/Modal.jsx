@@ -33,7 +33,7 @@ export default function BasicModal({ refreshedGames }) {
   return (
     <div className='modal-box'>
     
-      <button onClick={handleClickOpen("body")} className='button-size'></button>
+      <button onClick={handleClickOpen("body")} className='button-size' title='Add a New Game'></button>
       <Modal
         open={open}
         onClose={handleClose}

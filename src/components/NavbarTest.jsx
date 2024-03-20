@@ -24,7 +24,7 @@ const Navbar2 = () => {
                 <div className="sb__navbar-links">
                     <div className="sb__navbar-links_logo">
                         <Link to="/">
-                            <img src={logo} alt="logo" style={{ height: "35px", marginLeft: "50px" }} />
+                            <img title="Home" src={logo} alt="logo" style={{ height: "35px", marginLeft: "50px" }} />
                         </Link>
                         {isLoggedIn && (
                             <div>

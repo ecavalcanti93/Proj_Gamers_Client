@@ -24,7 +24,7 @@ function DeleteGameButton() {
       .catch((err) => console.log(err));
   };
 
-  return <button className="button-delete" onClick={fakeDeleteGame}></button>;
+  return <button title="Delete" className="button-delete" onClick={fakeDeleteGame}></button>;
 }
 
 export default DeleteGameButton;
